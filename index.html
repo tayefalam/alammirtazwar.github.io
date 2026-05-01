@@ -47,17 +47,19 @@ nav a:hover {
 
 /* HERO */
 .hero {
-  height: 80vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  text-align: center;
+  justify-content: space-between;
+  padding: 80px 10%;
+  flex-wrap: wrap;
+}
+
+.hero-text {
+  max-width: 500px;
 }
 
 .hero h1 {
-  font-size: 48px;
-  font-weight: 700;
+  font-size: 42px;
 }
 
 .hero p {
@@ -69,14 +71,23 @@ nav a:hover {
   color: #3b82f6;
 }
 
+.hero img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3b82f6;
+}
+
+/* BUTTONS */
 .buttons {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .buttons a {
   text-decoration: none;
   padding: 12px 20px;
-  margin: 5px;
+  margin-right: 10px;
   border-radius: 6px;
   font-size: 14px;
 }
@@ -93,13 +104,13 @@ nav a:hover {
 
 /* SECTION */
 .section {
-  padding: 80px 10%;
+  padding: 70px 10%;
   max-width: 1000px;
   margin: auto;
 }
 
 .section h2 {
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 20px;
 }
 
@@ -123,6 +134,14 @@ nav a:hover {
   font-size: 13px;
 }
 
+/* EXPERIENCE */
+.card {
+  border: 1px solid #374151;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
 /* FOOTER */
 footer {
   text-align: center;
@@ -139,38 +158,45 @@ footer {
   <div>
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
     <a href="#contact">Contact</a>
   </div>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Alam Mir Tazwar</h1>
-  <p>
-    Software Engineering Student | 
-    <span>Flutter Developer</span> | 
-    Machine Learning | Data Analytics
-  </p>
+  <div class="hero-text">
+    <h1>Alam Mir Tazwar</h1>
+    <p>
+      Software Engineering Student | 
+      <span>Flutter Developer</span> | 
+      Machine Learning | Data Analytics
+    </p>
 
-  <div class="buttons">
-    <a href="https://github.com/mirtazwar" class="btn-primary">GitHub</a>
-    <a href="https://www.linkedin.com/in/alam-tazwar/" class="btn-secondary">LinkedIn</a>
+    <div class="buttons">
+      <a href="https://github.com/mirtazwar" class="btn-primary">GitHub</a>
+      <a href="https://www.linkedin.com/in/alam-tazwar/" class="btn-secondary">LinkedIn</a>
+    </div>
   </div>
+
+  <img src="profile.jpg" alt="Profile Photo">
 </section>
 
+<!-- ABOUT -->
 <section class="section about" id="about">
   <h2>About Me</h2>
   <p>
-    I am a Software Engineering student at UMPSA with hands-on experience in building 
-    mobile and web applications using Flutter and Laravel. I have participated in 
-    hackathons and developed award-winning applications, along with experience in 
-    machine learning and data analysis. I focus on building practical, real-world 
-    solutions and continuously improving my technical skills.
+    I am a Software Engineering student at UMPSA with experience in developing 
+    mobile and web applications using Flutter and Laravel. I have participated 
+    in hackathons and developed award-winning applications. I also have experience 
+    in machine learning and data analysis, focusing on building practical and 
+    real-world solutions.
   </p>
 </section>
 
+<!-- SKILLS -->
 <section class="section" id="skills">
   <h2>Skills</h2>
-
   <div class="skills">
     <div class="skill">Python</div>
     <div class="skill">Java</div>
@@ -183,6 +209,29 @@ footer {
   </div>
 </section>
 
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <h2>Experience & Achievements</h2>
+
+  <div class="card">
+    <strong>Hackathon Best Game App Winner</strong><br>
+    UMPSA x Huawei 2025<br>
+    Developed EcoSnap, a Flutter-based social game application.
+  </div>
+
+  <div class="card">
+    <strong>Top 10 Finalist – Innovation Mobile App Competition</strong><br>
+    Built EcoSnap as part of Team AceEngineers.
+  </div>
+
+  <div class="card">
+    <strong>Datathon 2025 – Universiti Malaya</strong><br>
+    Built time series forecasting models using real-world financial data.
+  </div>
+
+</section>
+
+<!-- CONTACT -->
 <section class="section" id="contact">
   <h2>Contact</h2>
   <p>Email: your@email.com</p>
