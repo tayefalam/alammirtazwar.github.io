@@ -1,98 +1,234 @@
-<!-- ONLY CONTENT UPDATED BASED ON YOUR CV :contentReference[oaicite:0]{index=0} -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alam Mir Tazwar Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Alam Mir Tazwar</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-<!-- PROFILE SECTION -->
-<p class="section__text__p2">Software Engineering Student | Machine Learning & Web Development</p>
+    <nav id="hamburger-nav">
+      <div class="logo">Alam Mir Tazwar</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
 
-<!-- DOWNLOAD CV -->
-<button
-  class="btn btn-color-2"
-  onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')"
->
-  Download CV
-</button>
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Alam Mir Tazwar</h1>
+        <p class="section__text__p2">
+          Software Engineering Student | Machine Learning & Web Development
+        </p>
 
-<!-- SOCIAL LINKS -->
-<img
-  src="./assets/linkedin.png"
-  alt="My LinkedIn profile"
-  class="icon"
-  onclick="location.href='https://linkedin.com/in/your-link'"
-/>
-<img
-  src="./assets/github.png"
-  alt="My Github profile"
-  class="icon"
-  onclick="location.href='https://github.com/your-username'"
-/>
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
 
-<!-- ABOUT SECTION -->
-<div class="details-container">
-  <h3>Experience</h3>
-  <p>Web Developer Intern<br />COMNET UNISEL</p>
-</div>
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/your-link'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="GitHub"
+            class="icon"
+            onclick="location.href='https://github.com/your-username'"
+          />
+        </div>
+      </div>
+    </section>
 
-<div class="details-container">
-  <h3>Education</h3>
-  <p>Bachelor of Computer Science (Software Engineering)<br />UMPSA (2023–2026)</p>
-</div>
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
 
-<div class="text-container">
-  <p>
-    Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA),
-    seeking a 6-month internship to contribute to data-driven and digital solutions.
-    Experienced in machine learning and web development, including a car damage detection system.
-    Currently building skills in Microsoft Power Platform (Power BI, learning Power Apps),
-    with a strong interest in improving business processes and decision-making.
-  </p>
-</div>
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
+        </div>
 
-<!-- EXPERIENCE SECTION -->
-<h2 class="experience-sub-title">Technical Skills</h2>
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" class="icon" />
+              <h3>Experience</h3>
+              <p>Web Developer Intern<br />COMNET UNISEL (2021)</p>
+            </div>
 
-<!-- LEFT SIDE -->
-<article><h3>Python</h3><p>Experienced</p></article>
-<article><h3>Java</h3><p>Intermediate</p></article>
-<article><h3>C</h3><p>Intermediate</p></article>
-<article><h3>HTML</h3><p>Experienced</p></article>
-<article><h3>CSS</h3><p>Experienced</p></article>
-<article><h3>JavaScript</h3><p>Intermediate</p></article>
-<article><h3>PHP</h3><p>Intermediate</p></article>
+            <div class="details-container">
+              <img src="./assets/education.png" class="icon" />
+              <h3>Education</h3>
+              <p>
+                Bachelor of Computer Science (Software Engineering)<br />
+                UMPSA (2023–2026)
+              </p>
+            </div>
+          </div>
 
-<!-- RIGHT SIDE -->
-<h2 class="experience-sub-title">Technologies & Tools</h2>
+          <div class="text-container">
+            <p>
+              Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA),
+              seeking a 6-month internship to contribute to data-driven and digital solutions.
+              Experienced in machine learning and web development, including a car damage detection system.
+              Currently building skills in Microsoft Power Platform (Power BI, learning Power Apps),
+              with a strong interest in improving business processes and decision-making.
+            </p>
+          </div>
+        </div>
+      </div>
 
-<article><h3>TensorFlow</h3><p>Intermediate</p></article>
-<article><h3>OpenCV</h3><p>Intermediate</p></article>
-<article><h3>MySQL</h3><p>Intermediate</p></article>
-<article><h3>Laravel</h3><p>Intermediate</p></article>
-<article><h3>WordPress</h3><p>Experienced</p></article>
-<article><h3>Power BI</h3><p>Learning</p></article>
-<article><h3>AWS / Cloud</h3><p>Basic</p></article>
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#experience'" />
+    </section>
 
-<!-- PROJECTS SECTION -->
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
 
-<!-- PROJECT 1 -->
-<h2 class="experience-sub-title project-title">Car Damage Detection System</h2>
-<p style="text-align:center;">
-  Machine learning-based system using Python, TensorFlow, and OpenCV for automated car damage detection.
-</p>
+      <div class="experience-details-container">
+        <div class="about-containers">
 
-<!-- PROJECT 2 -->
-<h2 class="experience-sub-title project-title">EcoSnap (Flutter App)</h2>
-<p style="text-align:center;">
-  Social game app with strong UI/UX. Winner of Best Game App (UMPSA x Huawei Hackathon 2025).
-</p>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Programming & Development</h2>
+            <div class="article-container">
+              <article><h3>Python</h3><p>Experienced</p></article>
+              <article><h3>Java</h3><p>Intermediate</p></article>
+              <article><h3>C</h3><p>Intermediate</p></article>
+              <article><h3>HTML</h3><p>Experienced</p></article>
+              <article><h3>CSS</h3><p>Experienced</p></article>
+              <article><h3>JavaScript</h3><p>Intermediate</p></article>
+              <article><h3>PHP</h3><p>Intermediate</p></article>
+            </div>
+          </div>
 
-<!-- PROJECT 3 -->
-<h2 class="experience-sub-title project-title">SamanSphere (Web App)</h2>
-<p style="text-align:center;">
-  Laravel-based platform to centralize multi-agency summons payments.
-</p>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Tools & Technologies</h2>
+            <div class="article-container">
+              <article><h3>TensorFlow</h3><p>Intermediate</p></article>
+              <article><h3>OpenCV</h3><p>Intermediate</p></article>
+              <article><h3>MySQL</h3><p>Intermediate</p></article>
+              <article><h3>Laravel</h3><p>Intermediate</p></article>
+              <article><h3>WordPress</h3><p>Experienced</p></article>
+              <article><h3>Power BI</h3><p>Learning</p></article>
+              <article><h3>AWS Cloud</h3><p>Basic</p></article>
+            </div>
+          </div>
 
-<!-- CONTACT -->
-<p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
+        </div>
+      </div>
 
-<p><a href="https://www.linkedin.com/in/your-link">LinkedIn</a></p>
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#projects'" />
+    </section>
 
-<!-- FOOTER -->
-<p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+
+      <div class="experience-details-container">
+        <div class="about-containers">
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-1.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Car Damage Detection</h2>
+            <p style="text-align:center;">
+              ML system using TensorFlow & OpenCV for automated damage detection.
+            </p>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-2.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">EcoSnap App</h2>
+            <p style="text-align:center;">
+              Flutter-based social game app. Winner - Huawei Hackathon 2025.
+            </p>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-3.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">SamanSphere</h2>
+            <p style="text-align:center;">
+              Laravel web app for centralized summons payment system.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#contact'" />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/email.png" class="icon contact-icon email-icon" />
+          <p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
+        </div>
+
+        <div class="contact-info-container">
+          <img src="./assets/linkedin.png" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/your-link">LinkedIn</a></p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
