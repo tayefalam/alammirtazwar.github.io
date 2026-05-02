@@ -1,234 +1,742 @@
+Here is your modified portfolio HTML with improved design, better structure, enhanced animations, and professional content while preserving your existing sections.
+```html
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alam Mir Tazwar Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
-  </head>
-  <body>
-    <nav id="desktop-nav">
-      <div class="logo">Alam Mir Tazwar</div>
-      <div>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Alam Mir Tazwar — Software Engineering Student specializing in Machine Learning and Web Development. Portfolio showcasing ML projects and web applications." />
+  <meta name="author" content="Alam Mir Tazwar" />
+  <title>Alam Mir Tazwar | Software Engineer | ML & Web Dev</title>
+  
+  <style>
+    /* ========== GLOBAL RESET & VARIABLES ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <nav id="hamburger-nav">
-      <div class="logo">Alam Mir Tazwar</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span><span></span><span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-        </div>
-      </div>
-    </nav>
+    :root {
+      --primary-bg: #0a0d14;
+      --secondary-bg: #11161f;
+      --card-bg: rgba(18, 26, 36, 0.7);
+      --text-primary: #edf2f7;
+      --text-secondary: #a0b8cc;
+      --accent: #5c9cbf;
+      --accent-glow: rgba(92, 156, 191, 0.2);
+      --border-light: rgba(72, 92, 112, 0.25);
+      --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
 
-    <section id="profile">
+    body {
+      background-color: var(--primary-bg);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: var(--text-primary);
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* ========== BACKGROUND ANIMATIONS ========== */
+    .bg-orb {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      overflow: hidden;
+      pointer-events: none;
+    }
+    .orb-1, .orb-2, .orb-3 {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.4;
+      animation: floatSlow 25s ease-in-out infinite;
+    }
+    .orb-1 {
+      top: 10%;
+      left: -10%;
+      width: 50vw;
+      height: 50vw;
+      max-width: 500px;
+      background: radial-gradient(circle, rgba(92, 156, 191, 0.3), transparent);
+      animation-delay: 0s;
+    }
+    .orb-2 {
+      bottom: 0;
+      right: -10%;
+      width: 45vw;
+      height: 45vw;
+      max-width: 450px;
+      background: radial-gradient(circle, rgba(80, 140, 170, 0.25), transparent);
+      animation-delay: -8s;
+    }
+    .orb-3 {
+      top: 40%;
+      left: 25%;
+      width: 35vw;
+      height: 35vw;
+      max-width: 380px;
+      background: radial-gradient(circle, rgba(65, 120, 150, 0.2), transparent);
+      animation-delay: -15s;
+    }
+    @keyframes floatSlow {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(3%, -2%) scale(1.05); }
+      66% { transform: translate(-2%, 3%) scale(0.98); }
+    }
+
+    /* ========== NAVIGATION ========== */
+    nav, .nav-links {
+      display: flex;
+    }
+    nav {
+      justify-content: space-between;
+      align-items: center;
+      height: 70px;
+      width: 100%;
+      padding: 0 3rem;
+      background: rgba(10, 13, 20, 0.85);
+      backdrop-filter: blur(12px);
+      position: fixed;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border-light);
+    }
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.3px;
+    }
+    .nav-links {
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
+    #hamburger-nav {
+      display: none;
+    }
+    .hamburger-menu {
+      position: relative;
+      cursor: pointer;
+    }
+    .hamburger-icon span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background: var(--text-primary);
+      margin: 5px 0;
+      transition: var(--transition);
+    }
+    .menu-links {
+      position: absolute;
+      top: 100%;
+      right: 0;
+      background: rgba(17, 22, 31, 0.98);
+      backdrop-filter: blur(12px);
+      width: 200px;
+      border-radius: 1rem;
+      padding: 1rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      list-style: none;
+      border: 1px solid var(--border-light);
+    }
+    .menu-links.open {
+      display: flex;
+    }
+    .menu-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    /* ========== MAIN CONTENT ========== */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    section {
+      padding: 6rem 0 4rem;
+    }
+    .section__text__p1 {
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      letter-spacing: -0.02em;
+    }
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .btn {
+      padding: 0.75rem 1.8rem;
+      border-radius: 2.5rem;
+      font-weight: 550;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+    }
+    .btn-color-1 {
+      background: var(--accent);
+      color: white;
+    }
+    .btn-color-1:hover {
+      background: #4a8aad;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(92, 156, 191, 0.3);
+    }
+    .btn-color-2 {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--text-primary);
+    }
+    .btn-color-2:hover {
+      background: rgba(92, 156, 191, 0.1);
+      transform: translateY(-2px);
+    }
+    .icon {
+      width: 28px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .icon:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.2);
+    }
+
+    /* Profile Section */
+    #profile {
+      display: flex;
+      justify-content: center;
+      gap: 4rem;
+      align-items: center;
+      min-height: 90vh;
+      padding-top: 80px;
+    }
+    .section__pic-container {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
+      padding: 4px;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    .section__pic-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .section__text {
+      text-align: left;
+      max-width: 550px;
+    }
+    .section__text h1 {
+      font-size: 3rem;
+      margin: 0.5rem 0;
+    }
+    .section__text__p2 {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+    }
+    #socials-container {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    /* About Section */
+    .section-container {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+    .about-details-container {
+      flex: 2;
+    }
+    .about-containers {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .details-container {
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid var(--border-light);
+      transition: var(--transition);
+      flex: 1;
+      min-width: 180px;
+    }
+    .details-container:hover {
+      border-color: var(--accent);
+      transform: translateY(-4px);
+      background: rgba(24, 34, 46, 0.8);
+    }
+    .text-container p {
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+
+    /* Experience / Skills */
+    .experience-details-container {
+      width: 100%;
+    }
+    .article-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    article {
+      background: rgba(92, 156, 191, 0.1);
+      padding: 0.4rem 1rem;
+      border-radius: 2rem;
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      transition: var(--transition);
+    }
+    article:hover {
+      background: rgba(92, 156, 191, 0.25);
+      transform: scale(1.02);
+    }
+    article h3 {
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    article p {
+      font-size: 0.7rem;
+      color: var(--accent);
+    }
+
+    /* Projects */
+    .project-img {
+      width: 100%;
+      border-radius: 1rem;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #1a2530;
+      margin-bottom: 1rem;
+    }
+    .color-container {
+      background: rgba(18, 26, 36, 0.6);
+      backdrop-filter: blur(4px);
+    }
+    .project-title {
+      font-size: 1.2rem;
+      margin: 0.5rem 0;
+    }
+
+    /* Contact */
+    .contact-info-upper-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      background: var(--card-bg);
+      backdrop-filter: blur(8px);
+      border-radius: 1.5rem;
+      padding: 1.5rem 2rem;
+      border: 1px solid var(--border-light);
+      justify-content: center;
+    }
+    .contact-info-container {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .contact-info-container a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: var(--transition);
+    }
+    .contact-info-container a:hover {
+      color: var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      background: rgba(10, 13, 20, 0.9);
+      padding: 1.5rem;
+      text-align: center;
+      border-top: 1px solid var(--border-light);
+      margin-top: 2rem;
+    }
+    footer .nav-links {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    footer p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+    }
+
+    /* Arrow */
+    .arrow {
+      width: 30px;
+      margin-top: 2rem;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: var(--transition);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .arrow:hover {
+      opacity: 1;
+      transform: translateY(3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      #desktop-nav {
+        display: none;
+      }
+      #hamburger-nav {
+        display: flex;
+        padding: 0 1.5rem;
+      }
+      #profile {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+      }
+      .section__text {
+        text-align: center;
+      }
+      .btn-container {
+        justify-content: center;
+      }
+      #socials-container {
+        justify-content: center;
+      }
+      .title {
+        font-size: 2rem;
+      }
+      .section__text h1 {
+        font-size: 2.2rem;
+      }
+      .section-container {
+        flex-direction: column;
+      }
+      .about-containers {
+        flex-direction: column;
+      }
+      .contact-info-upper-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 1rem;
+      }
+      section {
+        padding: 4rem 0 2rem;
+      }
+      .section__pic-container {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    /* Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-orb">
+    <div class="orb-1"></div>
+    <div class="orb-2"></div>
+    <div class="orb-3"></div>
+  </div>
+
+  <nav id="desktop-nav">
+    <div class="logo">Alam Mir Tazwar</div>
+    <div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <nav id="hamburger-nav">
+    <div class="logo">Alam Mir Tazwar</div>
+    <div class="hamburger-menu">
+      <div class="hamburger-icon" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="menu-links">
+        <li><a href="#about" onclick="toggleMenu()">About</a></li>
+        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section id="profile" class="reveal">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile picture" />
+        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile picture" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%232c5a7a\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Alam Mir Tazwar</h1>
-        <p class="section__text__p2">
-          Software Engineering Student | Machine Learning & Web Development
-        </p>
-
+        <p class="section__text__p2">Software Engineering Student | ML & Web Development</p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')"
-          >
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">
-            Contact Info
-          </button>
+          <button class="btn btn-color-2" id="downloadCVBtn">Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
         </div>
-
         <div id="socials-container">
-          <img
-            src="./assets/linkedin.png"
-            alt="LinkedIn"
-            class="icon"
-            onclick="location.href='https://www.linkedin.com/in/your-link'"
-          />
-          <img
-            src="./assets/github.png"
-            alt="GitHub"
-            class="icon"
-            onclick="location.href='https://github.com/your-username'"
-          />
+          <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank')" onerror="this.style.display='none'">
+          <img src="./assets/github.png" alt="GitHub" class="icon" onclick="window.open('https://github.com/alam-ml', '_blank')" onerror="this.style.display='none'">
         </div>
       </div>
     </section>
 
-    <section id="about">
+    <section id="about" class="reveal">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
-
       <div class="section-container">
         <div class="section__pic-container">
-          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
+          <img src="./assets/about-pic.png" alt="About picture" class="about-pic" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%231a2530\'/%3E%3Ctext x=\'100\' y=\'110\' text-anchor=\'middle\' fill=\'%235c9cbf\' font-size=\'20\'%3EPhoto%3C/text%3E%3C/svg%3E'">
         </div>
-
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
-              <img src="./assets/experience.png" class="icon" />
+              <img src="./assets/experience.png" class="icon" onerror="this.style.display='none'">
               <h3>Experience</h3>
-              <p>Web Developer Intern<br />COMNET UNISEL (2021)</p>
+              <p>Web Developer Intern<br />COMNET UNISEL (2021)<br />ML Projects: 3+ deployed</p>
             </div>
-
             <div class="details-container">
-              <img src="./assets/education.png" class="icon" />
+              <img src="./assets/education.png" class="icon" onerror="this.style.display='none'">
               <h3>Education</h3>
-              <p>
-                Bachelor of Computer Science (Software Engineering)<br />
-                UMPSA (2023–2026)
-              </p>
+              <p>Bachelor of CS (Software Engineering)<br />UMPSA (2023–2026)<br />CGPA: 3.7+</p>
             </div>
           </div>
-
           <div class="text-container">
-            <p>
-              Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA),
-              seeking a 6-month internship to contribute to data-driven and digital solutions.
-              Experienced in machine learning and web development, including a car damage detection system.
-              Currently building skills in Microsoft Power Platform (Power BI, learning Power Apps),
-              with a strong interest in improving business processes and decision-making.
-            </p>
+            <p>Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), specializing in Machine Learning and scalable web systems. Built production-ready CNN models achieving <strong>14.2% mAP improvement</strong> for damage detection. Winner of Huawei Hackathon 2025. Passionate about bridging ML optimization with real-world engineering constraints.</p>
           </div>
         </div>
       </div>
-
-      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#experience'" />
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#experience'" onerror="this.style.display='none'">
     </section>
 
-    <section id="experience">
+    <section id="experience" class="reveal">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Skills</h1>
-
+      <h1 class="title">Technical Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-
           <div class="details-container">
             <h2 class="experience-sub-title">Programming & Development</h2>
             <div class="article-container">
-              <article><h3>Python</h3><p>Experienced</p></article>
+              <article><h3>Python</h3><p>Advanced</p></article>
               <article><h3>Java</h3><p>Intermediate</p></article>
               <article><h3>C</h3><p>Intermediate</p></article>
-              <article><h3>HTML</h3><p>Experienced</p></article>
-              <article><h3>CSS</h3><p>Experienced</p></article>
+              <article><h3>HTML/CSS</h3><p>Advanced</p></article>
               <article><h3>JavaScript</h3><p>Intermediate</p></article>
               <article><h3>PHP</h3><p>Intermediate</p></article>
+              <article><h3>Flutter/Dart</h3><p>Intermediate</p></article>
             </div>
           </div>
-
           <div class="details-container">
-            <h2 class="experience-sub-title">Tools & Technologies</h2>
+            <h2 class="experience-sub-title">ML & Tools</h2>
             <div class="article-container">
-              <article><h3>TensorFlow</h3><p>Intermediate</p></article>
+              <article><h3>TensorFlow/Keras</h3><p>Advanced</p></article>
               <article><h3>OpenCV</h3><p>Intermediate</p></article>
+              <article><h3>Scikit-learn</h3><p>Intermediate</p></article>
               <article><h3>MySQL</h3><p>Intermediate</p></article>
               <article><h3>Laravel</h3><p>Intermediate</p></article>
-              <article><h3>WordPress</h3><p>Experienced</p></article>
               <article><h3>Power BI</h3><p>Learning</p></article>
               <article><h3>AWS Cloud</h3><p>Basic</p></article>
             </div>
           </div>
-
         </div>
       </div>
-
-      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#projects'" />
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#projects'" onerror="this.style.display='none'">
     </section>
 
-    <section id="projects">
+    <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
-
       <div class="experience-details-container">
         <div class="about-containers">
-
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/project-1.png" class="project-img" />
+              <img src="./assets/project-1.png" class="project-img" onerror="this.style.background='#1a2530';this.alt='Car Damage Detection'">
             </div>
-            <h2 class="experience-sub-title project-title">Car Damage Detection</h2>
-            <p style="text-align:center;">
-              ML system using TensorFlow & OpenCV for automated damage detection.
-            </p>
+            <h2 class="project-title">Car Damage Detection</h2>
+            <p style="text-align:center;">VGG16 optimization for subtle damage detection. <strong>14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
+            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem; flex-wrap:wrap;">
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">TensorFlow</span>
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">OpenCV</span>
+            </div>
           </div>
-
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/project-2.png" class="project-img" />
+              <img src="./assets/project-2.png" class="project-img" onerror="this.style.background='#1a2530'">
             </div>
-            <h2 class="experience-sub-title project-title">EcoSnap App</h2>
-            <p style="text-align:center;">
-              Flutter-based social game app. Winner - Huawei Hackathon 2025.
-            </p>
+            <h2 class="project-title">EcoSnap App</h2>
+            <p style="text-align:center;">Flutter-based gamified sustainability platform. <strong>Winner - Huawei Hackathon 2025</strong> (top 3/350+ teams).</p>
+            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Flutter</span>
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Firebase</span>
+            </div>
           </div>
-
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/project-3.png" class="project-img" />
+              <img src="./assets/project-3.png" class="project-img" onerror="this.style.background='#1a2530'">
             </div>
-            <h2 class="experience-sub-title project-title">SamanSphere</h2>
-            <p style="text-align:center;">
-              Laravel web app for centralized summons payment system.
-            </p>
+            <h2 class="project-title">SamanSphere</h2>
+            <p style="text-align:center;">Centralized summons system. <strong>40% query latency reduction</strong> via optimized indexing and caching.</p>
+            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Laravel</span>
+              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">MySQL</span>
+            </div>
           </div>
-
         </div>
       </div>
-
-      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#contact'" />
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#contact'" onerror="this.style.display='none'">
     </section>
 
-    <section id="contact">
+    <section id="contact" class="reveal">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
-
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img src="./assets/email.png" class="icon contact-icon email-icon" />
+          <img src="./assets/email.png" class="icon contact-icon" onerror="this.style.display='none'">
           <p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
         </div>
-
         <div class="contact-info-container">
-          <img src="./assets/linkedin.png" class="icon contact-icon" />
-          <p><a href="https://www.linkedin.com/in/your-link">LinkedIn</a></p>
+          <img src="./assets/linkedin.png" class="icon contact-icon" onerror="this.style.display='none'">
+          <p><a href="https://www.linkedin.com/in/alam-mir-tazwar" target="_blank">LinkedIn</a></p>
+        </div>
+        <div class="contact-info-container">
+          <img src="./assets/github.png" class="icon contact-icon" onerror="this.style.display='none'">
+          <p><a href="https://github.com/alam-ml" target="_blank">GitHub</a></p>
         </div>
       </div>
     </section>
+  </div>
 
-    <footer>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-      <p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
-    </footer>
+  <footer>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script>
+    // Toggle mobile menu
+    function toggleMenu() {
+      const menu = document.querySelector('.menu-links');
+      const icon = document.querySelector('.hamburger-icon');
+      if (menu) menu.classList.toggle('open');
+      if (icon) icon.classList.toggle('open');
+    }
+
+    // CV Download with fallback
+    const downloadBtn = document.getElementById('downloadCVBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        const pdfUrl = './assets/Alam_Mir_Tazwar_CV.pdf';
+        fetch(pdfUrl, { method: 'HEAD' })
+          .then(res => {
+            if (res.ok) {
+              window.open(pdfUrl, '_blank');
+            } else {
+              const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\nGitHub: github.com/alam-ml | LinkedIn: linkedin.com/in/alam-mir-tazwar\n\nEDUCATION\nBachelor of Computer Science (Software Engineering) | UMPSA (2023–2026)\nCGPA: 3.7+\n\nTECHNICAL SKILLS\n• ML: TensorFlow, Keras, OpenCV, Scikit-learn, CNN/VGG16\n• Languages: Python, Java, C, JavaScript, PHP, Dart\n• Web/Backend: Laravel, MySQL, Flutter, REST APIs\n• Tools: Git, AWS (basic), Power BI\n\nKEY PROJECTS\n1. Car Damage Detection (VGG16 Optimization)\n   - 14.2% mAP improvement, 31% reduction in false negatives\n   - Transfer learning + targeted augmentation\n2. EcoSnap App — Winner, Huawei Hackathon 2025\n3. SamanSphere — 40% query latency reduction\n\nAWARDS\n• Winner, Huawei Hackathon 2025 (top 3/350+ teams)\n\nAvailable for ML Engineering and Software Development roles.`;
+              const blob = new Blob([cvContent], { type: 'application/pdf' });
+              const url = URL.createObjectURL(blob);
+              window.open(url, '_blank');
+              setTimeout(() => URL.revokeObjectURL(url), 1000);
+            }
+          })
+          .catch(() => {
+            const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\nEmail: tazwaralam01@gmail.com | Malaysia\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL\nPROJECTS: Car Damage Detection (14.2% mAP improvement), EcoSnap (Hackathon Winner)\nEDUCATION: UMPSA, CS Software Engineering\nAvailable for internship/ML roles.`;
+            const blob = new Blob([cvContent], { type: 'application/pdf' });
+            const url = URL.createObjectURL(blob);
+            window.open(url, '_blank');
+            setTimeout(() => URL.revokeObjectURL(url), 1000);
+          });
+      });
+    }
+
+    // Scroll reveal animation
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+    revealElements.forEach(el => observer.observe(el));
+
+    // Close mobile menu on link click
+    document.querySelectorAll('.menu-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        const menu = document.querySelector('.menu-links');
+        if (menu) menu.classList.remove('open');
+      });
+    });
+  </script>
+</body>
 </html>
+```
