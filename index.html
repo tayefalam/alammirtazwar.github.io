@@ -13,12 +13,38 @@
     }
 
     body {
-      background-color: #0b0e12;
+      background-color: #0a0d12;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
-      color: #eef2f5;
+      color: #edf2f7;
       line-height: 1.5;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* animated gradient bg */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(30, 45, 65, 0.4), rgba(8, 12, 18, 0.95));
+      z-index: -2;
+      pointer-events: none;
+    }
+    
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, rgba(45, 70, 90, 0.02) 0px, rgba(45, 70, 90, 0.02) 2px, transparent 2px, transparent 8px);
+      z-index: -1;
+      pointer-events: none;
     }
 
     /* custom scrollbar */
@@ -26,20 +52,26 @@
       width: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #1a1f26;
+      background: #11161e;
     }
     ::-webkit-scrollbar-thumb {
-      background: #3a4a5c;
+      background: #3a5a74;
       border-radius: 12px;
     }
 
-    /* glassmorphism base */
+    /* glassmorphism premium */
     .glass-card {
-      background: rgba(18, 24, 32, 0.65);
-      backdrop-filter: blur(8px);
+      background: rgba(18, 26, 36, 0.55);
+      backdrop-filter: blur(10px);
       border-radius: 2rem;
-      border: 0.5px solid rgba(72, 92, 112, 0.25);
-      transition: transform 0.2s ease, border-color 0.2s;
+      border: 0.5px solid rgba(100, 140, 170, 0.3);
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .glass-card:hover {
+      border-color: rgba(100, 170, 210, 0.7);
+      background: rgba(24, 34, 46, 0.65);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.4);
     }
 
     .container {
@@ -60,6 +92,8 @@
       font-weight: 550;
       border-left: 4px solid #5c9cbf;
       padding-left: 1rem;
+      position: relative;
+      overflow: hidden;
     }
 
     h3 {
@@ -71,22 +105,68 @@
     .section {
       padding: 5rem 0;
       border-bottom: 1px solid rgba(72, 92, 112, 0.2);
+      position: relative;
     }
 
     .section:last-child {
       border-bottom: none;
     }
 
-    /* hero */
+    /* HERO with animated elements and perfect image */
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
       display: flex;
       align-items: center;
       padding: 2rem 0;
+      position: relative;
     }
 
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
     .hero-content {
-      max-width: 780px;
+      flex: 1.4;
+      min-width: 280px;
+    }
+    .hero-visual {
+      flex: 0.8;
+      min-width: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .avatar-frame {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
+      padding: 4px;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(100, 160, 200, 0.3);
+      animation: subtleFloat 5s ease-in-out infinite;
+    }
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #0f1a22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-inner svg {
+      width: 80%;
+      height: 80%;
+      filter: drop-shadow(0 0 8px rgba(80, 150, 200, 0.5));
+    }
+    @keyframes subtleFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
     }
 
     .hero-badge {
@@ -95,13 +175,25 @@
       letter-spacing: 3px;
       color: #93b7d3;
       margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-badge::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: #5c9cbf;
+      border-radius: 2px;
     }
 
     .hero h1 {
       font-size: 4.2rem;
       font-weight: 650;
       line-height: 1.2;
-      background: linear-gradient(135deg, #FFFFFF 60%, #a1c2e0 100%);
+      background: linear-gradient(135deg, #FFFFFF 60%, #8ab3d0 100%);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
@@ -112,7 +204,7 @@
       font-size: 1.8rem;
       font-weight: 450;
       color: #cddfe9;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     .hero-desc {
@@ -125,74 +217,81 @@
     .cta-btn {
       display: inline-flex;
       align-items: center;
-      background: #eef2f5;
+      gap: 0.5rem;
+      background: linear-gradient(95deg, #eef2f5 0%, #e4edf3 100%);
       color: #0b0e12;
       padding: 0.85rem 2rem;
       border-radius: 3rem;
       font-weight: 550;
       font-size: 0.95rem;
       text-decoration: none;
-      transition: all 0.25s ease;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
       border: none;
       cursor: pointer;
-      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
     }
-
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+    .cta-btn:hover::before {
+      left: 100%;
+    }
     .cta-btn:hover {
-      background: #d4e2ed;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -8px black;
     }
 
-    /* about & engineering cards */
-    .about-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+    /* skill pills */
+    .tech-tag {
+      background: rgba(92, 156, 191, 0.15);
+      padding: 0.25rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 450;
+      letter-spacing: 0.2px;
+      color: #c2defa;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
+    .tech-tag:hover {
+      background: rgba(92, 156, 191, 0.4);
+      transform: scale(1.02);
     }
 
-    .about-text {
-      flex: 2;
-      font-size: 1.08rem;
-      color: #cfdfea;
-    }
-
-    .engineering-card {
-      flex: 1.5;
-      background: rgba(18, 24, 32, 0.55);
-      backdrop-filter: blur(4px);
-      border-radius: 1.75rem;
-      padding: 1.6rem;
-      border: 0.5px solid rgba(92, 156, 191, 0.3);
-    }
-
-    .eng-list {
-      list-style: none;
-      margin-top: 1rem;
-    }
-
-    .eng-list li {
-      margin-bottom: 0.9rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-size: 0.96rem;
-    }
-
-    .eng-list li::before {
-      content: "▹";
-      color: #5c9cbf;
-      font-size: 1rem;
-    }
-
-    /* projects */
+    /* projects animations + hover */
     .project-main {
-      background: rgba(12, 18, 26, 0.7);
+      background: radial-gradient(ellipse at 0% 30%, rgba(18, 28, 38, 0.9), rgba(12, 18, 26, 0.8));
       border-radius: 2rem;
       padding: 2rem;
       margin-bottom: 3rem;
       border-left: 4px solid #5c9cbf;
-      transition: all 0.2s;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-main::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(92,156,191,0.08), transparent);
+      pointer-events: none;
+    }
+    .project-main:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+      border-left-width: 6px;
     }
 
     .case-study-grid {
@@ -201,36 +300,17 @@
       gap: 1.6rem;
       margin-top: 1.5rem;
     }
-
     .case-block {
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.35);
       border-radius: 1.25rem;
       padding: 1.2rem 1.3rem;
+      transition: all 0.25s;
+      border: 1px solid transparent;
     }
-
-    .case-block h4 {
-      font-size: 1rem;
-      letter-spacing: 1px;
-      font-weight: 600;
-      color: #93b7d3;
-      margin-bottom: 0.65rem;
-    }
-
-    .tech-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1rem 0 0;
-    }
-
-    .tech-tag {
-      background: rgba(92, 156, 191, 0.15);
-      padding: 0.22rem 0.8rem;
-      border-radius: 2rem;
-      font-size: 0.7rem;
-      font-weight: 450;
-      letter-spacing: 0.2px;
-      color: #b8d4f0;
+    .case-block:hover {
+      background: rgba(25, 40, 55, 0.6);
+      border-color: rgba(92,156,191,0.4);
+      transform: translateX(4px);
     }
 
     .other-projects {
@@ -239,161 +319,155 @@
       gap: 1.8rem;
       margin-top: 1rem;
     }
-
     .project-card {
-      background: rgba(18, 24, 32, 0.5);
+      background: rgba(18, 24, 32, 0.6);
       backdrop-filter: blur(4px);
       border-radius: 1.5rem;
       padding: 1.5rem;
       flex: 1;
-      min-width: 200px;
-      transition: all 0.2s;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
       border: 0.5px solid rgba(72, 92, 112, 0.3);
     }
-
-    .project-card:hover, .project-main:hover {
-      border-color: rgba(92, 156, 191, 0.6);
-      background: rgba(20, 28, 38, 0.7);
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: #5c9cbf;
+      background: rgba(26, 38, 50, 0.8);
+      box-shadow: 0 18px 30px -12px black;
     }
 
-    /* contact */
-    .contact-links {
-      display: flex;
-      gap: 2rem;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-    }
     .contact-item {
-      background: rgba(255,255,255,0.03);
+      background: rgba(20, 30, 42, 0.7);
       border-radius: 2rem;
       padding: 0.75rem 1.8rem;
-      transition: 0.2s;
+      transition: all 0.3s;
       text-decoration: none;
       color: #eef2f5;
       font-weight: 470;
       backdrop-filter: blur(5px);
       border: 0.5px solid rgba(72, 92, 112, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
     .contact-item:hover {
-      background: #2c3845;
-      border-color: #5c9cbf;
-      transform: translateY(-2px);
-    }
-    .footer-note {
-      text-align: center;
-      padding: 2rem 0 3rem;
-      font-size: 0.8rem;
-      color: #7b8b9b;
+      background: #2c3e52;
+      border-color: #7ab3cc;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
     }
 
-    /* reveal animations */
+    /* reveal animations enhanced */
     .reveal {
       opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2);
     }
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
-    @media (max-width: 800px) {
-      .container {
-        padding: 0 1.5rem;
-      }
-      .hero h1 {
-        font-size: 2.8rem;
-      }
-      .hero-role {
-        font-size: 1.4rem;
-      }
-      h2 {
-        font-size: 1.6rem;
-      }
-      .case-study-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-grid {
-        flex-direction: column;
-      }
-      .section {
-        padding: 3.5rem 0;
-      }
+    /* staggered children animation */
+    .stagger-child > * {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
     }
-    @media (max-width: 550px) {
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-      .project-main {
-        padding: 1.3rem;
-      }
+    .stagger-child.visible > * {
+      opacity: 1;
+      transform: translateY(0);
     }
+    .stagger-child > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-child > *:nth-child(2) { transition-delay: 0.1s; }
+    .stagger-child > *:nth-child(3) { transition-delay: 0.15s; }
+    .stagger-child > *:nth-child(4) { transition-delay: 0.2s; }
 
-    a, button {
-      transition: all 0.2s ease;
-    }
-    .inline-code {
-      font-family: 'Menlo', monospace;
-      background: #1e2630;
-      padding: 0.1rem 0.3rem;
-      border-radius: 6px;
-      font-size: 0.85rem;
+    @media (max-width: 800px) {
+      .container { padding: 0 1.5rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero-role { font-size: 1.4rem; }
+      h2 { font-size: 1.6rem; }
+      .case-study-grid { grid-template-columns: 1fr; }
+      .hero-grid { flex-direction: column-reverse; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero-badge::after { left: 50%; transform: translateX(-50%); width: 60px; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .avatar-frame { width: 200px; height: 200px; }
     }
   </style>
 </head>
 <body>
   <main>
     <div class="container">
-      <!-- HERO SECTION -->
+      <!-- HERO SECTION with professional avatar (SVG portrait) -->
       <section class="hero reveal">
-        <div class="hero-content">
-          <div class="hero-badge">ENGINEERING · ML · SYSTEMS</div>
-          <h1>Alam Mir Tazwar</h1>
-          <div class="hero-role">Software Engineer</div>
-          <div class="hero-role" style="font-size:1.3rem; color:#aac7df;">Specializing in Machine Learning and System Optimization</div>
-          <p class="hero-desc">
-            Focused on building efficient and scalable systems, including machine learning solutions for real-world constraints.<br>
-            CNN optimization • performance tuning • data-driven pipelines.
-          </p>
-          <button id="downloadCVBtn" class="cta-btn">📄 Download CV (PDF)</button>
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">ENGINEERING · ML · SYSTEMS</div>
+            <h1>Alam Mir Tazwar</h1>
+            <div class="hero-role">Software Engineer</div>
+            <div class="hero-role" style="font-size:1.3rem; color:#aac7df;">Specializing in Machine Learning and System Optimization</div>
+            <p class="hero-desc">
+              Focused on building efficient and scalable systems, including machine learning solutions for real-world constraints.<br>
+              CNN optimization • performance tuning • data-driven pipelines.
+            </p>
+            <button id="downloadCVBtn" class="cta-btn">📄 Download CV (PDF) →</button>
+          </div>
+          <div class="hero-visual">
+            <div class="avatar-frame">
+              <div class="avatar-inner">
+                <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="50" cy="45" r="22" fill="#2C5A7A" stroke="#7AB3CC" stroke-width="1.2"/>
+                  <circle cx="38" cy="40" r="2.5" fill="#EFF7FF"/>
+                  <circle cx="62" cy="40" r="2.5" fill="#EFF7FF"/>
+                  <path d="M42 54 Q50 62, 58 54" stroke="#B8D4F0" stroke-width="2" fill="none" stroke-linecap="round"/>
+                  <rect x="44" y="68" width="12" height="18" rx="3" fill="#1E3A4D" />
+                  <path d="M34 75 L44 72 L44 78 L34 78 Z" fill="#2C5A7A"/>
+                  <path d="M66 75 L56 72 L56 78 L66 78 Z" fill="#2C5A7A"/>
+                  <circle cx="50" cy="86" r="7" fill="#1A2F3C" stroke="#5C9CBF" stroke-width="0.8"/>
+                  <path d="M30 22 L40 18 L50 22 L60 18 L70 22" stroke="#6A9FC0" stroke-width="1.5" fill="none"/>
+                  <path d="M26 26 L74 26" stroke="#3F6D8C" stroke-width="1" stroke-dasharray="2 2"/>
+                </svg>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <!-- ABOUT SECTION: engineering + ML integration -->
+      <!-- ABOUT SECTION -->
       <section class="section reveal">
         <h2>About</h2>
-        <div class="about-grid">
-          <div class="about-text">
+        <div class="about-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+          <div class="about-text" style="flex: 2; font-size: 1.08rem; color: #cfdfea;">
             <p>I’m a Software Engineering student with deep focus on building <strong>efficient, production-grade systems</strong> that bridge traditional software engineering with machine learning. My work revolves around designing robust data preprocessing pipelines, training performant CNN models under constrained datasets, and integrating them into scalable backends.</p>
             <br>
             <p>Experience across the full stack — from Python model optimization (TensorFlow, OpenCV) to backend architecture and lightweight web interfaces. I thrive on solving ambiguous problems with both engineering rigor and ML-first thinking.</p>
           </div>
-          <div class="engineering-card">
+          <div class="engineering-card" style="flex: 1.5; background: rgba(18, 24, 32, 0.55); backdrop-filter: blur(8px); border-radius: 1.75rem; padding: 1.6rem;">
             <h3 style="margin-bottom:0.5rem;">⚡ Engineering Mindset</h3>
-            <ul class="eng-list">
-              <li>System Design & Scalability</li>
-              <li>Performance Optimization & profiling</li>
-              <li>Data-driven decisions & A/B testing</li>
-              <li>Iterative development & MLOps awareness</li>
-              <li>Clean, maintainable code (SOLID principles)</li>
+            <ul class="eng-list" style="list-style: none;">
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ System Design & Scalability</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Performance Optimization & profiling</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Data-driven decisions & A/B testing</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Iterative development & MLOps awareness</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- PROJECTS SECTION (main case study + others) -->
-      <section class="section reveal">
+      <!-- PROJECTS MAIN CASE STUDY -->
+      <section class="section reveal stagger-child" id="projects">
         <h2>Key Project — Case Study</h2>
         <div class="project-main">
           <h3 style="font-weight: 600;">Car Damage Detection through Optimization of VGG16 CNN</h3>
           <div class="case-study-grid">
-            <div class="case-block"><h4>📌 Problem</h4>Existing CNN models rely heavily on large datasets and fail to detect subtle damages (scratches, dents) effectively when trained on limited or non-diverse data. Real-world automated damage assessment requires robust detection with minimal annotation cost.</div>
-            <div class="case-block"><h4>⚙️ Approach</h4>Leveraged transfer learning with VGG16 as base, built custom preprocessing pipeline using OpenCV (CLAHE, morphological ops). Applied targeted data augmentation (random erasing, cutmix, synthetic reflections) to improve generalization. Fine-tuned top layers with progressive unfreezing and cyclical LR scheduling.</div>
-            <div class="case-block"><h4>✅ Solution</h4>Improved detection accuracy for small, reflective damages by <strong>≈14% mAP</strong> over baseline. Reduced overfitting significantly through regularization, dropout tuning, and class-weighted loss. Delivered a lightweight inference pipeline suitable for edge deployment.</div>
-            <div class="case-block"><h4>📈 Impact</h4>More stable validation performance with limited dataset; better real-world usability for automated damage detection systems. Demonstrates deep expertise in both CNN optimization and building end-to-end ML solutions under resource constraints.</div>
+            <div class="case-block"><h4>📌 Problem</h4>Existing CNN models rely heavily on large datasets and fail to detect subtle damages (scratches, dents) effectively when trained on limited or non-diverse data.</div>
+            <div class="case-block"><h4>⚙️ Approach</h4>Leveraged transfer learning with VGG16, built preprocessing pipeline using OpenCV, applied targeted augmentation and fine-tuning.</div>
+            <div class="case-block"><h4>✅ Solution</h4>Improved detection accuracy for small, reflective damages by <strong>≈14% mAP</strong> over baseline. Robust pipeline reduces overfitting.</div>
+            <div class="case-block"><h4>📈 Impact</h4>More stable validation under constrained datasets; real-world usability for automated damage assessment systems.</div>
           </div>
-          <div class="tech-stack" style="margin-top:1.5rem;">
-            <span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Keras</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">VGG16</span><span class="tech-tag">Data Augmentation</span>
+          <div class="tech-stack" style="margin-top:1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+            <span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Keras</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">VGG16</span>
           </div>
         </div>
 
@@ -401,109 +475,76 @@
         <div class="other-projects">
           <div class="project-card">
             <h3>EcoSnap</h3>
-            <p style="font-size:0.9rem; color:#cbdde8;">Flutter-based gamified sustainability platform. Winner of Huawei Hackathon 2025. Focused on user engagement loops, scalable backend integration, and real-time carbon tracking.</p>
+            <p style="font-size:0.9rem;">Flutter-based gamified sustainability platform. Winner of Huawei Hackathon 2025. Focused on user engagement & scalable backend.</p>
             <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Dart</span></div>
           </div>
           <div class="project-card">
             <h3>SamanSphere</h3>
-            <p style="font-size:0.9rem; color:#cbdde8;">Centralized summons management system built with Laravel. Designed for municipality use, optimizing database queries and role-based access to improve usability.</p>
-            <div class="tech-stack"><span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaScript</span></div>
+            <p style="font-size:0.9rem;">Centralized summons management system with Laravel, optimized queries and role-based access for municipality use.</p>
+            <div class="tech-stack"><span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span></div>
           </div>
         </div>
       </section>
 
-      <!-- ENGINEERING THINKING SECTION -->
+      <!-- ENGINEERING THINKING SECTION (with delayed animation)-->
       <section class="section reveal">
         <h2>Engineering Thinking</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem;">
-          <div class="glass-card" style="padding: 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
-            <h3>System Design Mindset</h3>
-            <p style="font-size:0.9rem;">Architecting for scale, redundancy, and low latency. I design decoupled systems with clear contracts, focusing on failure modes, throughput, and data consistency from day one.</p>
-          </div>
-          <div class="glass-card" style="padding: 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
-            <h3>Performance Optimization</h3>
-            <p style="font-size:0.9rem;">From query tuning and caching strategies to kernel-level CNN optimizations — I continuously profile, measure, and eliminate bottlenecks for both SW and ML pipelines.</p>
-          </div>
-          <div class="glass-card" style="padding: 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
-            <h3>Data-Driven Decisions</h3>
-            <p style="font-size:0.9rem;">A/B testing, monitoring drift, and model validation. I use metrics to drive architecture choices, whether it’s choosing between batch vs streaming or fine-tuning layers.</p>
-          </div>
-          <div class="glass-card" style="padding: 1.5rem;">
-            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔄</div>
-            <h3>Iterative Development</h3>
-            <p style="font-size:0.9rem;">Agile, continuous integration, and rapid prototyping. Every project is refined through feedback loops, enabling reliable delivery and maintainable codebases.</p>
-          </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem;">
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">🧠</div><h3>System Design Mindset</h3><p style="font-size:0.9rem;">Architecting for scale, redundancy, low latency. Decoupled systems with clear contracts and failure awareness.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">⚡</div><h3>Performance Optimization</h3><p style="font-size:0.9rem;">From query tuning to kernel-level CNN optimizations – profiling bottlenecks relentlessly.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">📊</div><h3>Data-Driven Decisions</h3><p style="font-size:0.9rem;">A/B testing, monitoring drift, metrics-driven architecture for ML and SW.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">🔄</div><h3>Iterative Development</h3><p style="font-size:0.9rem;">Agile, rapid prototyping, continuous feedback loops for maintainable codebases.</p></div>
         </div>
       </section>
 
-      <!-- SKILLS SECTION (compact but crisp) -->
+      <!-- SKILLS SECTION -->
       <section class="section reveal">
         <h2>Technical Arsenal</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
-          <div style="min-width: 160px;"><strong>Languages</strong><br><span class="tech-tag" style="background:#0f1a22;">Python</span> <span class="tech-tag">Java</span> <span class="tech-tag">C</span> <span class="tech-tag">JavaScript</span> <span class="tech-tag">PHP</span> <span class="tech-tag">HTML/CSS</span></div>
-          <div style="min-width: 180px;"><strong>ML & Data</strong><br><span class="tech-tag">TensorFlow</span> <span class="tech-tag">Keras</span> <span class="tech-tag">OpenCV</span> <span class="tech-tag">Scikit-learn</span> <span class="tech-tag">CNN / VGG16</span></div>
-          <div style="min-width: 170px;"><strong>Backend & DB</strong><br><span class="tech-tag">MySQL</span> <span class="tech-tag">Laravel</span> <span class="tech-tag">Node.js (basic)</span> <span class="tech-tag">REST APIs</span></div>
-          <div style="min-width: 140px;"><strong>Tools & Cloud</strong><br><span class="tech-tag">Git</span> <span class="tech-tag">AWS (basic)</span> <span class="tech-tag">Power BI</span> <span class="tech-tag">Docker (learning)</span></div>
+          <div><strong>Languages</strong><br><span class="tech-tag">Python</span> <span class="tech-tag">Java</span> <span class="tech-tag">C</span> <span class="tech-tag">JavaScript</span> <span class="tech-tag">PHP</span></div>
+          <div><strong>ML & Data</strong><br><span class="tech-tag">TensorFlow</span> <span class="tech-tag">Keras</span> <span class="tech-tag">OpenCV</span> <span class="tech-tag">Scikit-learn</span> <span class="tech-tag">CNN/VGG16</span></div>
+          <div><strong>Backend & DB</strong><br><span class="tech-tag">MySQL</span> <span class="tech-tag">Laravel</span> <span class="tech-tag">REST APIs</span></div>
+          <div><strong>Tools & Cloud</strong><br><span class="tech-tag">Git</span> <span class="tech-tag">AWS (basic)</span> <span class="tech-tag">Power BI</span></div>
         </div>
       </section>
 
       <!-- CONTACT SECTION -->
       <section class="section reveal">
         <h2>Connect</h2>
-        <div class="contact-links">
+        <div class="contact-links" style="display: flex; gap: 1.8rem; flex-wrap: wrap;">
           <a href="mailto:alam.tazwar@example.com" class="contact-item">✉️ alam.tazwar@example.com</a>
           <a href="#" id="linkedinFake" class="contact-item">🔗 LinkedIn / in/alam-mir-tazwar</a>
           <a href="#" id="githubFake" class="contact-item">🐙 GitHub / alam-ml</a>
         </div>
-        <p style="margin-top: 2rem; font-size:0.85rem; color:#8d9dae;">📍 Malaysia · Open to global collaboration & ML engineering roles.</p>
+        <p style="margin-top: 2rem; font-size:0.85rem; color:#8d9dae;">📍 Malaysia · Open to global ML engineering & research collaborations.</p>
       </section>
-      <div class="footer-note">
-        © 2025 Alam Mir Tazwar — engineered for precision & performance
-      </div>
+      <div class="footer-note" style="text-align: center; padding: 2rem 0 3rem; font-size:0.8rem;">© 2025 Alam Mir Tazwar — precision engineered portfolio</div>
     </div>
   </main>
 
   <script>
-    // FAKE CV DOWNLOAD BUTTON (generates a dummy PDF-like dataURL / demo)
+    // Enhanced CV download simulation
     const downloadBtn = document.getElementById('downloadCVBtn');
     if (downloadBtn) {
       downloadBtn.addEventListener('click', () => {
-        // Simulate professional CV download: creates a .pdf named download
-        const cvContent = `
-          ALAM MIR TAZWAR — SOFTWARE ENGINEER (ML & SYSTEMS)
-          ==================================================
-          Email: alam.tazwar@example.com | Location: Malaysia
-          LinkedIn: linkedin.com/in/alam-mir-tazwar
-          GitHub: github.com/alam-ml
+        const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEER (ML & SYSTEMS)
+==================================================
+Email: alam.tazwar@example.com | Malaysia
+LinkedIn: linkedin.com/in/alam-mir-tazwar
+GitHub: github.com/alam-ml
 
-          SUMMARY:
-          Software Engineer specializing in Machine Learning, CNN optimization under limited datasets, and scalable system design.
-          Proven ability to build end-to-end ML pipelines and robust backend systems.
+SUMMARY: Software Engineer specializing in Machine Learning, CNN optimization under limited datasets, and scalable system design. Proven ability to build end-to-end ML pipelines and robust backend systems.
 
-          TECHNICAL SKILLS:
-          • Python, TensorFlow, Keras, OpenCV, Scikit-learn
-          • Java, C, JavaScript, PHP, Laravel, MySQL
-          • System Design, Performance Tuning, Data preprocessing
+TECHNICAL SKILLS: Python, TensorFlow, Keras, OpenCV, Scikit-learn, Java, C, JavaScript, PHP, Laravel, MySQL, System Design, Performance Tuning.
 
-          KEY PROJECT — Car Damage Detection through VGG16 Optimization:
-          - Addressed subtle damage detection with constrained dataset.
-          - Implemented transfer learning, advanced augmentations, and fine-tuned hyperparameters.
-          - Improved detection mAP by ~14% for scratches/dents. Showcased robust ML engineering.
+KEY PROJECT — Car Damage Detection through VGG16 Optimization:
+- Addressed subtle damage detection with constrained dataset.
+- Implemented transfer learning, advanced augmentations, fine-tuned hyperparameters.
+- Improved detection mAP by ~14% for scratches/dents. Robust engineering.
 
-          AWARDS & ACHIEVEMENTS:
-          • Winner, Huawei Hackathon 2025 (EcoSnap)
-          • Published research-oriented approach to CNN generalization
-
-          EDUCATION:
-          Bachelor in Software Engineering (Ongoing) — Focus on ML Systems & High-Performance Computing
-
-          References available upon request.
-        `;
+AWARDS: Winner Huawei Hackathon 2025 (EcoSnap)
+EDUCATION: Bachelor in Software Engineering (ML Systems & High-Performance Computing)`;
         const blob = new Blob([cvContent], { type: 'application/pdf' });
-        // forces download as .pdf even though content is text, but browsers treat as download
         const url = URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
@@ -515,41 +556,32 @@
       });
     }
 
-    // Linkedin & GitHub demo links (alert to simulate external profile, but maintain professional placeholder)
     const linkedin = document.getElementById('linkedinFake');
     const github = document.getElementById('githubFake');
-    if (linkedin) {
-      linkedin.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank') || alert('LinkedIn profile: linkedin.com/in/alam-mir-tazwar (demo)');
-      });
-    }
-    if (github) {
-      github.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open('https://github.com/alam-ml', '_blank') || alert('GitHub: github.com/alam-ml (demo)');
-      });
-    }
+    if (linkedin) linkedin.addEventListener('click', (e) => { e.preventDefault(); window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank') || alert('LinkedIn profile'); });
+    if (github) github.addEventListener('click', (e) => { e.preventDefault(); window.open('https://github.com/alam-ml', '_blank') || alert('GitHub profile'); });
 
-    // Intersection Observer for scroll reveal (lightweight, smooth, high-performance)
+    // Intersection Observer for reveal with staggered children support
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
-          // keep observing to support dynamic? but we can unobserve after animation
+          if (entry.target.classList.contains('stagger-child')) {
+            const children = entry.target.children;
+            for (let i = 0; i < children.length; i++) {
+              if (children[i].style) children[i].style.opacity = '1';
+            }
+          }
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
     revealElements.forEach(el => observer.observe(el));
-
-    // small extra micro-interactions: add subtle hover effect for cards + dynamic year in footer optional
-    const currentYear = new Date().getFullYear();
-    const footerDiv = document.querySelector('.footer-note');
-    if (footerDiv) {
-      footerDiv.innerHTML = `© ${currentYear} Alam Mir Tazwar — engineered for precision & performance`;
-    }
+    
+    // Force footer year update
+    const footer = document.querySelector('.footer-note');
+    if (footer) footer.innerHTML = `© ${new Date().getFullYear()} Alam Mir Tazwar — precision engineered portfolio`;
   </script>
 </body>
 </html>
