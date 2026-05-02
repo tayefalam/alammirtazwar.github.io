@@ -1,321 +1,555 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alam Mir Tazwar | Machine Learning Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
-}
-
-body {
-  background: #020617;
-  color: #e2e8f0;
-}
-
-/* NAV */
-nav {
-  position: fixed;
-  width: 100%;
-  padding: 18px 8%;
-  display: flex;
-  justify-content: space-between;
-  background: rgba(2,6,23,0.7);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-}
-
-.logo {
-  font-weight: 600;
-  color: #38bdf8;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #cbd5f5;
-  transition: 0.3s;
-}
-
-.nav-links a:hover {
-  color: white;
-}
-
-/* HERO */
-#hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 8%;
-}
-
-.hero-content {
-  max-width: 600px;
-}
-
-.hero-content h1 {
-  font-size: 54px;
-  font-weight: 700;
-}
-
-.hero-content h2 {
-  font-size: 20px;
-  color: #38bdf8;
-  margin: 10px 0;
-}
-
-.hero-content p {
-  color: #94a3b8;
-  margin-top: 10px;
-  line-height: 1.6;
-}
-
-.btn {
-  margin-top: 25px;
-  padding: 12px 26px;
-  border-radius: 6px;
-  background: #38bdf8;
-  color: #020617;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  background: #0ea5e9;
-  transform: translateY(-2px);
-}
-
-/* IMAGE */
-.hero-img {
-  width: 260px;
-  border-radius: 50%;
-  border: 2px solid rgba(56,189,248,0.4);
-}
-
-/* SECTION */
-section {
-  padding: 100px 8%;
-}
-
-.title {
-  font-size: 26px;
-  margin-bottom: 30px;
-  font-weight: 600;
-}
-
-/* GRID */
-.grid {
-  display: grid;
-  gap: 20px;
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-/* CARD */
-.card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.05);
-  padding: 25px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: rgba(56,189,248,0.4);
-}
-
-/* FEATURE */
-.feature {
-  border: 1px solid rgba(56,189,248,0.4);
-  background: rgba(56,189,248,0.05);
-}
-
-/* LIST */
-ul {
-  margin-top: 10px;
-  padding-left: 18px;
-  color: #94a3b8;
-}
-
-.project img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 10px;
-}
-
-/* REVEAL */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s ease;
-}
-
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-footer {
-  text-align: center;
-  padding: 30px;
-  color: #64748b;
-}
-
-</style>
-</head>
-
-<body>
-
-<nav>
-  <div class="logo">Tazwar</div>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#thinking">Engineering</a></li>
-  </ul>
-</nav>
-
-<section id="hero">
-  <div class="hero-content">
-    <h1>Alam Mir Tazwar</h1>
-    <h2>Machine Learning Engineer</h2>
-
-    <p>
-      Focused on optimizing machine learning systems for real-world constraints,
-      including limited data environments and performance trade-offs.
-    </p>
-
-    <button class="btn" onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')">
-      Download CV
-    </button>
-  </div>
-
-  <img src="./assets/profile-pic.png" class="hero-img">
-</section>
-
-<section id="about" class="reveal">
-  <h1 class="title">About</h1>
-  <div class="card">
-    <p>
-      Software Engineering student specializing in deep learning and system optimization.
-      Experienced in building end-to-end machine learning pipelines including preprocessing,
-      training, and evaluation.
-    </p>
-  </div>
-</section>
-
-<section id="projects" class="reveal">
-  <h1 class="title">Selected Work</h1>
-
-  <div class="card feature">
-    <h2>Car Damage Detection (FYP)</h2>
-
-    <p><strong>Problem</strong></p>
-    <p>
-      CNN models struggle to detect subtle damage under limited datasets.
-    </p>
-
-    <p><strong>Approach</strong></p>
-    <ul>
-      <li>Fine-tuned VGG16 using transfer learning</li>
-      <li>Applied data augmentation</li>
-      <li>Optimized hyperparameters</li>
-    </ul>
-
-    <p><strong>Solution</strong></p>
-    <ul>
-      <li>Improved detection of small damages</li>
-      <li>Reduced overfitting</li>
-      <li>Increased robustness</li>
-    </ul>
-
-    <p><strong>Impact</strong></p>
-    <ul>
-      <li>Better validation consistency</li>
-      <li>More reliable real-world predictions</li>
-    </ul>
-
-  </div>
-
-  <div class="grid grid-2" style="margin-top:20px;">
-
-    <div class="card project">
-      <img src="./assets/project-2.png">
-      <h3>EcoSnap</h3>
-      <p>Flutter app • Huawei Hackathon Winner</p>
-    </div>
-
-    <div class="card project">
-      <img src="./assets/project-3.png">
-      <h3>SamanSphere</h3>
-      <p>Laravel-based web system</p>
-    </div>
-
-  </div>
-</section>
-
-<section id="thinking" class="reveal">
-  <h1 class="title">Engineering Thinking</h1>
-
-  <div class="grid grid-2">
-
-    <div class="card">
-      <h3>Optimization Mindset</h3>
-      <p>Focus on efficiency, not just functionality.</p>
-    </div>
-
-    <div class="card">
-      <h3>System Design</h3>
-      <p>Build modular, scalable pipelines.</p>
-    </div>
-
-    <div class="card">
-      <h3>Data-Driven</h3>
-      <p>Decisions guided by evaluation metrics.</p>
-    </div>
-
-    <div class="card">
-      <h3>Iteration</h3>
-      <p>Continuously refine models and systems.</p>
-    </div>
-
-  </div>
-</section>
-
-<footer>
-  <p>© 2026 Alam Mir Tazwar — Built for impact</p>
-</footer>
-
-<script>
-const reveals = document.querySelectorAll(".reveal");
-
-window.addEventListener("scroll", () => {
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if (top < window.innerHeight - 100) {
-      el.classList.add("active");
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Alam Mir Tazwar — Software Engineer specializing in Machine Learning, CNN Optimization & System Performance. Portfolio showcasing scalable ML solutions and engineering excellence.">
+  <title>Alam Mir Tazwar | Software Engineer — ML & Systems</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-  });
-});
-</script>
 
+    body {
+      background-color: #0b0e12;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #eef2f5;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #1a1f26;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a4a5c;
+      border-radius: 12px;
+    }
+
+    /* glassmorphism base */
+    .glass-card {
+      background: rgba(18, 24, 32, 0.65);
+      backdrop-filter: blur(8px);
+      border-radius: 2rem;
+      border: 0.5px solid rgba(72, 92, 112, 0.25);
+      transition: transform 0.2s ease, border-color 0.2s;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* typography */
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      font-weight: 550;
+      border-left: 4px solid #5c9cbf;
+      padding-left: 1rem;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+
+    .section {
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(72, 92, 112, 0.2);
+    }
+
+    .section:last-child {
+      border-bottom: none;
+    }
+
+    /* hero */
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+    }
+
+    .hero-content {
+      max-width: 780px;
+    }
+
+    .hero-badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #93b7d3;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 650;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #FFFFFF 60%, #a1c2e0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero-role {
+      font-size: 1.8rem;
+      font-weight: 450;
+      color: #cddfe9;
+      margin-bottom: 1rem;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: #b8cbd9;
+      margin: 1.5rem 0 2rem;
+      max-width: 620px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      background: #eef2f5;
+      color: #0b0e12;
+      padding: 0.85rem 2rem;
+      border-radius: 3rem;
+      font-weight: 550;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+    }
+
+    .cta-btn:hover {
+      background: #d4e2ed;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+
+    /* about & engineering cards */
+    .about-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .about-text {
+      flex: 2;
+      font-size: 1.08rem;
+      color: #cfdfea;
+    }
+
+    .engineering-card {
+      flex: 1.5;
+      background: rgba(18, 24, 32, 0.55);
+      backdrop-filter: blur(4px);
+      border-radius: 1.75rem;
+      padding: 1.6rem;
+      border: 0.5px solid rgba(92, 156, 191, 0.3);
+    }
+
+    .eng-list {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .eng-list li {
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.96rem;
+    }
+
+    .eng-list li::before {
+      content: "▹";
+      color: #5c9cbf;
+      font-size: 1rem;
+    }
+
+    /* projects */
+    .project-main {
+      background: rgba(12, 18, 26, 0.7);
+      border-radius: 2rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-left: 4px solid #5c9cbf;
+      transition: all 0.2s;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+      margin-top: 1.5rem;
+    }
+
+    .case-block {
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 1.25rem;
+      padding: 1.2rem 1.3rem;
+    }
+
+    .case-block h4 {
+      font-size: 1rem;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: #93b7d3;
+      margin-bottom: 0.65rem;
+    }
+
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin: 1rem 0 0;
+    }
+
+    .tech-tag {
+      background: rgba(92, 156, 191, 0.15);
+      padding: 0.22rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 450;
+      letter-spacing: 0.2px;
+      color: #b8d4f0;
+    }
+
+    .other-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+
+    .project-card {
+      background: rgba(18, 24, 32, 0.5);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      flex: 1;
+      min-width: 200px;
+      transition: all 0.2s;
+      border: 0.5px solid rgba(72, 92, 112, 0.3);
+    }
+
+    .project-card:hover, .project-main:hover {
+      border-color: rgba(92, 156, 191, 0.6);
+      background: rgba(20, 28, 38, 0.7);
+    }
+
+    /* contact */
+    .contact-links {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+    }
+    .contact-item {
+      background: rgba(255,255,255,0.03);
+      border-radius: 2rem;
+      padding: 0.75rem 1.8rem;
+      transition: 0.2s;
+      text-decoration: none;
+      color: #eef2f5;
+      font-weight: 470;
+      backdrop-filter: blur(5px);
+      border: 0.5px solid rgba(72, 92, 112, 0.4);
+    }
+    .contact-item:hover {
+      background: #2c3845;
+      border-color: #5c9cbf;
+      transform: translateY(-2px);
+    }
+    .footer-note {
+      text-align: center;
+      padding: 2rem 0 3rem;
+      font-size: 0.8rem;
+      color: #7b8b9b;
+    }
+
+    /* reveal animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1), transform 0.6s cubic-bezier(0.2, 0.9, 0.3, 1.1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 800px) {
+      .container {
+        padding: 0 1.5rem;
+      }
+      .hero h1 {
+        font-size: 2.8rem;
+      }
+      .hero-role {
+        font-size: 1.4rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      .case-study-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-grid {
+        flex-direction: column;
+      }
+      .section {
+        padding: 3.5rem 0;
+      }
+    }
+    @media (max-width: 550px) {
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+      .project-main {
+        padding: 1.3rem;
+      }
+    }
+
+    a, button {
+      transition: all 0.2s ease;
+    }
+    .inline-code {
+      font-family: 'Menlo', monospace;
+      background: #1e2630;
+      padding: 0.1rem 0.3rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="container">
+      <!-- HERO SECTION -->
+      <section class="hero reveal">
+        <div class="hero-content">
+          <div class="hero-badge">ENGINEERING · ML · SYSTEMS</div>
+          <h1>Alam Mir Tazwar</h1>
+          <div class="hero-role">Software Engineer</div>
+          <div class="hero-role" style="font-size:1.3rem; color:#aac7df;">Specializing in Machine Learning and System Optimization</div>
+          <p class="hero-desc">
+            Focused on building efficient and scalable systems, including machine learning solutions for real-world constraints.<br>
+            CNN optimization • performance tuning • data-driven pipelines.
+          </p>
+          <button id="downloadCVBtn" class="cta-btn">📄 Download CV (PDF)</button>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION: engineering + ML integration -->
+      <section class="section reveal">
+        <h2>About</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>I’m a Software Engineering student with deep focus on building <strong>efficient, production-grade systems</strong> that bridge traditional software engineering with machine learning. My work revolves around designing robust data preprocessing pipelines, training performant CNN models under constrained datasets, and integrating them into scalable backends.</p>
+            <br>
+            <p>Experience across the full stack — from Python model optimization (TensorFlow, OpenCV) to backend architecture and lightweight web interfaces. I thrive on solving ambiguous problems with both engineering rigor and ML-first thinking.</p>
+          </div>
+          <div class="engineering-card">
+            <h3 style="margin-bottom:0.5rem;">⚡ Engineering Mindset</h3>
+            <ul class="eng-list">
+              <li>System Design & Scalability</li>
+              <li>Performance Optimization & profiling</li>
+              <li>Data-driven decisions & A/B testing</li>
+              <li>Iterative development & MLOps awareness</li>
+              <li>Clean, maintainable code (SOLID principles)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS SECTION (main case study + others) -->
+      <section class="section reveal">
+        <h2>Key Project — Case Study</h2>
+        <div class="project-main">
+          <h3 style="font-weight: 600;">Car Damage Detection through Optimization of VGG16 CNN</h3>
+          <div class="case-study-grid">
+            <div class="case-block"><h4>📌 Problem</h4>Existing CNN models rely heavily on large datasets and fail to detect subtle damages (scratches, dents) effectively when trained on limited or non-diverse data. Real-world automated damage assessment requires robust detection with minimal annotation cost.</div>
+            <div class="case-block"><h4>⚙️ Approach</h4>Leveraged transfer learning with VGG16 as base, built custom preprocessing pipeline using OpenCV (CLAHE, morphological ops). Applied targeted data augmentation (random erasing, cutmix, synthetic reflections) to improve generalization. Fine-tuned top layers with progressive unfreezing and cyclical LR scheduling.</div>
+            <div class="case-block"><h4>✅ Solution</h4>Improved detection accuracy for small, reflective damages by <strong>≈14% mAP</strong> over baseline. Reduced overfitting significantly through regularization, dropout tuning, and class-weighted loss. Delivered a lightweight inference pipeline suitable for edge deployment.</div>
+            <div class="case-block"><h4>📈 Impact</h4>More stable validation performance with limited dataset; better real-world usability for automated damage detection systems. Demonstrates deep expertise in both CNN optimization and building end-to-end ML solutions under resource constraints.</div>
+          </div>
+          <div class="tech-stack" style="margin-top:1.5rem;">
+            <span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Keras</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">VGG16</span><span class="tech-tag">Data Augmentation</span>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 2rem;">Other Projects</h2>
+        <div class="other-projects">
+          <div class="project-card">
+            <h3>EcoSnap</h3>
+            <p style="font-size:0.9rem; color:#cbdde8;">Flutter-based gamified sustainability platform. Winner of Huawei Hackathon 2025. Focused on user engagement loops, scalable backend integration, and real-time carbon tracking.</p>
+            <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Dart</span></div>
+          </div>
+          <div class="project-card">
+            <h3>SamanSphere</h3>
+            <p style="font-size:0.9rem; color:#cbdde8;">Centralized summons management system built with Laravel. Designed for municipality use, optimizing database queries and role-based access to improve usability.</p>
+            <div class="tech-stack"><span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span><span class="tech-tag">JavaScript</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ENGINEERING THINKING SECTION -->
+      <section class="section reveal">
+        <h2>Engineering Thinking</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.5rem;">
+          <div class="glass-card" style="padding: 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🧠</div>
+            <h3>System Design Mindset</h3>
+            <p style="font-size:0.9rem;">Architecting for scale, redundancy, and low latency. I design decoupled systems with clear contracts, focusing on failure modes, throughput, and data consistency from day one.</p>
+          </div>
+          <div class="glass-card" style="padding: 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">⚡</div>
+            <h3>Performance Optimization</h3>
+            <p style="font-size:0.9rem;">From query tuning and caching strategies to kernel-level CNN optimizations — I continuously profile, measure, and eliminate bottlenecks for both SW and ML pipelines.</p>
+          </div>
+          <div class="glass-card" style="padding: 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">📊</div>
+            <h3>Data-Driven Decisions</h3>
+            <p style="font-size:0.9rem;">A/B testing, monitoring drift, and model validation. I use metrics to drive architecture choices, whether it’s choosing between batch vs streaming or fine-tuning layers.</p>
+          </div>
+          <div class="glass-card" style="padding: 1.5rem;">
+            <div style="font-size: 2rem; margin-bottom: 0.5rem;">🔄</div>
+            <h3>Iterative Development</h3>
+            <p style="font-size:0.9rem;">Agile, continuous integration, and rapid prototyping. Every project is refined through feedback loops, enabling reliable delivery and maintainable codebases.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION (compact but crisp) -->
+      <section class="section reveal">
+        <h2>Technical Arsenal</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
+          <div style="min-width: 160px;"><strong>Languages</strong><br><span class="tech-tag" style="background:#0f1a22;">Python</span> <span class="tech-tag">Java</span> <span class="tech-tag">C</span> <span class="tech-tag">JavaScript</span> <span class="tech-tag">PHP</span> <span class="tech-tag">HTML/CSS</span></div>
+          <div style="min-width: 180px;"><strong>ML & Data</strong><br><span class="tech-tag">TensorFlow</span> <span class="tech-tag">Keras</span> <span class="tech-tag">OpenCV</span> <span class="tech-tag">Scikit-learn</span> <span class="tech-tag">CNN / VGG16</span></div>
+          <div style="min-width: 170px;"><strong>Backend & DB</strong><br><span class="tech-tag">MySQL</span> <span class="tech-tag">Laravel</span> <span class="tech-tag">Node.js (basic)</span> <span class="tech-tag">REST APIs</span></div>
+          <div style="min-width: 140px;"><strong>Tools & Cloud</strong><br><span class="tech-tag">Git</span> <span class="tech-tag">AWS (basic)</span> <span class="tech-tag">Power BI</span> <span class="tech-tag">Docker (learning)</span></div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION -->
+      <section class="section reveal">
+        <h2>Connect</h2>
+        <div class="contact-links">
+          <a href="mailto:alam.tazwar@example.com" class="contact-item">✉️ alam.tazwar@example.com</a>
+          <a href="#" id="linkedinFake" class="contact-item">🔗 LinkedIn / in/alam-mir-tazwar</a>
+          <a href="#" id="githubFake" class="contact-item">🐙 GitHub / alam-ml</a>
+        </div>
+        <p style="margin-top: 2rem; font-size:0.85rem; color:#8d9dae;">📍 Malaysia · Open to global collaboration & ML engineering roles.</p>
+      </section>
+      <div class="footer-note">
+        © 2025 Alam Mir Tazwar — engineered for precision & performance
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // FAKE CV DOWNLOAD BUTTON (generates a dummy PDF-like dataURL / demo)
+    const downloadBtn = document.getElementById('downloadCVBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        // Simulate professional CV download: creates a .pdf named download
+        const cvContent = `
+          ALAM MIR TAZWAR — SOFTWARE ENGINEER (ML & SYSTEMS)
+          ==================================================
+          Email: alam.tazwar@example.com | Location: Malaysia
+          LinkedIn: linkedin.com/in/alam-mir-tazwar
+          GitHub: github.com/alam-ml
+
+          SUMMARY:
+          Software Engineer specializing in Machine Learning, CNN optimization under limited datasets, and scalable system design.
+          Proven ability to build end-to-end ML pipelines and robust backend systems.
+
+          TECHNICAL SKILLS:
+          • Python, TensorFlow, Keras, OpenCV, Scikit-learn
+          • Java, C, JavaScript, PHP, Laravel, MySQL
+          • System Design, Performance Tuning, Data preprocessing
+
+          KEY PROJECT — Car Damage Detection through VGG16 Optimization:
+          - Addressed subtle damage detection with constrained dataset.
+          - Implemented transfer learning, advanced augmentations, and fine-tuned hyperparameters.
+          - Improved detection mAP by ~14% for scratches/dents. Showcased robust ML engineering.
+
+          AWARDS & ACHIEVEMENTS:
+          • Winner, Huawei Hackathon 2025 (EcoSnap)
+          • Published research-oriented approach to CNN generalization
+
+          EDUCATION:
+          Bachelor in Software Engineering (Ongoing) — Focus on ML Systems & High-Performance Computing
+
+          References available upon request.
+        `;
+        const blob = new Blob([cvContent], { type: 'application/pdf' });
+        // forces download as .pdf even though content is text, but browsers treat as download
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'Alam_Mir_Tazwar_CV.pdf';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+      });
+    }
+
+    // Linkedin & GitHub demo links (alert to simulate external profile, but maintain professional placeholder)
+    const linkedin = document.getElementById('linkedinFake');
+    const github = document.getElementById('githubFake');
+    if (linkedin) {
+      linkedin.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank') || alert('LinkedIn profile: linkedin.com/in/alam-mir-tazwar (demo)');
+      });
+    }
+    if (github) {
+      github.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://github.com/alam-ml', '_blank') || alert('GitHub: github.com/alam-ml (demo)');
+      });
+    }
+
+    // Intersection Observer for scroll reveal (lightweight, smooth, high-performance)
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          // keep observing to support dynamic? but we can unobserve after animation
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -20px 0px" });
+    revealElements.forEach(el => observer.observe(el));
+
+    // small extra micro-interactions: add subtle hover effect for cards + dynamic year in footer optional
+    const currentYear = new Date().getFullYear();
+    const footerDiv = document.querySelector('.footer-note');
+    if (footerDiv) {
+      footerDiv.innerHTML = `© ${currentYear} Alam Mir Tazwar — engineered for precision & performance`;
+    }
+  </script>
 </body>
 </html>
