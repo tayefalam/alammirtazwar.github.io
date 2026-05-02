@@ -1,299 +1,234 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alam Mir Tazwar | Software Engineer</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alam Mir Tazwar Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="mediaqueries.css" />
+  </head>
+  <body>
+    <nav id="desktop-nav">
+      <div class="logo">Alam Mir Tazwar</div>
+      <div>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <nav id="hamburger-nav">
+      <div class="logo">Alam Mir Tazwar</div>
+      <div class="hamburger-menu">
+        <div class="hamburger-icon" onclick="toggleMenu()">
+          <span></span><span></span><span></span>
+        </div>
+        <div class="menu-links">
+          <li><a href="#about" onclick="toggleMenu()">About</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+        </div>
+      </div>
+    </nav>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+    <section id="profile">
+      <div class="section__pic-container">
+        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile picture" />
+      </div>
+      <div class="section__text">
+        <p class="section__text__p1">Hello, I'm</p>
+        <h1 class="title">Alam Mir Tazwar</h1>
+        <p class="section__text__p2">
+          Software Engineering Student | Machine Learning & Web Development
+        </p>
 
-    body {
-      background: #0f172a;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
+        <div class="btn-container">
+          <button
+            class="btn btn-color-2"
+            onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')"
+          >
+            Download CV
+          </button>
+          <button class="btn btn-color-1" onclick="location.href='./#contact'">
+            Contact Info
+          </button>
+        </div>
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 8%;
-      position: fixed;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
+        <div id="socials-container">
+          <img
+            src="./assets/linkedin.png"
+            alt="LinkedIn"
+            class="icon"
+            onclick="location.href='https://www.linkedin.com/in/your-link'"
+          />
+          <img
+            src="./assets/github.png"
+            alt="GitHub"
+            class="icon"
+            onclick="location.href='https://github.com/your-username'"
+          />
+        </div>
+      </div>
+    </section>
 
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      color: #38bdf8;
-    }
+    <section id="about">
+      <p class="section__text__p1">Get To Know More</p>
+      <h1 class="title">About Me</h1>
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
+      <div class="section-container">
+        <div class="section__pic-container">
+          <img src="./assets/about-pic.png" alt="Profile picture" class="about-pic" />
+        </div>
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+        <div class="about-details-container">
+          <div class="about-containers">
+            <div class="details-container">
+              <img src="./assets/experience.png" class="icon" />
+              <h3>Experience</h3>
+              <p>Web Developer Intern<br />COMNET UNISEL (2021)</p>
+            </div>
 
-    .nav-links a:hover {
-      color: #38bdf8;
-    }
+            <div class="details-container">
+              <img src="./assets/education.png" class="icon" />
+              <h3>Education</h3>
+              <p>
+                Bachelor of Computer Science (Software Engineering)<br />
+                UMPSA (2023–2026)
+              </p>
+            </div>
+          </div>
 
-    /* HERO */
-    #profile {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 8%;
-      gap: 60px;
-    }
-
-    .section__pic-container img {
-      width: 280px;
-      border-radius: 50%;
-      border: 4px solid #38bdf8;
-      box-shadow: 0 0 40px rgba(56,189,248,0.5);
-    }
-
-    .section__text h1 {
-      font-size: 48px;
-      font-weight: 700;
-    }
-
-    .section__text__p2 {
-      color: #94a3b8;
-      margin: 10px 0;
-    }
-
-    .btn {
-      padding: 12px 25px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: linear-gradient(45deg, #38bdf8, #6366f1);
-      color: white;
-    }
-
-    .btn-outline {
-      border: 1px solid #38bdf8;
-      background: transparent;
-      color: #38bdf8;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px);
-    }
-
-    /* SECTION */
-    section {
-      padding: 80px 8%;
-    }
-
-    .title {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 32px;
-      color: #38bdf8;
-    }
-
-    /* CARDS */
-    .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 25px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(56,189,248,0.3);
-    }
-
-    .grid {
-      display: grid;
-      gap: 25px;
-    }
-
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
-
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-
-    /* SKILLS */
-    .skill {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
-
-    /* PROJECT */
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-
-    /* CONTACT */
-    .contact a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Tazwar</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png">
-    </div>
-
-    <div class="section__text">
-      <h1>Alam Mir Tazwar</h1>
-      <p class="section__text__p2">
-        Software Engineer | Machine Learning Engineer | Problem Solver
-      </p>
-
-      <button class="btn btn-primary" onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')">
-        Download CV
-      </button>
-
-      <button class="btn btn-outline" onclick="location.href='#contact'">
-        Contact
-      </button>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about">
-    <h1 class="title">About Me</h1>
-
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Experience</h3>
-        <p>Web Developer Intern - COMNET UNISEL</p>
+          <div class="text-container">
+            <p>
+              Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA),
+              seeking a 6-month internship to contribute to data-driven and digital solutions.
+              Experienced in machine learning and web development, including a car damage detection system.
+              Currently building skills in Microsoft Power Platform (Power BI, learning Power Apps),
+              with a strong interest in improving business processes and decision-making.
+            </p>
+          </div>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Education</h3>
-        <p>Software Engineering - UMPSA (2023–2026)</p>
-      </div>
-    </div>
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#experience'" />
+    </section>
 
-    <div class="card" style="margin-top:20px;">
-      <p>
-        Software Engineering student focused on machine learning and real-world applications.
-        Currently building intelligent systems including a CNN-based car damage detection model.
-        Strong interest in AI optimization, automation, and scalable systems.
-      </p>
-    </div>
-  </section>
+    <section id="experience">
+      <p class="section__text__p1">Explore My</p>
+      <h1 class="title">Skills</h1>
 
-  <!-- SKILLS -->
-  <section id="experience">
-    <h1 class="title">Skills</h1>
+      <div class="experience-details-container">
+        <div class="about-containers">
 
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Programming</h3>
-        <div class="skill"><span>Python</span><span>Advanced</span></div>
-        <div class="skill"><span>Java</span><span>Intermediate</span></div>
-        <div class="skill"><span>JavaScript</span><span>Intermediate</span></div>
-      </div>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Programming & Development</h2>
+            <div class="article-container">
+              <article><h3>Python</h3><p>Experienced</p></article>
+              <article><h3>Java</h3><p>Intermediate</p></article>
+              <article><h3>C</h3><p>Intermediate</p></article>
+              <article><h3>HTML</h3><p>Experienced</p></article>
+              <article><h3>CSS</h3><p>Experienced</p></article>
+              <article><h3>JavaScript</h3><p>Intermediate</p></article>
+              <article><h3>PHP</h3><p>Intermediate</p></article>
+            </div>
+          </div>
 
-      <div class="card">
-        <h3>Tools</h3>
-        <div class="skill"><span>TensorFlow</span><span>Intermediate</span></div>
-        <div class="skill"><span>OpenCV</span><span>Intermediate</span></div>
-        <div class="skill"><span>AWS</span><span>Basic</span></div>
-      </div>
-    </div>
-  </section>
+          <div class="details-container">
+            <h2 class="experience-sub-title">Tools & Technologies</h2>
+            <div class="article-container">
+              <article><h3>TensorFlow</h3><p>Intermediate</p></article>
+              <article><h3>OpenCV</h3><p>Intermediate</p></article>
+              <article><h3>MySQL</h3><p>Intermediate</p></article>
+              <article><h3>Laravel</h3><p>Intermediate</p></article>
+              <article><h3>WordPress</h3><p>Experienced</p></article>
+              <article><h3>Power BI</h3><p>Learning</p></article>
+              <article><h3>AWS Cloud</h3><p>Basic</p></article>
+            </div>
+          </div>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h1 class="title">Projects</h1>
-
-    <div class="grid grid-3">
-      <div class="card project">
-        <img src="./assets/project-1.png">
-        <h3>Car Damage Detection</h3>
-        <p>Deep learning system using VGG16 for detecting dents & scratches.</p>
+        </div>
       </div>
 
-      <div class="card project">
-        <img src="./assets/project-2.png">
-        <h3>EcoSnap</h3>
-        <p>Hackathon-winning Flutter app for eco-awareness gamification.</p>
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#projects'" />
+    </section>
+
+    <section id="projects">
+      <p class="section__text__p1">Browse My Recent</p>
+      <h1 class="title">Projects</h1>
+
+      <div class="experience-details-container">
+        <div class="about-containers">
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-1.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">Car Damage Detection</h2>
+            <p style="text-align:center;">
+              ML system using TensorFlow & OpenCV for automated damage detection.
+            </p>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-2.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">EcoSnap App</h2>
+            <p style="text-align:center;">
+              Flutter-based social game app. Winner - Huawei Hackathon 2025.
+            </p>
+          </div>
+
+          <div class="details-container color-container">
+            <div class="article-container">
+              <img src="./assets/project-3.png" class="project-img" />
+            </div>
+            <h2 class="experience-sub-title project-title">SamanSphere</h2>
+            <p style="text-align:center;">
+              Laravel web app for centralized summons payment system.
+            </p>
+          </div>
+
+        </div>
       </div>
 
-      <div class="card project">
-        <img src="./assets/project-3.png">
-        <h3>SamanSphere</h3>
-        <p>Centralized summons system built with Laravel.</p>
+      <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='./#contact'" />
+    </section>
+
+    <section id="contact">
+      <p class="section__text__p1">Get in Touch</p>
+      <h1 class="title">Contact Me</h1>
+
+      <div class="contact-info-upper-container">
+        <div class="contact-info-container">
+          <img src="./assets/email.png" class="icon contact-icon email-icon" />
+          <p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
+        </div>
+
+        <div class="contact-info-container">
+          <img src="./assets/linkedin.png" class="icon contact-icon" />
+          <p><a href="https://www.linkedin.com/in/your-link">LinkedIn</a></p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <h1 class="title">Contact</h1>
+    <footer>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+    </footer>
 
-    <div class="card contact">
-      <p>Email: <a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
-      <p>LinkedIn: <a href="#">Update your link</a></p>
-      <p>GitHub: <a href="#">Update your link</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Alam Mir Tazwar. Built with precision.</p>
-  </footer>
-
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
