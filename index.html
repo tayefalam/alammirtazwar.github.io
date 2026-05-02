@@ -1,299 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alam Mir Tazwar | Software Engineer</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tazwar | ML Engineer</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<style>
 
-    body {
-      background: #0f172a;
-      color: #fff;
-      scroll-behavior: smooth;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
 
-    /* NAVBAR */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      padding: 20px 8%;
-      position: fixed;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.7);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
+body {
+  background: linear-gradient(-45deg, #0f172a, #020617, #1e293b, #020617);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  color: white;
+  overflow-x: hidden;
+}
 
-    .logo {
-      font-weight: 700;
-      font-size: 20px;
-      color: #38bdf8;
-    }
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
 
-    .nav-links {
-      display: flex;
-      gap: 25px;
-      list-style: none;
-    }
+/* FLOATING GLOW */
+.glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #38bdf8;
+  filter: blur(150px);
+  opacity: 0.2;
+  animation: float 10s infinite alternate;
+}
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      transition: 0.3s;
-    }
+.glow:nth-child(1) { top: 10%; left: 10%; }
+.glow:nth-child(2) { bottom: 10%; right: 10%; }
 
-    .nav-links a:hover {
-      color: #38bdf8;
-    }
+@keyframes float {
+  to { transform: translateY(-50px) translateX(30px); }
+}
 
-    /* HERO */
-    #profile {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 8%;
-      gap: 60px;
-    }
+/* NAV */
+nav {
+  position: fixed;
+  width: 100%;
+  padding: 20px 8%;
+  display: flex;
+  justify-content: space-between;
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.3);
+  z-index: 1000;
+}
 
-    .section__pic-container img {
-      width: 280px;
-      border-radius: 50%;
-      border: 4px solid #38bdf8;
-      box-shadow: 0 0 40px rgba(56,189,248,0.5);
-    }
+.logo {
+  font-weight: 700;
+  color: #38bdf8;
+}
 
-    .section__text h1 {
-      font-size: 48px;
-      font-weight: 700;
-    }
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
 
-    .section__text__p2 {
-      color: #94a3b8;
-      margin: 10px 0;
-    }
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
 
-    .btn {
-      padding: 12px 25px;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      margin-right: 10px;
-      transition: 0.3s;
-    }
+.nav-links a:hover {
+  color: #38bdf8;
+}
 
-    .btn-primary {
-      background: linear-gradient(45deg, #38bdf8, #6366f1);
-      color: white;
-    }
+/* HERO */
+#profile {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8%;
+}
 
-    .btn-outline {
-      border: 1px solid #38bdf8;
-      background: transparent;
-      color: #38bdf8;
-    }
+.hero-text h1 {
+  font-size: 56px;
+}
 
-    .btn:hover {
-      transform: translateY(-3px);
-    }
+.typing {
+  color: #38bdf8;
+  font-size: 20px;
+  margin: 10px 0;
+}
 
-    /* SECTION */
-    section {
-      padding: 80px 8%;
-    }
+.hero-text p {
+  color: #94a3b8;
+  max-width: 500px;
+}
 
-    .title {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 32px;
-      color: #38bdf8;
-    }
+.btn {
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    /* CARDS */
-    .card {
-      background: rgba(255,255,255,0.05);
-      border-radius: 15px;
-      padding: 25px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s;
-    }
+.btn-primary {
+  background: linear-gradient(45deg, #38bdf8, #6366f1);
+}
 
-    .card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 0 20px rgba(56,189,248,0.3);
-    }
+.btn:hover {
+  transform: translateY(-5px) scale(1.05);
+}
 
-    .grid {
-      display: grid;
-      gap: 25px;
-    }
+/* GLASS CARD */
+.card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(56,189,248,0.1);
+  transition: 0.4s;
+}
 
-    .grid-2 {
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    }
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 0 60px rgba(56,189,248,0.3);
+}
 
-    .grid-3 {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
+/* GRID */
+.grid {
+  display: grid;
+  gap: 25px;
+}
 
-    /* SKILLS */
-    .skill {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 10px;
-    }
+.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
 
-    /* PROJECT */
-    .project img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
+section {
+  padding: 100px 8%;
+}
 
-    /* CONTACT */
-    .contact a {
-      color: #38bdf8;
-      text-decoration: none;
-    }
+.title {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 50px;
+  color: #38bdf8;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #94a3b8;
-    }
-  </style>
+/* FEATURE PROJECT */
+.feature {
+  border: 1px solid rgba(56,189,248,0.3);
+  background: rgba(56,189,248,0.05);
+}
+
+/* IMAGE */
+.project img {
+  width: 100%;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #94a3b8;
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <div class="logo">Tazwar</div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+<div class="glow"></div>
+<div class="glow"></div>
 
-  <!-- HERO -->
-  <section id="profile">
-    <div class="section__pic-container">
-      <img src="./assets/profile-pic.png">
+<nav>
+  <div class="logo">Tazwar</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
+</nav>
+
+<section id="profile">
+  <div class="hero-text">
+    <h1>Alam Mir Tazwar</h1>
+    <div class="typing" id="typing"></div>
+    <p>
+      Building intelligent systems with machine learning, optimizing performance,
+      and turning real-world problems into scalable solutions.
+    </p>
+
+    <button class="btn btn-primary" onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')">
+      Download CV
+    </button>
+  </div>
+
+  <img src="./assets/profile-pic.png" style="width:300px;border-radius:50%;box-shadow:0 0 50px #38bdf8;">
+</section>
+
+<section id="about">
+  <h1 class="title">About</h1>
+  <div class="card">
+    <p>
+      Software Engineering student specializing in Machine Learning and AI optimization.
+      Currently developing a VGG16-based car damage detection system focusing on
+      improving performance under limited datasets.
+    </p>
+  </div>
+</section>
+
+<section id="experience">
+  <h1 class="title">Skills</h1>
+  <div class="grid grid-2">
+    <div class="card">
+      <h3>Core</h3>
+      <p>Python • TensorFlow • OpenCV • JavaScript • Laravel</p>
+    </div>
+    <div class="card">
+      <h3>Focus</h3>
+      <p>Machine Learning • CNN Optimization • Data Processing</p>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h1 class="title">Projects</h1>
+
+  <!-- FEATURE -->
+  <div class="card feature">
+    <h2>🔥 Car Damage Detection (FYP)</h2>
+    <p>
+      Optimized VGG16 CNN model for detecting subtle damages with limited datasets.
+      Focus on accuracy, efficiency, and real-world deployment.
+    </p>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:30px;">
+    <div class="card project">
+      <img src="./assets/project-2.png">
+      <h3>EcoSnap</h3>
     </div>
 
-    <div class="section__text">
-      <h1>Alam Mir Tazwar</h1>
-      <p class="section__text__p2">
-        Software Engineer | Machine Learning Engineer | Problem Solver
-      </p>
-
-      <button class="btn btn-primary" onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')">
-        Download CV
-      </button>
-
-      <button class="btn btn-outline" onclick="location.href='#contact'">
-        Contact
-      </button>
+    <div class="card project">
+      <img src="./assets/project-3.png">
+      <h3>SamanSphere</h3>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h1 class="title">About Me</h1>
+<footer>
+  <p>© 2026 Tazwar — Engineered with precision</p>
+</footer>
 
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Experience</h3>
-        <p>Web Developer Intern - COMNET UNISEL</p>
-      </div>
+<script>
+const roles = ["Machine Learning Engineer", "Software Engineer", "AI Enthusiast"];
+let i = 0;
+let j = 0;
+let current = "";
+let isDeleting = false;
 
-      <div class="card">
-        <h3>Education</h3>
-        <p>Software Engineering - UMPSA (2023–2026)</p>
-      </div>
-    </div>
+function type() {
+  current = roles[i];
+  
+  if (isDeleting) {
+    j--;
+  } else {
+    j++;
+  }
 
-    <div class="card" style="margin-top:20px;">
-      <p>
-        Software Engineering student focused on machine learning and real-world applications.
-        Currently building intelligent systems including a CNN-based car damage detection model.
-        Strong interest in AI optimization, automation, and scalable systems.
-      </p>
-    </div>
-  </section>
+  document.getElementById("typing").innerText = current.substring(0, j);
 
-  <!-- SKILLS -->
-  <section id="experience">
-    <h1 class="title">Skills</h1>
+  if (!isDeleting && j === current.length) {
+    isDeleting = true;
+    setTimeout(type, 1200);
+  } else if (isDeleting && j === 0) {
+    isDeleting = false;
+    i = (i + 1) % roles.length;
+    setTimeout(type, 300);
+  } else {
+    setTimeout(type, isDeleting ? 50 : 100);
+  }
+}
 
-    <div class="grid grid-2">
-      <div class="card">
-        <h3>Programming</h3>
-        <div class="skill"><span>Python</span><span>Advanced</span></div>
-        <div class="skill"><span>Java</span><span>Intermediate</span></div>
-        <div class="skill"><span>JavaScript</span><span>Intermediate</span></div>
-      </div>
-
-      <div class="card">
-        <h3>Tools</h3>
-        <div class="skill"><span>TensorFlow</span><span>Intermediate</span></div>
-        <div class="skill"><span>OpenCV</span><span>Intermediate</span></div>
-        <div class="skill"><span>AWS</span><span>Basic</span></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h1 class="title">Projects</h1>
-
-    <div class="grid grid-3">
-      <div class="card project">
-        <img src="./assets/project-1.png">
-        <h3>Car Damage Detection</h3>
-        <p>Deep learning system using VGG16 for detecting dents & scratches.</p>
-      </div>
-
-      <div class="card project">
-        <img src="./assets/project-2.png">
-        <h3>EcoSnap</h3>
-        <p>Hackathon-winning Flutter app for eco-awareness gamification.</p>
-      </div>
-
-      <div class="card project">
-        <img src="./assets/project-3.png">
-        <h3>SamanSphere</h3>
-        <p>Centralized summons system built with Laravel.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <h1 class="title">Contact</h1>
-
-    <div class="card contact">
-      <p>Email: <a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
-      <p>LinkedIn: <a href="#">Update your link</a></p>
-      <p>GitHub: <a href="#">Update your link</a></p>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2026 Alam Mir Tazwar. Built with precision.</p>
-  </footer>
+type();
+</script>
 
 </body>
 </html>
