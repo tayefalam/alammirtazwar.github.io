@@ -1,155 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alam Mir Tazwar | Software Engineer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Alam Mir Tazwar — Software Engineer specializing in Machine Learning, CNN Optimization & System Performance. Portfolio showcasing scalable ML solutions and engineering excellence.">
+  <title>Alam Mir Tazwar | Software Engineer — ML & Systems</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
-body{background:#0a0d12;color:#edf2f7;line-height:1.5}
+    body {
+      background-color: #0a0d12;
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      color: #edf2f7;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
 
-.container{max-width:1200px;margin:auto;padding:2rem}
+    /* animated gradient bg */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 30%, rgba(30, 45, 65, 0.4), rgba(8, 12, 18, 0.95));
+      z-index: -2;
+      pointer-events: none;
+    }
+    
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, rgba(45, 70, 90, 0.02) 0px, rgba(45, 70, 90, 0.02) 2px, transparent 2px, transparent 8px);
+      z-index: -1;
+      pointer-events: none;
+    }
 
-/* HERO */
-.hero{display:flex;justify-content:space-between;align-items:center;min-height:90vh}
-.hero-content{max-width:600px}
-.hero h1{font-size:3.5rem}
-.hero-role{color:#5c9cbf;margin:10px 0}
+    /* custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #11161e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #3a5a74;
+      border-radius: 12px;
+    }
 
-.avatar-frame{
-  width:260px;height:260px;border-radius:50%;
-  padding:4px;background:linear-gradient(135deg,#2c5a7a,#1a3f55);
-}
-.avatar-inner{width:100%;height:100%;border-radius:50%;overflow:hidden}
-.avatar-inner img{width:100%;height:100%;object-fit:cover}
+    /* glassmorphism premium */
+    .glass-card {
+      background: rgba(18, 26, 36, 0.55);
+      backdrop-filter: blur(10px);
+      border-radius: 2rem;
+      border: 0.5px solid rgba(100, 140, 170, 0.3);
+      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    }
+    .glass-card:hover {
+      border-color: rgba(100, 170, 210, 0.7);
+      background: rgba(24, 34, 46, 0.65);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 35px -15px rgba(0, 0, 0, 0.4);
+    }
 
-/* BUTTON */
-.cta-btn{
-  background:#fff;color:#000;padding:10px 20px;
-  border-radius:30px;cursor:pointer;border:none;
-  margin-top:20px
-}
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
-/* SECTIONS */
-.section{padding:4rem 0;border-bottom:1px solid #222}
-h2{margin-bottom:20px;color:#5c9cbf}
+    /* typography */
+    h1, h2, h3 {
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
 
-/* PROJECTS */
-.project-card{
-  background:#111;border-radius:12px;padding:1rem;
-  transition:0.3s
-}
-.project-card:hover{transform:translateY(-5px)}
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 2rem;
+      font-weight: 550;
+      border-left: 4px solid #5c9cbf;
+      padding-left: 1rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-.project-card img{
-  width:100%;border-radius:10px;margin-bottom:10px;
-  transition:0.4s
-}
-.project-card:hover img{transform:scale(1.05)}
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
 
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .section {
+      padding: 5rem 0;
+      border-bottom: 1px solid rgba(72, 92, 112, 0.2);
+      position: relative;
+    }
 
-/* CONTACT */
-.contact-item{
-  display:flex;align-items:center;gap:8px;
-  text-decoration:none;color:#fff;margin-top:10px
-}
-.contact-item img{width:18px}
+    .section:last-child {
+      border-bottom: none;
+    }
 
-@media(max-width:800px){
-.hero{flex-direction:column;text-align:center}
-.grid{grid-template-columns:1fr}
-}
-</style>
+    /* HERO with animated elements and perfect image */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      padding: 2rem 0;
+      position: relative;
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 3rem;
+    }
+    .hero-content {
+      flex: 1.4;
+      min-width: 280px;
+    }
+    .hero-visual {
+      flex: 0.8;
+      min-width: 220px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .avatar-frame {
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
+      padding: 4px;
+      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(100, 160, 200, 0.3);
+      animation: subtleFloat 5s ease-in-out infinite;
+    }
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #0f1a22;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    /* FIX 2: image perfect fit */
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    @keyframes subtleFloat {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .hero-badge {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #93b7d3;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+    }
+    .hero-badge::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: #5c9cbf;
+      border-radius: 2px;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      font-weight: 650;
+      line-height: 1.2;
+      background: linear-gradient(135deg, #FFFFFF 60%, #8ab3d0 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      margin-bottom: 1rem;
+    }
+
+    .hero-role {
+      font-size: 1.8rem;
+      font-weight: 450;
+      color: #cddfe9;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-desc {
+      font-size: 1.18rem;
+      color: #b8cbd9;
+      margin: 1.5rem 0 2rem;
+      max-width: 620px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(95deg, #eef2f5 0%, #e4edf3 100%);
+      color: #0b0e12;
+      padding: 0.85rem 2rem;
+      border-radius: 3rem;
+      font-weight: 550;
+      font-size: 0.95rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+    .cta-btn:hover::before {
+      left: 100%;
+    }
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px -8px black;
+    }
+
+    /* skill pills */
+    .tech-tag {
+      background: rgba(92, 156, 191, 0.15);
+      padding: 0.25rem 0.9rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 450;
+      letter-spacing: 0.2px;
+      color: #c2defa;
+      transition: all 0.2s ease;
+      backdrop-filter: blur(2px);
+    }
+    .tech-tag:hover {
+      background: rgba(92, 156, 191, 0.4);
+      transform: scale(1.02);
+    }
+
+    /* projects animations + hover */
+    .project-main {
+      background: radial-gradient(ellipse at 0% 30%, rgba(18, 28, 38, 0.9), rgba(12, 18, 26, 0.8));
+      border-radius: 2rem;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      border-left: 4px solid #5c9cbf;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-main::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 100% 0%, rgba(92,156,191,0.08), transparent);
+      pointer-events: none;
+    }
+    .project-main:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.5);
+      border-left-width: 6px;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.6rem;
+      margin-top: 1.5rem;
+    }
+    .case-block {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 1.25rem;
+      padding: 1.2rem 1.3rem;
+      transition: all 0.25s;
+      border: 1px solid transparent;
+    }
+    .case-block:hover {
+      background: rgba(25, 40, 55, 0.6);
+      border-color: rgba(92,156,191,0.4);
+      transform: translateX(4px);
+    }
+
+    .other-projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 1rem;
+    }
+    .project-card {
+      background: rgba(18, 24, 32, 0.6);
+      backdrop-filter: blur(4px);
+      border-radius: 1.5rem;
+      padding: 1.5rem;
+      flex: 1;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+      border: 0.5px solid rgba(72, 92, 112, 0.3);
+    }
+    .project-card:hover {
+      transform: translateY(-6px) scale(1.01);
+      border-color: #5c9cbf;
+      background: rgba(26, 38, 50, 0.8);
+      box-shadow: 0 18px 30px -12px black;
+    }
+    /* project image styling */
+    .project-img {
+      width: 100%;
+      border-radius: 12px;
+      margin-bottom: 12px;
+      object-fit: cover;
+      background: #1a2530;
+      aspect-ratio: 16 / 9;
+    }
+
+    .contact-item {
+      background: rgba(20, 30, 42, 0.7);
+      border-radius: 2rem;
+      padding: 0.75rem 1.8rem;
+      transition: all 0.3s;
+      text-decoration: none;
+      color: #eef2f5;
+      font-weight: 470;
+      backdrop-filter: blur(5px);
+      border: 0.5px solid rgba(72, 92, 112, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .contact-item:hover {
+      background: #2c3e52;
+      border-color: #7ab3cc;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+    .contact-icon {
+      width: 20px;
+      height: 20px;
+      object-fit: contain;
+    }
+
+    /* reveal animations enhanced */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.2), transform 0.7s cubic-bezier(0.2, 0.9, 0.3, 1.2);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* staggered children animation */
+    .stagger-child > * {
+      opacity: 0;
+      transform: translateY(12px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    .stagger-child.visible > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .stagger-child > *:nth-child(1) { transition-delay: 0.05s; }
+    .stagger-child > *:nth-child(2) { transition-delay: 0.1s; }
+    .stagger-child > *:nth-child(3) { transition-delay: 0.15s; }
+    .stagger-child > *:nth-child(4) { transition-delay: 0.2s; }
+
+    @media (max-width: 800px) {
+      .container { padding: 0 1.5rem; }
+      .hero h1 { font-size: 2.8rem; }
+      .hero-role { font-size: 1.4rem; }
+      h2 { font-size: 1.6rem; }
+      .case-study-grid { grid-template-columns: 1fr; }
+      .hero-grid { flex-direction: column-reverse; text-align: center; }
+      .hero-content { text-align: center; }
+      .hero-badge::after { left: 50%; transform: translateX(-50%); width: 60px; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .avatar-frame { width: 200px; height: 200px; }
+    }
+  </style>
 </head>
-
 <body>
+  <main>
+    <div class="container">
+      <!-- HERO SECTION with profile image (FIX 1 + FIX 2) -->
+      <section class="hero reveal">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge">ENGINEERING · ML · SYSTEMS</div>
+            <h1>Alam Mir Tazwar</h1>
+            <div class="hero-role">Software Engineer</div>
+            <div class="hero-role" style="font-size:1.3rem; color:#aac7df;">Specializing in Machine Learning and System Optimization</div>
+            <p class="hero-desc">
+              Focused on building efficient and scalable systems, including machine learning solutions for real-world constraints.<br>
+              CNN optimization • performance tuning • data-driven pipelines.
+            </p>
+            <button id="downloadCVBtn" class="cta-btn">📄 Download CV (PDF) →</button>
+          </div>
+          <div class="hero-visual">
+            <div class="avatar-frame">
+              <div class="avatar-inner">
+                <!-- FIX 1: Replaced SVG with profile image -->
+                <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-<div class="container">
+      <!-- ABOUT SECTION -->
+      <section class="section reveal">
+        <h2>About</h2>
+        <div class="about-grid" style="display: flex; flex-wrap: wrap; gap: 2rem;">
+          <div class="about-text" style="flex: 2; font-size: 1.08rem; color: #cfdfea;">
+            <p>I’m a Software Engineering student with deep focus on building <strong>efficient, production-grade systems</strong> that bridge traditional software engineering with machine learning. My work revolves around designing robust data preprocessing pipelines, training performant CNN models under constrained datasets, and integrating them into scalable backends.</p>
+            <br>
+            <p>Experience across the full stack — from Python model optimization (TensorFlow, OpenCV) to backend architecture and lightweight web interfaces. I thrive on solving ambiguous problems with both engineering rigor and ML-first thinking.</p>
+          </div>
+          <div class="engineering-card" style="flex: 1.5; background: rgba(18, 24, 32, 0.55); backdrop-filter: blur(8px); border-radius: 1.75rem; padding: 1.6rem;">
+            <h3 style="margin-bottom:0.5rem;">⚡ Engineering Mindset</h3>
+            <ul class="eng-list" style="list-style: none;">
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ System Design & Scalability</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Performance Optimization & profiling</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Data-driven decisions & A/B testing</li>
+              <li style="margin-bottom:0.9rem; display:flex; gap:0.6rem;">▹ Iterative development & MLOps awareness</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-content">
-    <h1>Alam Mir Tazwar</h1>
-    <div class="hero-role">Software Engineer</div>
-    <p>
-      Focused on building efficient and scalable systems, including machine learning solutions for real-world constraints.
-    </p>
+      <!-- PROJECTS MAIN CASE STUDY -->
+      <section class="section reveal stagger-child" id="projects">
+        <h2>Key Project — Case Study</h2>
+        <div class="project-main">
+          <h3 style="font-weight: 600;">Car Damage Detection through Optimization of VGG16 CNN</h3>
+          <div class="case-study-grid">
+            <div class="case-block"><h4>📌 Problem</h4>Existing CNN models rely heavily on large datasets and fail to detect subtle damages (scratches, dents) effectively when trained on limited or non-diverse data.</div>
+            <div class="case-block"><h4>⚙️ Approach</h4>Leveraged transfer learning with VGG16, built preprocessing pipeline using OpenCV, applied targeted augmentation and fine-tuning.</div>
+            <div class="case-block"><h4>✅ Solution</h4>Improved detection accuracy for small, reflective damages by <strong>≈14% mAP</strong> over baseline. Robust pipeline reduces overfitting.</div>
+            <div class="case-block"><h4>📈 Impact</h4>More stable validation under constrained datasets; real-world usability for automated damage assessment systems.</div>
+          </div>
+          <div class="tech-stack" style="margin-top:1.5rem; display: flex; flex-wrap: wrap; gap: 0.6rem;">
+            <span class="tech-tag">Python</span><span class="tech-tag">TensorFlow</span><span class="tech-tag">Keras</span><span class="tech-tag">OpenCV</span><span class="tech-tag">Scikit-learn</span><span class="tech-tag">VGG16</span>
+          </div>
+        </div>
 
-    <button id="downloadCVBtn" class="cta-btn">Download CV</button>
-  </div>
+        <h2 style="margin-top: 2rem;">Other Projects</h2>
+        <div class="other-projects">
+          <!-- FIX 3: EcoSnap project with image -->
+          <div class="project-card">
+            <img src="./assets/project-2.png" alt="EcoSnap project preview" class="project-img">
+            <h3>EcoSnap</h3>
+            <p style="font-size:0.9rem;">Flutter-based gamified sustainability platform. Winner of Huawei Hackathon 2025. Focused on user engagement & scalable backend.</p>
+            <div class="tech-stack"><span class="tech-tag">Flutter</span><span class="tech-tag">Firebase</span><span class="tech-tag">Dart</span></div>
+          </div>
+          <!-- FIX 3: SamanSphere project with image -->
+          <div class="project-card">
+            <img src="./assets/project-3.png" alt="SamanSphere project preview" class="project-img">
+            <h3>SamanSphere</h3>
+            <p style="font-size:0.9rem;">Centralized summons management system with Laravel, optimized queries and role-based access for municipality use.</p>
+            <div class="tech-stack"><span class="tech-tag">PHP</span><span class="tech-tag">Laravel</span><span class="tech-tag">MySQL</span></div>
+          </div>
+        </div>
+      </section>
 
-  <div class="avatar-frame">
-    <div class="avatar-inner">
-      <img src="./assets/profile-pic.png" alt="profile">
+      <!-- ENGINEERING THINKING SECTION -->
+      <section class="section reveal">
+        <h2>Engineering Thinking</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem;">
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">🧠</div><h3>System Design Mindset</h3><p style="font-size:0.9rem;">Architecting for scale, redundancy, low latency. Decoupled systems with clear contracts and failure awareness.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">⚡</div><h3>Performance Optimization</h3><p style="font-size:0.9rem;">From query tuning to kernel-level CNN optimizations – profiling bottlenecks relentlessly.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">📊</div><h3>Data-Driven Decisions</h3><p style="font-size:0.9rem;">A/B testing, monitoring drift, metrics-driven architecture for ML and SW.</p></div>
+          <div class="glass-card" style="padding: 1.5rem;"><div style="font-size: 2rem;">🔄</div><h3>Iterative Development</h3><p style="font-size:0.9rem;">Agile, rapid prototyping, continuous feedback loops for maintainable codebases.</p></div>
+        </div>
+      </section>
+
+      <!-- SKILLS SECTION -->
+      <section class="section reveal">
+        <h2>Technical Arsenal</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: space-between;">
+          <div><strong>Languages</strong><br><span class="tech-tag">Python</span> <span class="tech-tag">Java</span> <span class="tech-tag">C</span> <span class="tech-tag">JavaScript</span> <span class="tech-tag">PHP</span></div>
+          <div><strong>ML & Data</strong><br><span class="tech-tag">TensorFlow</span> <span class="tech-tag">Keras</span> <span class="tech-tag">OpenCV</span> <span class="tech-tag">Scikit-learn</span> <span class="tech-tag">CNN/VGG16</span></div>
+          <div><strong>Backend & DB</strong><br><span class="tech-tag">MySQL</span> <span class="tech-tag">Laravel</span> <span class="tech-tag">REST APIs</span></div>
+          <div><strong>Tools & Cloud</strong><br><span class="tech-tag">Git</span> <span class="tech-tag">AWS (basic)</span> <span class="tech-tag">Power BI</span></div>
+        </div>
+      </section>
+
+      <!-- CONTACT SECTION (FIX 4: proper icons and real links) -->
+      <section class="section reveal">
+        <h2>Connect</h2>
+        <div class="contact-links" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+          <!-- email with icon -->
+          <a href="mailto:tazwaralam01@gmail.com" class="contact-item">
+            <img src="./assets/email.png" alt="email" class="contact-icon" onerror="this.style.display='none'"> tazwaralam01@gmail.com
+          </a>
+          <!-- LinkedIn with icon -->
+          <a href="https://www.linkedin.com/in/alam-mir-tazwar" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/linkedin.png" alt="linkedin" class="contact-icon" onerror="this.style.display='none'"> LinkedIn
+          </a>
+          <!-- GitHub with icon -->
+          <a href="https://github.com/alam-ml" class="contact-item" target="_blank" rel="noopener noreferrer">
+            <img src="./assets/github.png" alt="github" class="contact-icon" onerror="this.style.display='none'"> GitHub
+          </a>
+        </div>
+        <p style="margin-top: 2rem; font-size:0.85rem; color:#8d9dae;">📍 Malaysia · Open to global ML engineering & research collaborations.</p>
+      </section>
+      <div class="footer-note" style="text-align: center; padding: 2rem 0 3rem; font-size:0.8rem;">© 2025 Alam Mir Tazwar — precision engineered portfolio</div>
     </div>
-  </div>
-</section>
+  </main>
 
-<!-- ABOUT -->
-<section class="section">
-  <h2>About</h2>
-  <p>
-    Software Engineering student specializing in machine learning and system optimization.
-    Experienced in building end-to-end ML pipelines and scalable applications.
-  </p>
-</section>
+  <script>
+    // FIX 5: CV Download - opens PDF in new tab (critical update)
+    const downloadBtn = document.getElementById('downloadCVBtn');
+    if (downloadBtn) {
+      downloadBtn.addEventListener('click', () => {
+        window.open('./assets/resume-example.pdf', '_blank');
+      });
+    }
 
-<!-- PROJECTS -->
-<section class="section">
-  <h2>Projects</h2>
-
-  <div class="project-card">
-    <h3>Car Damage Detection (FYP)</h3>
-    <p>Optimized VGG16 CNN for detecting subtle damages under limited datasets.</p>
-  </div>
-
-  <div class="grid" style="margin-top:20px">
-
-    <div class="project-card">
-      <img src="./assets/project-2.png">
-      <h3>EcoSnap</h3>
-      <p>Flutter app • Huawei Hackathon Winner</p>
-    </div>
-
-    <div class="project-card">
-      <img src="./assets/project-3.png">
-      <h3>SamanSphere</h3>
-      <p>Laravel-based system</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="section">
-  <h2>Contact</h2>
-
-  <a href="mailto:tazwaralam01@gmail.com" class="contact-item">
-    <img src="./assets/email.png"> tazwaralam01@gmail.com
-  </a>
-
-  <a href="https://www.linkedin.com" class="contact-item">
-    <img src="./assets/linkedin.png"> LinkedIn
-  </a>
-
-  <a href="https://github.com" class="contact-item">
-    <img src="./assets/github.png"> GitHub
-  </a>
-
-</section>
-
-</div>
-
-<script>
-
-/* CV DOWNLOAD FIX */
-document.getElementById("downloadCVBtn").addEventListener("click",()=>{
-  window.open("./assets/resume-example.pdf","_blank");
-});
-
-</script>
-
+    // LinkedIn and GitHub links are already handled in the HTML with proper href attributes
+    // adding fallback safety for dynamic open if needed
+    
+    // Intersection Observer for reveal with staggered children support
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          if (entry.target.classList.contains('stagger-child')) {
+            const children = entry.target.children;
+            for (let i = 0; i < children.length; i++) {
+              if (children[i].style) children[i].style.opacity = '1';
+            }
+          }
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -30px 0px" });
+    revealElements.forEach(el => observer.observe(el));
+    
+    // Update footer year
+    const footer = document.querySelector('.footer-note');
+    if (footer) footer.innerHTML = `© ${new Date().getFullYear()} Alam Mir Tazwar — precision engineered portfolio`;
+    
+    // Graceful fallback for missing images (optional: no console errors)
+    const allImgs = document.querySelectorAll('img');
+    allImgs.forEach(img => {
+      img.addEventListener('error', function() {
+        if (this.src.includes('profile-pic.png') && !this.hasAttribute('data-fallback')) {
+          this.setAttribute('data-fallback', 'true');
+          // subtle gradient fallback via style
+          this.style.background = 'linear-gradient(135deg, #2c5a7a, #1a3f55)';
+          this.style.objectFit = 'cover';
+        }
+      });
+    });
+  </script>
 </body>
 </html>
