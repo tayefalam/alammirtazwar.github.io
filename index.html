@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tazwar | Machine Learning Engineer</title>
+<title>Alam Mir Tazwar | Machine Learning Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -30,6 +30,7 @@ nav {
   justify-content: space-between;
   background: rgba(2,6,23,0.7);
   backdrop-filter: blur(10px);
+  z-index: 1000;
 }
 
 .logo {
@@ -46,6 +47,11 @@ nav {
 .nav-links a {
   text-decoration: none;
   color: #cbd5f5;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: white;
 }
 
 /* HERO */
@@ -53,15 +59,16 @@ nav {
   height: 100vh;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 8%;
 }
 
 .hero-content {
-  max-width: 700px;
+  max-width: 600px;
 }
 
 .hero-content h1 {
-  font-size: 56px;
+  font-size: 54px;
   font-weight: 700;
 }
 
@@ -85,6 +92,19 @@ nav {
   color: #020617;
   border: none;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+  transform: translateY(-2px);
+}
+
+/* IMAGE */
+.hero-img {
+  width: 260px;
+  border-radius: 50%;
+  border: 2px solid rgba(56,189,248,0.4);
 }
 
 /* SECTION */
@@ -104,7 +124,9 @@ section {
   gap: 20px;
 }
 
-.grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
 /* CARD */
 .card {
@@ -112,6 +134,12 @@ section {
   border: 1px solid rgba(255,255,255,0.05);
   padding: 25px;
   border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(56,189,248,0.4);
 }
 
 /* FEATURE */
@@ -125,6 +153,24 @@ ul {
   margin-top: 10px;
   padding-left: 18px;
   color: #94a3b8;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* REVEAL */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 footer {
@@ -151,97 +197,125 @@ footer {
   <div class="hero-content">
     <h1>Alam Mir Tazwar</h1>
     <h2>Machine Learning Engineer</h2>
+
     <p>
-      I design and optimize machine learning systems for real-world constraints.
-      My work focuses on improving model performance under limited data while maintaining efficiency and scalability.
+      Focused on optimizing machine learning systems for real-world constraints,
+      including limited data environments and performance trade-offs.
     </p>
 
     <button class="btn" onclick="window.open('./assets/Alam_Mir_Tazwar_CV.pdf')">
       Download CV
     </button>
   </div>
+
+  <img src="./assets/profile-pic.png" class="hero-img">
 </section>
 
-<section id="about">
+<section id="about" class="reveal">
   <h1 class="title">About</h1>
   <div class="card">
     <p>
       Software Engineering student specializing in deep learning and system optimization.
-      Experience building end-to-end machine learning pipelines including preprocessing,
-      model tuning, and evaluation.
+      Experienced in building end-to-end machine learning pipelines including preprocessing,
+      training, and evaluation.
     </p>
   </div>
 </section>
 
-<section id="projects">
-  <h1 class="title">Projects</h1>
+<section id="projects" class="reveal">
+  <h1 class="title">Selected Work</h1>
 
   <div class="card feature">
     <h2>Car Damage Detection (FYP)</h2>
+
+    <p><strong>Problem</strong></p>
     <p>
-      Built an optimized VGG16 CNN model to detect subtle vehicle damage.
+      CNN models struggle to detect subtle damage under limited datasets.
     </p>
+
+    <p><strong>Approach</strong></p>
     <ul>
-      <li>Improved detection accuracy on limited dataset scenarios</li>
-      <li>Applied data augmentation and transfer learning</li>
-      <li>Reduced overfitting through tuning and regularization</li>
+      <li>Fine-tuned VGG16 using transfer learning</li>
+      <li>Applied data augmentation</li>
+      <li>Optimized hyperparameters</li>
     </ul>
+
+    <p><strong>Solution</strong></p>
+    <ul>
+      <li>Improved detection of small damages</li>
+      <li>Reduced overfitting</li>
+      <li>Increased robustness</li>
+    </ul>
+
+    <p><strong>Impact</strong></p>
+    <ul>
+      <li>Better validation consistency</li>
+      <li>More reliable real-world predictions</li>
+    </ul>
+
   </div>
 
   <div class="grid grid-2" style="margin-top:20px;">
-    <div class="card">
+
+    <div class="card project">
+      <img src="./assets/project-2.png">
       <h3>EcoSnap</h3>
-      <p>Flutter-based gamified sustainability app (Hackathon Winner)</p>
+      <p>Flutter app • Huawei Hackathon Winner</p>
     </div>
 
-    <div class="card">
+    <div class="card project">
+      <img src="./assets/project-3.png">
       <h3>SamanSphere</h3>
-      <p>Laravel-based centralized summons system</p>
+      <p>Laravel-based web system</p>
     </div>
+
   </div>
 </section>
 
-<section id="thinking">
+<section id="thinking" class="reveal">
   <h1 class="title">Engineering Thinking</h1>
 
   <div class="grid grid-2">
+
     <div class="card">
       <h3>Optimization Mindset</h3>
-      <p>
-        Focus on improving efficiency and performance rather than just functionality.
-        Prioritize scalable solutions over quick fixes.
-      </p>
+      <p>Focus on efficiency, not just functionality.</p>
     </div>
 
     <div class="card">
-      <h3>System Design Approach</h3>
-      <p>
-        Break down problems into modular components and design pipelines
-        that are maintainable, testable, and extensible.
-      </p>
+      <h3>System Design</h3>
+      <p>Build modular, scalable pipelines.</p>
     </div>
 
     <div class="card">
-      <h3>Data-Driven Decisions</h3>
-      <p>
-        Use evaluation metrics and validation performance to guide improvements,
-        ensuring models generalize well.
-      </p>
+      <h3>Data-Driven</h3>
+      <p>Decisions guided by evaluation metrics.</p>
     </div>
 
     <div class="card">
-      <h3>Continuous Improvement</h3>
-      <p>
-        Iteratively refine models and systems through experimentation,
-        tuning, and performance analysis.
-      </p>
+      <h3>Iteration</h3>
+      <p>Continuously refine models and systems.</p>
     </div>
+
   </div>
 </section>
 
 <footer>
   <p>© 2026 Alam Mir Tazwar — Built for impact</p>
 </footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", () => {
+  reveals.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("active");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
