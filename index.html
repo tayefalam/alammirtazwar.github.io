@@ -225,16 +225,13 @@
   width: 28px;
   cursor: pointer;
   transition: var(--transition);
-  filter: brightness(0) invert(1); /* 👈 add this line */
+  filter: brightness(0) invert(1);
 }
 
 .icon:hover {
+  transform: translateY(-2px);
   filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(92,156,191,0.6));
 }
-    .icon:hover {
-      transform: translateY(-2px);
-      filter: brightness(1.2);
-    }
 
     /* Profile Section */
     #profile {
@@ -244,7 +241,7 @@
       align-items: center;
       min-height: auto;
  padding: 140px 0 80px;
-      padding-top: 80px;
+      
     }
     .section__pic-container {
       width: 280px;
