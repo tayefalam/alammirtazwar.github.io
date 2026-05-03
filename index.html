@@ -1,4 +1,4 @@
-You're absolutely right! Here is the fixed version with "Hello, I'm" instead of "Visionary Engineer", plus all the premium million-dollar design elements preserved.
+Here is the complete HTML portfolio with a dramatically improved design for the Technical Skills and Projects sections, featuring card layouts, hover effects, icons, and better visual hierarchy.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +6,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Alam Mir Tazwar — Software Engineering Student specializing in Machine Learning and Web Development. Award-winning portfolio showcasing breakthrough ML projects." />
+  <meta name="description" content="Alam Mir Tazwar — Software Engineering Student specializing in Machine Learning and Web Development. Huawei Hackathon Winner. Portfolio showcasing ML projects and web applications." />
   <meta name="author" content="Alam Mir Tazwar" />
   <title>Alam Mir Tazwar | Software Engineer | ML & Web Dev</title>
   
@@ -26,7 +26,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       --border-light: rgba(255, 255, 255, 0.08);
       --transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
       --card-bg: rgba(8, 12, 20, 0.45);
-      --card-bg-hover: rgba(15, 25, 40, 0.65);
+      --card-bg-hover: rgba(15, 25, 40, 0.75);
       --glass-border: 1px solid rgba(126, 200, 227, 0.15);
     }
 
@@ -39,7 +39,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       overflow-x: hidden;
     }
 
-    /* ========== 3D GALACTIC PARTICLE FIELD BACKGROUND ========== */
+    /* ========== BACKGROUND ========== */
     #canvas-bg {
       position: fixed;
       top: 0;
@@ -50,7 +50,6 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       display: block;
     }
     
-    /* Cinematic gradient layers */
     .gradient-overlay {
       position: fixed;
       top: 0;
@@ -73,24 +72,13 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       pointer-events: none;
     }
     
-    /* Premium light sweep */
     .light-sweep {
       position: fixed;
       top: 0;
       left: -50%;
       width: 200%;
       height: 100%;
-      background: linear-gradient(110deg, 
-        transparent 0%, 
-        transparent 25%,
-        rgba(126, 200, 227, 0.04) 30%,
-        rgba(126, 200, 227, 0.1) 35%,
-        rgba(126, 200, 227, 0.15) 40%,
-        rgba(126, 200, 227, 0.1) 45%,
-        rgba(126, 200, 227, 0.04) 50%,
-        transparent 55%,
-        transparent 100%
-      );
+      background: linear-gradient(110deg, transparent 0%, transparent 25%, rgba(126, 200, 227, 0.04) 30%, rgba(126, 200, 227, 0.1) 35%, rgba(126, 200, 227, 0.15) 40%, rgba(126, 200, 227, 0.1) 45%, rgba(126, 200, 227, 0.04) 50%, transparent 55%, transparent 100%);
       animation: lightSweepElite 18s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
@@ -103,7 +91,6 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       100% { transform: translateX(50%); opacity: 0; }
     }
     
-    /* Vignette for focus */
     .vignette {
       position: fixed;
       top: 0;
@@ -115,7 +102,6 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       pointer-events: none;
     }
     
-    /* Premium cursor glow */
     .cursor-glow {
       position: fixed;
       width: 800px;
@@ -130,7 +116,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       will-change: transform;
     }
 
-    /* ========== LUXURY NAVIGATION ========== */
+    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       justify-content: space-between;
@@ -235,7 +221,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       display: flex;
     }
 
-    /* ========== MAIN CONTENT - ELITE DESIGN ========== */
+    /* ========== MAIN CONTENT ========== */
     .container {
       max-width: 1440px;
       margin: 0 auto;
@@ -253,7 +239,6 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       padding: 90px 0 0;
     }
     
-    /* Premium profile with rotating halo */
     .section__pic-container {
       width: 420px;
       height: 420px;
@@ -304,7 +289,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     
     .greeting {
       font-size: 1rem;
-      letter-spacing: 6px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.5rem;
@@ -322,11 +307,20 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       line-height: 1.1;
     }
     
-    .animated-role {
-      font-size: 1.8rem;
+    .location-text {
+      font-size: 1.1rem;
       color: var(--text-secondary);
-      min-height: 4.5rem;
-      margin: 1rem 0;
+      margin-top: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .animated-role {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      min-height: 3.5rem;
+      margin: 0.8rem 0;
     }
     
     #dynamicRole {
@@ -345,11 +339,11 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     .btn-container {
       display: flex;
       gap: 2rem;
-      margin: 2.5rem 0;
+      margin: 2rem 0;
     }
     
     .btn {
-      padding: 1.1rem 2.8rem;
+      padding: 1rem 2.5rem;
       border-radius: 3.5rem;
       font-weight: 600;
       font-size: 1rem;
@@ -417,16 +411,16 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     #socials-container {
       display: flex;
       gap: 1.8rem;
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
     
     #about {
       padding-top: 0;
-      margin-top: -90px;
+      margin-top: -60px;
     }
     
     #experience, #projects, #contact {
-      padding-top: 6rem;
+      padding-top: 5rem;
     }
     
     .section__text__p1 {
@@ -438,29 +432,197 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     }
     
     .title {
-      font-size: 3.5rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      margin-bottom: 3rem;
+      margin-bottom: 2.5rem;
       letter-spacing: -1px;
       background: linear-gradient(135deg, #FFFFFF, var(--accent));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       display: inline-block;
+      border-bottom: 2px solid rgba(126,200,227,0.3);
+      padding-bottom: 0.5rem;
     }
     
-    .about-containers, .experience-details-container {
+    /* IMPROVED SKILLS SECTION - MODERN GRID CARDS */
+    .skills-grid {
       display: flex;
-      gap: 2.5rem;
       flex-wrap: wrap;
-      margin-bottom: 3rem;
+      gap: 1.8rem;
+      justify-content: center;
+    }
+    
+    .skill-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      border: var(--glass-border);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      flex: 1;
+      min-width: 260px;
+    }
+    
+    .skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      background: var(--card-bg-hover);
+      box-shadow: 0 25px 40px -20px rgba(126,200,227,0.2);
+    }
+    
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--accent);
+      border-bottom: 1px solid rgba(126,200,227,0.2);
+      padding-bottom: 0.8rem;
+    }
+    
+    .skill-header span {
+      font-size: 1.8rem;
+    }
+    
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
+    
+    .skill-tag {
+      background: rgba(126, 200, 227, 0.12);
+      padding: 0.5rem 1.2rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-tag:hover {
+      background: rgba(126, 200, 227, 0.3);
+      transform: scale(1.03);
+    }
+    
+    .skill-level {
+      color: var(--accent);
+      font-size: 0.7rem;
+      font-weight: 400;
+    }
+    
+    /* IMPROVED PROJECTS SECTION - MODERN SHOWCASE CARDS */
+    .projects-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+    }
+    
+    .project-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      border: var(--glass-border);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      flex: 1;
+      min-width: 300px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-card:hover::before {
+      opacity: 1;
+    }
+    
+    .project-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      background: var(--card-bg-hover);
+      box-shadow: 0 25px 40px -20px rgba(126,200,227,0.25);
+    }
+    
+    .project-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+      color: var(--text-primary);
+    }
+    
+    .project-description {
+      color: var(--text-secondary);
+      line-height: 1.7;
+      font-size: 0.95rem;
+      margin: 1rem 0;
+    }
+    
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+    
+    .project-tech span {
+      background: rgba(126, 200, 227, 0.12);
+      padding: 0.25rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .project-tech span:hover {
+      background: rgba(126, 200, 227, 0.3);
+    }
+    
+    .award-badge {
+      display: inline-block;
+      background: linear-gradient(135deg, rgba(126,200,227,0.2), rgba(74,159,191,0.1));
+      border: 1px solid rgba(126,200,227,0.3);
+      padding: 0.3rem 0.8rem;
+      border-radius: 2rem;
+      font-size: 0.7rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 0.8rem;
+    }
+    
+    .about-containers {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
     }
     
     .details-container {
       background: var(--card-bg);
       backdrop-filter: blur(18px);
       border-radius: 2rem;
-      padding: 2.2rem;
+      padding: 2rem;
       border: var(--glass-border);
       transition: var(--transition);
       flex: 1;
@@ -475,69 +637,25 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     }
     
     .details-container h3 {
-      font-size: 1.5rem;
-      margin-bottom: 1.2rem;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
       color: var(--accent);
     }
     
     .text-container p {
       color: var(--text-secondary);
-      line-height: 1.9;
-      font-size: 1.1rem;
-    }
-    
-    .article-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-top: 1.2rem;
-    }
-    
-    article {
-      background: rgba(126, 200, 227, 0.1);
-      padding: 0.6rem 1.3rem;
-      border-radius: 2rem;
-      display: flex;
-      gap: 0.8rem;
-      align-items: baseline;
-      transition: var(--transition);
-      font-size: 0.9rem;
-      font-weight: 500;
-      backdrop-filter: blur(5px);
-    }
-    
-    article:hover {
-      background: rgba(126, 200, 227, 0.3);
-      transform: scale(1.04);
-    }
-    
-    .project-title {
-      font-size: 1.4rem;
-      margin: 1rem 0;
-    }
-    
-    .project-badge {
-      display: inline-block;
-      font-size: 0.7rem;
-      background: rgba(126, 200, 227, 0.2);
-      padding: 0.3rem 1rem;
-      border-radius: 2rem;
-      margin-top: 1.2rem;
-      transition: var(--transition);
-    }
-    
-    .project-badge:hover {
-      background: rgba(126, 200, 227, 0.35);
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
     
     .contact-info-upper-container {
       display: flex;
-      gap: 3rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
       background: var(--card-bg);
       backdrop-filter: blur(18px);
       border-radius: 2rem;
-      padding: 2.5rem 3.5rem;
+      padding: 2rem 3rem;
       border: var(--glass-border);
       justify-content: center;
       transition: var(--transition);
@@ -551,7 +669,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 0.5rem 1.2rem;
+      padding: 0.5rem 1rem;
       border-radius: 3rem;
       transition: var(--transition);
     }
@@ -562,14 +680,14 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     }
     
     .contact-info-container span {
-      font-size: 2rem;
+      font-size: 1.8rem;
     }
     
     .contact-info-container a {
       color: var(--text-primary);
       text-decoration: none;
       transition: var(--transition);
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 500;
     }
     
@@ -579,21 +697,21 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     
     footer {
       background: rgba(2, 4, 8, 0.85);
-      padding: 2.5rem;
+      padding: 2rem;
       text-align: center;
       border-top: 1px solid rgba(126, 200, 227, 0.2);
-      margin-top: 5rem;
+      margin-top: 4rem;
       backdrop-filter: blur(10px);
     }
     
     footer .nav-links {
       justify-content: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
     
     .arrow {
-      width: 42px;
-      margin-top: 3rem;
+      width: 40px;
+      margin-top: 2rem;
       cursor: pointer;
       opacity: 0.6;
       transition: var(--transition);
@@ -604,13 +722,13 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     
     .arrow:hover {
       opacity: 1;
-      transform: translateY(6px);
+      transform: translateY(5px);
     }
     
     .reveal {
       opacity: 0;
-      transform: translateY(60px);
-      transition: opacity 1s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 1s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transform: translateY(50px);
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
     
     .reveal.visible {
@@ -618,11 +736,8 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       transform: translateY(0);
     }
     
-    .stat-number {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--accent);
-      display: block;
+    .edu-item {
+      margin-bottom: 1rem;
     }
     
     @media (max-width: 1200px) {
@@ -631,7 +746,7 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
         height: 350px;
       }
       .section__text h1 {
-        font-size: 4.5rem;
+        font-size: 4rem;
       }
     }
     
@@ -639,14 +754,14 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       #profile {
         flex-direction: column;
         text-align: center;
-        gap: 3rem;
+        gap: 2.5rem;
       }
       .section__pic-container {
-        width: 300px;
-        height: 300px;
+        width: 280px;
+        height: 280px;
       }
       .section__text h1 {
-        font-size: 3.5rem;
+        font-size: 3rem;
       }
       .section__text {
         text-align: center;
@@ -655,13 +770,13 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
         justify-content: center;
       }
       #about {
-        margin-top: -40px;
+        margin-top: -30px;
       }
       .title {
-        font-size: 2.5rem;
+        font-size: 2.3rem;
       }
       .animated-role {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
       }
       nav {
         padding: 0 2rem;
@@ -685,41 +800,41 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
         padding: 0 1.2rem;
       }
       .section__pic-container {
-        width: 240px;
-        height: 240px;
+        width: 200px;
+        height: 200px;
       }
       .section__text h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       .animated-role {
         font-size: 1rem;
       }
       .btn {
-        padding: 0.8rem 1.6rem;
-        font-size: 0.85rem;
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
       }
       .title {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       .contact-info-upper-container {
         flex-direction: column;
         align-items: center;
-        gap: 1.5rem;
-        padding: 1.8rem;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      .skill-card, .project-card {
+        min-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- 3D GALACTIC PARTICLE FIELD -->
   <canvas id="canvas-bg"></canvas>
   <div class="gradient-overlay"></div>
   <div class="gradient-overlay-2"></div>
   <div class="light-sweep"></div>
   <div class="vignette"></div>
-  
-  <!-- Premium cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
 
   <nav id="desktop-nav">
@@ -753,18 +868,19 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
         <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%234A9FBF\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <p class="greeting">Hello, I'm</p>
         <h1>Alam Mir Tazwar</h1>
         <div class="animated-role">
           <span id="dynamicRole"></span>
         </div>
+        <div class="location-text">📍 Pekan, Pahang, Malaysia</div>
         <div class="btn-container">
           <button class="btn btn-color-2" id="downloadCVBtn">📄 Download CV</button>
           <button class="btn btn-color-1" onclick="location.href='#contact'">✉️ Contact Me</button>
         </div>
         <div id="socials-container">
           <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank')" onerror="this.style.display='none'">
-          <img src="./assets/github.png" alt="GitHub" class="icon" onclick="window.open('https://github.com/alam-ml', '_blank')" onerror="this.style.display='none'">
+          <img src="./assets/github.png" alt="GitHub" class="icon" onclick="window.open('https://github.com/mirtazwar', '_blank')" onerror="this.style.display='none'">
         </div>
       </div>
     </section>
@@ -774,52 +890,61 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       <h1 class="title">About Me</h1>
       <div class="about-containers">
         <div class="details-container">
-          <h3>💼 Experience & Impact</h3>
-          <p><span class="stat-number">3+</span> Production ML Deployments</p>
-          <p><span class="stat-number">14.2%</span> mAP Improvement Achieved</p>
-          <p>Web Developer Intern @ COMNET UNISEL (2021)</p>
+          <h3>💼 Work Experience</h3>
+          <p><strong>Web Developer Intern — COMNET UNISEL</strong><br />Sep 2021 – Dec 2021</p>
+          <p style="margin-top:0.8rem;">• Developed 20+ full-stack WordPress websites<br />• Managed SEO improvements & database integration<br />• Conducted training for ~100 students<br />• Represented organization at SDEC conference</p>
         </div>
         <div class="details-container">
-          <h3>🎓 Academic Excellence</h3>
-          <p><span class="stat-number">3.7+</span> CGPA | Dean's List</p>
-          <p>Bachelor of CS (Software Engineering)</p>
-          <p>UMPSA (2023–2026) | Full Scholarship</p>
+          <h3>🎓 Education</h3>
+          <div class="edu-item"><strong>Bachelor of CS (Software Engineering) Hons.</strong><br />UMPSA (2023–Present)</div>
+          <div class="edu-item" style="margin-top:1rem;"><strong>Diploma in CS (Information Technology)</strong><br />UNISEL (2018–2022)</div>
         </div>
       </div>
       <div class="text-container">
-        <p>I'm a passionate <strong>Software Engineering student</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, specializing in <strong>Machine Learning</strong> and <strong>scalable web systems</strong>. I've built production-ready CNN models achieving <strong style="color:var(--accent)">14.2% mAP improvement</strong> for damage detection and won the <strong style="color:var(--accent)">Huawei Hackathon 2025</strong> among 350+ teams. I thrive at the intersection of AI innovation and real-world engineering, delivering solutions that make a difference.</p>
+        <p>I'm a <strong>Software Engineering student</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, passionate about <strong>Machine Learning</strong> and <strong>Web Development</strong>. I built a <strong>Car Damage Detection system</strong> using VGG16, TensorFlow, and OpenCV, and won <strong>🏆 Huawei Hackathon 2025 UMPSA (Best Game App)</strong> representing my team <strong>AceEngineers</strong>. Currently expanding my skills in <strong>Machine Learning, Microsoft Power Platform (Power BI, Power Apps)</strong> to drive data-informed business decisions. I thrive at the intersection of AI innovation and practical engineering.</p>
       </div>
       <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#experience'" onerror="this.style.display='none'">
     </section>
 
     <section id="experience" class="reveal">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Technical Arsenal</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h3>💻 Core Engineering</h3>
-            <div class="article-container">
-              <article><span>🐍 Python</span> <span>Advanced</span></article>
-              <article><span>☕ Java</span> <span>Advanced</span></article>
-              <article><span>⚙️ C/C++</span> <span>Intermediate</span></article>
-              <article><span>🌐 HTML5/CSS3</span> <span>Expert</span></article>
-              <article><span>📜 JavaScript/TS</span> <span>Advanced</span></article>
-              <article><span>🐘 PHP</span> <span>Intermediate</span></article>
-              <article><span>📱 Flutter/Dart</span> <span>Advanced</span></article>
-            </div>
+      <h1 class="title">Technical Skills</h1>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-header"><span>💻</span> Programming Languages</div>
+          <div class="skill-items">
+            <div class="skill-tag">🐍 Python <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">☕ Java <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">⚙️ C <span class="skill-level">Intermediate</span></div>
+            <div class="skill-tag">📜 JavaScript <span class="skill-level">Intermediate</span></div>
+            <div class="skill-tag">🐘 PHP <span class="skill-level">Intermediate</span></div>
+            <div class="skill-tag">📱 Dart <span class="skill-level">Intermediate</span></div>
           </div>
-          <div class="details-container">
-            <h3>🤖 AI & Data Ecosystem</h3>
-            <div class="article-container">
-              <article><span>🧠 TensorFlow/Keras</span> <span>Expert</span></article>
-              <article><span>👁️ OpenCV</span> <span>Advanced</span></article>
-              <article><span>📊 Scikit-learn</span> <span>Advanced</span></article>
-              <article><span>🗄️ MySQL/PostgreSQL</span> <span>Advanced</span></article>
-              <article><span>🚀 Laravel</span> <span>Advanced</span></article>
-              <article><span>📈 Power BI</span> <span>Intermediate</span></article>
-              <article><span>☁️ AWS/GCP</span> <span>Intermediate</span></article>
-            </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header"><span>🤖</span> ML & AI Tools</div>
+          <div class="skill-items">
+            <div class="skill-tag">🧠 TensorFlow/Keras <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">👁️ OpenCV <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">📊 Scikit-learn <span class="skill-level">Intermediate</span></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header"><span>🌐</span> Web & Database</div>
+          <div class="skill-items">
+            <div class="skill-tag">🚀 Laravel <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">📝 WordPress <span class="skill-level">Expert</span></div>
+            <div class="skill-tag">🗄️ MySQL <span class="skill-level">Advanced</span></div>
+            <div class="skill-tag">🎨 HTML/CSS <span class="skill-level">Expert</span></div>
+          </div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-header"><span>⚡</span> Other Tools</div>
+          <div class="skill-items">
+            <div class="skill-tag">📊 Power BI <span class="skill-level">Intermediate</span></div>
+            <div class="skill-tag">☁️ AWS/GCP <span class="skill-level">Basic</span></div>
+            <div class="skill-tag">🤝 Leadership <span class="skill-level">Strong</span></div>
+            <div class="skill-tag">🎯 Problem Solving <span class="skill-level">Strong</span></div>
           </div>
         </div>
       </div>
@@ -829,21 +954,32 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Flagship Projects</h1>
-      <div class="about-containers">
-        <div class="details-container">
-          <h3 class="project-title">🚗 Car Damage Detection AI</h3>
-          <p>Engineered a fine-tuned VGG16 architecture achieving <strong style="color:var(--accent)">14.2% mAP improvement</strong> and <strong style="color:var(--accent)">31% reduction in false negatives</strong>. Implemented advanced augmentation and transfer learning strategies that outperformed baseline models significantly.</p>
-          <div class="project-badge">TensorFlow · OpenCV · Transfer Learning</div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-icon">🚗</div>
+          <h3 class="project-title">Car Damage Detection System</h3>
+          <p class="project-description">ML-powered system using <strong>VGG16, TensorFlow, and OpenCV</strong> to detect subtle vehicle damages (scratches, dents). Achieved significant accuracy improvements through preprocessing and optimization techniques.</p>
+          <div class="project-tech"><span>TensorFlow</span><span>OpenCV</span><span>CNN</span><span>Python</span></div>
+          <div class="award-badge">🎓 Final Year Project</div>
         </div>
-        <div class="details-container">
-          <h3 class="project-title">🌱 EcoSnap — Hackathon Champion</h3>
-          <p><strong style="color:var(--accent)">🏆 Winner — Huawei Hackathon 2025</strong> (Top 3/350+ teams). Built a Flutter-based gamified platform with real-time carbon tracking, social challenges, and AI-powered insights.</p>
-          <div class="project-badge">Flutter · Firebase · ML Kit · REST APIs</div>
+        <div class="project-card">
+          <div class="project-icon">🌱</div>
+          <h3 class="project-title">EcoSnap — Huawei Hackathon Winner</h3>
+          <p class="project-description"><strong>🏆 Best Game App Award</strong> representing team <strong>AceEngineers</strong> at Huawei Hackathon 2025 UMPSA. Flutter-based social gamification app promoting sustainability with strong UI/UX and real-time engagement features.</p>
+          <div class="project-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div>
+          <div class="award-badge">🏆 Winner — Huawei Hackathon 2025</div>
         </div>
-        <div class="details-container">
-          <h3 class="project-title">📋 SamanSphere Enterprise</h3>
-          <p>Led development of a centralized traffic summons system serving thousands of concurrent users. Engineered Redis caching and optimized indexing resulting in <strong style="color:var(--accent)">40% query latency reduction</strong>.</p>
-          <div class="project-badge">Laravel · MySQL · Redis · Docker</div>
+        <div class="project-card">
+          <div class="project-icon">📋</div>
+          <h3 class="project-title">SamanSphere</h3>
+          <p class="project-description">Centralized traffic summons payment platform built with <strong>Laravel</strong>. Optimized for multi-agency integration, high performance, and secure transactions.</p>
+          <div class="project-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div>
+        </div>
+        <div class="project-card">
+          <div class="project-icon">🦟</div>
+          <h3 class="project-title">DengueSense & Datathon</h3>
+          <p class="project-description"><strong>DengueSense:</strong> Mobile app concept for dengue risk awareness. <strong>Datathon Financial Forecasting:</strong> Built time series models for financial data analysis at Universiti Malaya.</p>
+          <div class="project-tech"><span>Time Series</span><span>Data Analysis</span><span>Mobile Concept</span></div>
         </div>
       </div>
       <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#contact'" onerror="this.style.display='none'">
@@ -853,247 +989,62 @@ You're absolutely right! Here is the fixed version with "Hello, I'm" instead of 
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Let's Connect</h1>
       <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <span>📧</span>
-          <p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
-        </div>
-        <div class="contact-info-container">
-          <span>🔗</span>
-          <p><a href="https://www.linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></p>
-        </div>
-        <div class="contact-info-container">
-          <span>🐙</span>
-          <p><a href="https://github.com/alam-ml" target="_blank">github.com/alam-ml</a></p>
-        </div>
+        <div class="contact-info-container"><span>📧</span><p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p></div>
+        <div class="contact-info-container"><span>📱</span><p><a href="tel:+60104650774">+60 10-465 0774</a></p></div>
+        <div class="contact-info-container"><span>🔗</span><p><a href="https://linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></p></div>
+        <div class="contact-info-container"><span>🌐</span><p><a href="https://mirtazwar.github.io" target="_blank">mirtazwar.github.io</a></p></div>
       </div>
     </section>
   </div>
 
   <footer>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#experience">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <p>Copyright © 2026 Alam Mir Tazwar. All Rights Reserved. | Crafted with precision</p>
+    <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#experience">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+    <p>© 2026 Alam Mir Tazwar — Software Engineering Student | ML & Web Development</p>
   </footer>
 
   <script>
-    function toggleMenu() {
-      const menu = document.querySelector('.menu-links');
-      if (menu) menu.classList.toggle('open');
-    }
-
-    // Animated typing effect
-    const roles = ["Software Engineering Student", "ML Engineer", "Web Developer", "AI Enthusiast"];
+    function toggleMenu() { const menu = document.querySelector('.menu-links'); if (menu) menu.classList.toggle('open'); }
+    const roles = ["Software Engineering Student", "ML Engineer", "Web Developer", "Hackathon Winner"];
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicRole");
-    
     function typeEffect() {
       if (!dynamicElement) return;
       const currentRole = roles[roleIndex];
-      if (isDeleting) {
-        dynamicElement.textContent = currentRole.substring(0, charIndex - 1);
-        charIndex--;
-      } else {
-        dynamicElement.textContent = currentRole.substring(0, charIndex + 1);
-        charIndex++;
-      }
-      
-      if (!isDeleting && charIndex === currentRole.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 2200);
-        return;
-      }
-      
-      if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        roleIndex = (roleIndex + 1) % roles.length;
-        setTimeout(typeEffect, 300);
-        return;
-      }
-      
+      if (isDeleting) { dynamicElement.textContent = currentRole.substring(0, charIndex - 1); charIndex--; }
+      else { dynamicElement.textContent = currentRole.substring(0, charIndex + 1); charIndex++; }
+      if (!isDeleting && charIndex === currentRole.length) { isDeleting = true; setTimeout(typeEffect, 2200); return; }
+      if (isDeleting && charIndex === 0) { isDeleting = false; roleIndex = (roleIndex + 1) % roles.length; setTimeout(typeEffect, 300); return; }
       setTimeout(typeEffect, isDeleting ? 45 : 85);
     }
-    
     typeEffect();
-
-    // Premium cursor glow tracker
     const cursorGlow = document.getElementById('cursorGlow');
-    document.addEventListener('mousemove', (e) => {
-      cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
-    });
-
-    // ========== 3D GALACTIC PARTICLE FIELD ==========
+    document.addEventListener('mousemove', (e) => { cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`; });
     const canvas = document.getElementById('canvas-bg');
     const ctx = canvas.getContext('2d');
-    let particles = [];
-    let particleCount = 280;
-    let mouseX = 0, mouseY = 0;
-
-    function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
+    let particles = [], particleCount = 280, mouseX = 0, mouseY = 0;
+    function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     class Particle {
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 3.2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.22;
-        this.speedY = (Math.random() - 0.5) * 0.18;
-        this.opacity = Math.random() * 0.5 + 0.1;
-        this.color = `rgba(126, 200, 227, ${this.opacity})`;
-      }
-      
+      constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.size = Math.random() * 3.2 + 0.5; this.speedX = (Math.random() - 0.5) * 0.22; this.speedY = (Math.random() - 0.5) * 0.18; this.opacity = Math.random() * 0.5 + 0.1; this.color = `rgba(126, 200, 227, ${this.opacity})`; }
       update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
-        
-        const dx = mouseX - this.x;
-        const dy = mouseY - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 200) {
-          const angle = Math.atan2(dy, dx);
-          const force = (200 - distance) / 200 * 0.35;
-          this.x += Math.cos(angle) * force;
-          this.y += Math.sin(angle) * force;
-        }
-        
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        this.x += this.speedX; this.y += this.speedY;
+        const dx = mouseX - this.x, dy = mouseY - this.y, distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 200) { const angle = Math.atan2(dy, dx); const force = (200 - distance) / 200 * 0.35; this.x += Math.cos(angle) * force; this.y += Math.sin(angle) * force; }
+        if (this.x < 0) this.x = canvas.width; if (this.x > canvas.width) this.x = 0; if (this.y < 0) this.y = canvas.height; if (this.y > canvas.height) this.y = 0;
       }
-      
-      draw() {
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fillStyle = this.color;
-        ctx.fill();
-      }
+      draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.fill(); }
     }
-
-    function initParticles() {
-      particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-      }
-    }
-
+    function initParticles() { particles = []; for (let i = 0; i < particleCount; i++) particles.push(new Particle()); }
     function connectParticles() {
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x;
-          const dy = particles[i].y - particles[j].y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-          
-          if (distance < 140) {
-            ctx.beginPath();
-            ctx.moveTo(particles[i].x, particles[i].y);
-            ctx.lineTo(particles[j].x, particles[j].y);
-            const opacity = 0.08 * (1 - distance / 140);
-            ctx.strokeStyle = `rgba(126, 200, 227, ${opacity})`;
-            ctx.lineWidth = 0.6;
-            ctx.stroke();
-          }
-        }
-      }
+      for (let i = 0; i < particles.length; i++) for (let j = i + 1; j < particles.length; j++) { const dx = particles[i].x - particles[j].x, dy = particles[i].y - particles[j].y, distance = Math.sqrt(dx * dx + dy * dy); if (distance < 140) { ctx.beginPath(); ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); const opacity = 0.08 * (1 - distance / 140); ctx.strokeStyle = `rgba(126, 200, 227, ${opacity})`; ctx.lineWidth = 0.6; ctx.stroke(); } }
     }
-
-    function animateBackground() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      
-      for (let i = 0; i < particles.length; i++) {
-        particles[i].update();
-        particles[i].draw();
-      }
-      
-      connectParticles();
-      requestAnimationFrame(animateBackground);
-    }
-
-    window.addEventListener('resize', () => {
-      resizeCanvas();
-      initParticles();
-    });
-    
-    window.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-    });
-
-    resizeCanvas();
-    initParticles();
-    animateBackground();
-
-    // Scroll reveal
+    function animateBackground() { ctx.clearRect(0, 0, canvas.width, canvas.height); for (let i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw(); } connectParticles(); requestAnimationFrame(animateBackground); }
+    window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    resizeCanvas(); initParticles(); animateBackground();
     const revealElements = document.querySelectorAll('.reveal');
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
+    const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
     revealElements.forEach(el => observer.observe(el));
-
-    // Premium CV Download
-    document.getElementById('downloadCVBtn')?.addEventListener('click', () => {
-      const cvContent = `═══════════════════════════════════════════════════
-                    ALAM MIR TAZWAR
-═══════════════════════════════════════════════════
-
-📧 Email: tazwaralam01@gmail.com
-📍 Location: Malaysia
-🔗 LinkedIn: linkedin.com/in/alam-mir-tazwar
-🐙 GitHub: github.com/alam-ml
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎓 EDUCATION
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Bachelor of Computer Science (Software Engineering)
-Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)
-2023 – 2026 | CGPA: 3.7+ | Dean's List
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-⚡ TECHNICAL SKILLS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• AI/ML: TensorFlow, Keras, OpenCV, Scikit-learn, CNN
-• Languages: Python, Java, C, JavaScript, PHP, Dart
-• Web: Laravel, Flutter, REST APIs, Redis, Docker
-• Databases: MySQL, PostgreSQL, Firebase
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏆 FLAGSHIP PROJECTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-1. Car Damage Detection AI
-   → 14.2% mAP improvement | 31% fewer false negatives
-
-2. EcoSnap — Huawei Hackathon 2025 WINNER
-   → Top 3 out of 350+ international teams
-
-3. SamanSphere Enterprise System
-   → 40% query latency reduction
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🏅 AWARDS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-• Winner, Huawei Hackathon 2025 (Top 3/350+ teams)
-• Dean's List Award (Multiple Semesters)
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 Open to: ML Engineering | Software Development
-Let's build something extraordinary.
-═══════════════════════════════════════════════════`;
-      const blob = new Blob([cvContent], { type: 'application/pdf' });
-      const url = URL.createObjectURL(blob);
-      window.open(url, '_blank');
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
-    });
+    document.getElementById('downloadCVBtn')?.addEventListener('click', () => { const cvContent = `═══════════════════════════════════════════════════\n                    ALAM MIR TAZWAR\n═══════════════════════════════════════════════════\n\n📧 Email: tazwaralam01@gmail.com\n📱 Phone: +60 10-465 0774\n📍 Location: Pekan, Pahang, Malaysia\n🌐 Portfolio: mirtazwar.github.io\n🔗 LinkedIn: linkedin.com/in/alam-mir-tazwar\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🎓 EDUCATION\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nBachelor of Computer Science (Software Engineering) Hons.\nUniversiti Malaysia Pahang Al-Sultan Abdullah (UMPSA) | 2023–Present\nFinal Year Project: Car Damage Detection (Python, TensorFlow, OpenCV)\n\nDiploma in Computer Science (Information Technology)\nUniversiti Selangor (UNISEL) | 2018–2022\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n💼 WORK EXPERIENCE\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nWeb Developer Intern — COMNET UNISEL (Sep 2021 – Dec 2021)\n• Developed 20+ full-stack WordPress websites\n• Managed SEO improvements and database integration\n• Conducted training for ~100 students\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🏆 FLAGSHIP PROJECTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n1. Car Damage Detection System — VGG16, TensorFlow, OpenCV\n2. EcoSnap — Huawei Hackathon 2025 WINNER (Best Game App)\n3. SamanSphere — Laravel-based summons payment platform\n4. DengueSense & Datathon Financial Forecasting\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n⚡ TECHNICAL SKILLS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nLanguages: Python, Java, C, JavaScript, PHP, Dart\nML/AI: TensorFlow, Keras, OpenCV, Scikit-learn\nWeb: Laravel, WordPress, HTML/CSS, MySQL\nTools: Power BI, AWS, Google Cloud\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🏅 CERTIFICATIONS & ACHIEVEMENTS\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n• Huawei Hackathon 2025 Winner (Best Game App)\n• Google Cloud Engineering Badge\n• AWS Cloud Practitioner Essentials\n• CCNA: Introduction to Networks\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n🗣️ LANGUAGES\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nEnglish (Fluent) | Bangla (Fluent) | Hindi (Intermediate) | Malay (Basic)\n\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\nOpen to opportunities in ML Engineering and Software Development.\n═══════════════════════════════════════════════════`; const blob = new Blob([cvContent], { type: 'application/pdf' }); const url = URL.createObjectURL(blob); window.open(url, '_blank'); setTimeout(() => URL.revokeObjectURL(url), 1000); });
   </script>
 </body>
 </html>
