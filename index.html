@@ -1,4 +1,4 @@
-Here is an HTML document that centers the profile section, pulls the "About Me" section closer to it, and adds a subtle animated cursor/scrolling background effect.
+Here is the complete HTML document with a larger profile section, bigger profile image, and animated text for the job title and call-to-action buttons.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -82,15 +82,15 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
     /* ========== CURSOR & SCROLL ANIMATED GLOW EFFECT ========== */
     .cursor-glow {
       position: fixed;
-      width: 450px;
-      height: 450px;
+      width: 550px;
+      height: 550px;
       border-radius: 50%;
       background: radial-gradient(circle, rgba(92, 156, 191, 0.12), transparent 70%);
       pointer-events: none;
       z-index: -1;
       transform: translate(-50%, -50%);
-      transition: transform 0.08s linear;
-      filter: blur(40px);
+      transition: transform 0.05s linear;
+      filter: blur(50px);
       will-change: transform;
     }
 
@@ -100,13 +100,13 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(92, 156, 191, 0.05), transparent 60%);
+      background: radial-gradient(ellipse at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(92, 156, 191, 0.06), transparent 65%);
       pointer-events: none;
       z-index: -1;
-      transition: background 0.15s ease;
+      transition: background 0.12s ease;
     }
 
-    /* ========== BACKGROUND ORBS (above video, below glow) ========== */
+    /* ========== BACKGROUND ORBS ========== */
     .bg-orb {
       position: fixed;
       top: 0;
@@ -237,27 +237,174 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
 
     /* ========== MAIN CONTENT ========== */
     .container {
-      max-width: 1280px;
+      max-width: 1400px;
       margin: 0 auto;
       padding: 0 2rem;
     }
     
-    /* Profile section - FULL VIEWPORT HEIGHT & CENTERED */
+    /* Profile section - BIGGER & CENTERED */
     #profile {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 4rem;
-      padding: 70px 0 30px;   /* reduced bottom padding to bring about section closer */
+      gap: 5rem;
+      padding: 70px 0 0;
       margin-bottom: 0;
     }
     
-    /* About section - reduced top margin/padding to sit closer to profile */
+    /* Bigger profile image container */
+    .section__pic-container {
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
+      padding: 6px;
+      box-shadow: 0 30px 45px -15px rgba(0,0,0,0.5), 0 0 0 2px rgba(92,156,191,0.2);
+      animation: float 5s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+    .section__pic-container:hover {
+      transform: scale(1.02);
+      box-shadow: 0 35px 55px -18px rgba(0,0,0,0.6), 0 0 0 3px rgba(92,156,191,0.4);
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    .section__pic-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    
+    /* Bigger text in profile */
+    .section__text {
+      text-align: left;
+      max-width: 650px;
+    }
+    .section__text h1 {
+      font-size: 4rem;
+      margin: 0.5rem 0;
+      background: linear-gradient(135deg, #ffffff, var(--accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+    }
+    
+    /* Animated text styling */
+    .animated-role {
+      font-size: 1.5rem;
+      color: var(--text-secondary);
+      min-height: 3rem;
+      margin: 0.5rem 0;
+    }
+    
+    .dynamic-text-wrapper {
+      display: inline-block;
+    }
+    
+    #dynamicRole {
+      color: var(--accent);
+      font-weight: 600;
+      position: relative;
+      display: inline-block;
+      border-right: 2px solid var(--accent);
+      padding-right: 8px;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: blinkCursor 0.75s step-end infinite;
+    }
+    
+    @keyframes blinkCursor {
+      0%, 100% { border-color: var(--accent); }
+      50% { border-color: transparent; }
+    }
+    
+    /* Animated button hover effects */
+    .btn-container {
+      display: flex;
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .btn {
+      padding: 0.9rem 2rem;
+      border-radius: 3rem;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      border: none;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.5s, height 0.5s;
+    }
+    .btn:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+    .btn-color-1 {
+      background: var(--accent);
+      color: white;
+      box-shadow: 0 4px 15px rgba(92, 156, 191, 0.3);
+    }
+    .btn-color-1:hover {
+      background: #4a8aad;
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(92, 156, 191, 0.4);
+    }
+    .btn-color-2 {
+      background: transparent;
+      border: 1.5px solid var(--accent);
+      color: var(--text-primary);
+    }
+    .btn-color-2:hover {
+      background: rgba(92, 156, 191, 0.1);
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    
+    /* Animated social icons */
+    #socials-container {
+      display: flex;
+      gap: 1.2rem;
+      margin-top: 1.5rem;
+    }
+    .icon {
+      width: 32px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      filter: brightness(0) invert(1);
+    }
+    .icon:hover {
+      transform: translateY(-5px) scale(1.1);
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(92,156,191,0.7));
+    }
+    
+    /* About section - pulled up */
     #about {
       padding-top: 0;
-      margin-top: -20px;
+      margin-top: -60px;
       position: relative;
+      z-index: 2;
+    }
+    
+    #experience, #projects, #contact {
+      padding-top: 3rem;
     }
     
     .section__text__p1 {
@@ -273,98 +420,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       margin-bottom: 2rem;
       letter-spacing: -0.02em;
     }
-    .btn-container {
-      display: flex;
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .btn {
-      padding: 0.75rem 1.8rem;
-      border-radius: 2.5rem;
-      font-weight: 550;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: var(--transition);
-      border: none;
-    }
-    .btn-color-1 {
-      background: var(--accent);
-      color: white;
-    }
-    .btn-color-1:hover {
-      background: #4a8aad;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 15px rgba(92, 156, 191, 0.3);
-    }
-    .btn-color-2 {
-      background: transparent;
-      border: 1px solid var(--accent);
-      color: var(--text-primary);
-    }
-    .btn-color-2:hover {
-      background: rgba(92, 156, 191, 0.1);
-      transform: translateY(-2px);
-    }
-   .icon {
-      width: 28px;
-      cursor: pointer;
-      transition: var(--transition);
-      filter: brightness(0) invert(1);
-    }
-
-    .icon:hover {
-      transform: translateY(-2px);
-      filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(92,156,191,0.6));
-    }
-
-    /* Profile Section - centered content */
-    .section__pic-container {
-      width: 280px;
-      height: 280px;
-      border-radius: 50%;
-      overflow: hidden;
-      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
-      padding: 4px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.4);
-      animation: float 5s ease-in-out infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-8px); }
-    }
-    .section__pic-container img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 50%;
-    }
-    .section__text {
-      text-align: left;
-      max-width: 550px;
-    }
-    .section__text h1 {
-      font-size: 3rem;
-      margin: 0.5rem 0;
-    }
-    .section__text__p2 {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-    }
-    #socials-container {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    /* About Section */
-    .section-container {
-      display: flex;
-      gap: 3rem;
-      flex-wrap: wrap;
-    }
-    .about-details-container {
-      flex: 2;
-    }
+    
     .about-containers {
       display: flex;
       gap: 1.5rem;
@@ -453,19 +509,6 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       border: 1px solid var(--border-light);
       justify-content: center;
     }
-    .contact-info-container {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-    .contact-info-container a {
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: var(--transition);
-    }
-    .contact-info-container a:hover {
-      color: var(--accent);
-    }
 
     /* Footer */
     footer {
@@ -478,10 +521,6 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
     footer .nav-links {
       justify-content: center;
       margin-bottom: 1rem;
-    }
-    footer p {
-      font-size: 0.75rem;
-      color: var(--text-secondary);
     }
 
     /* Arrow */
@@ -501,6 +540,36 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
     }
 
     /* Responsive */
+    @media (max-width: 1000px) {
+      #profile {
+        gap: 3rem;
+        flex-direction: column;
+        text-align: center;
+        padding: 80px 0 0;
+      }
+      .section__pic-container {
+        width: 280px;
+        height: 280px;
+      }
+      .section__text {
+        text-align: center;
+      }
+      .section__text h1 {
+        font-size: 3rem;
+      }
+      .animated-role {
+        font-size: 1.2rem;
+      }
+      .btn-container {
+        justify-content: center;
+      }
+      #socials-container {
+        justify-content: center;
+      }
+      #about {
+        margin-top: -30px;
+      }
+    }
     @media (max-width: 900px) {
       #desktop-nav {
         display: none;
@@ -509,41 +578,11 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
         display: flex;
         padding: 0 1.5rem;
       }
-      #profile {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-        min-height: 100vh;
-        padding: 80px 0 20px;
-      }
-      #about {
-        margin-top: 0;
-        padding-top: 1rem;
-      }
-      .section__text {
-        text-align: center;
-      }
-      .btn-container {
-        justify-content: center;
-      }
-      #socials-container {
-        justify-content: center;
-      }
       .title {
         font-size: 2rem;
       }
-      .section__text h1 {
-        font-size: 2.2rem;
-      }
-      .section-container {
-        flex-direction: column;
-      }
       .about-containers {
         flex-direction: column;
-      }
-      .contact-info-upper-container {
-        flex-direction: column;
-        align-items: center;
       }
     }
     @media (max-width: 600px) {
@@ -551,15 +590,21 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
         padding: 0 1rem;
       }
       .section__pic-container {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
       }
-      #profile {
-        min-height: 100vh;
-        padding: 70px 0 20px;
+      .section__text h1 {
+        font-size: 2.2rem;
+      }
+      .animated-role {
+        font-size: 1rem;
+      }
+      .btn {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.85rem;
       }
       #about {
-        margin-top: -10px;
+        margin-top: -20px;
       }
     }
 
@@ -569,7 +614,6 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       transform: translateY(40px) scale(0.98);
       transition: opacity 0.7s ease, transform 0.7s ease;
     }
-
     .reveal.visible {
       opacity: 1;
       transform: translateY(0) scale(1);
@@ -590,7 +634,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
   <div class="cursor-glow" id="cursorGlow"></div>
   <div class="scroll-glow" id="scrollGlow"></div>
 
-  <!-- animated floating orbs (above video) -->
+  <!-- animated floating orbs -->
   <div class="bg-orb">
     <div class="orb-1"></div>
     <div class="orb-2"></div>
@@ -632,7 +676,11 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Alam Mir Tazwar</h1>
-        <p class="section__text__p2">Software Engineering Student | ML & Web Development</p>
+        <div class="animated-role">
+          <span class="dynamic-text-wrapper">
+            <span id="dynamicRole"></span>
+          </span>
+        </div>
         <div class="btn-container">
           <button class="btn btn-color-2" id="downloadCVBtn">Download CV</button>
           <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
@@ -648,9 +696,6 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="section-container">
-        <div class="section__pic-container">
-          <img src="./assets/about-pic.png" alt="About picture" class="about-pic" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 200 200\'%3E%3Crect width=\'200\' height=\'200\' fill=\'%231a2530\'/%3E%3Ctext x=\'100\' y=\'110\' text-anchor=\'middle\' fill=\'%235c9cbf\' font-size=\'20\'%3EPhoto%3C/text%3E%3C/svg%3E'">
-        </div>
         <div class="about-details-container">
           <div class="about-containers">
             <div class="details-container">
@@ -678,7 +723,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2 class="experience-sub-title">Programming & Development</h2>
+            <h2>Programming & Development</h2>
             <div class="article-container">
               <article><h3>Python</h3><p>Advanced</p></article>
               <article><h3>Java</h3><p>Intermediate</p></article>
@@ -690,7 +735,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
             </div>
           </div>
           <div class="details-container">
-            <h2 class="experience-sub-title">ML & Tools</h2>
+            <h2>ML & Tools</h2>
             <div class="article-container">
               <article><h3>TensorFlow/Keras</h3><p>Advanced</p></article>
               <article><h3>OpenCV</h3><p>Intermediate</p></article>
@@ -713,11 +758,11 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
         <div class="about-containers">
           <div class="details-container color-container">
             <div class="article-container">
-              <img src="./assets/project-1.png" class="project-img" onerror="this.style.background='#1a2530';this.alt='Car Damage Detection'">
+              <img src="./assets/project-1.png" class="project-img" onerror="this.style.background='#1a2530'">
             </div>
             <h2 class="project-title">Car Damage Detection</h2>
-            <p style="text-align:center;">VGG16 optimization for subtle damage detection. <strong>14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
-            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem; flex-wrap:wrap;">
+            <p style="text-align:center;">VGG16 optimization. <strong>14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
+            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">TensorFlow</span>
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">OpenCV</span>
             </div>
@@ -727,7 +772,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
               <img src="./assets/project-2.png" class="project-img" onerror="this.style.background='#1a2530'">
             </div>
             <h2 class="project-title">EcoSnap App</h2>
-            <p style="text-align:center;">Flutter-based gamified sustainability platform. <strong>Winner - Huawei Hackathon 2025</strong> (top 3/350+ teams).</p>
+            <p style="text-align:center;">Gamified sustainability platform. <strong>Winner - Huawei Hackathon 2025</strong>.</p>
             <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Flutter</span>
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Firebase</span>
@@ -738,7 +783,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
               <img src="./assets/project-3.png" class="project-img" onerror="this.style.background='#1a2530'">
             </div>
             <h2 class="project-title">SamanSphere</h2>
-            <p style="text-align:center;">Centralized summons system. <strong>40% query latency reduction</strong> via optimized indexing and caching.</p>
+            <p style="text-align:center;">Centralized summons system. <strong>40% query latency reduction</strong>.</p>
             <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Laravel</span>
               <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">MySQL</span>
@@ -790,6 +835,49 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
       if (icon) icon.classList.toggle('open');
     }
 
+    // ========== ANIMATED TYPING EFFECT ==========
+    const roles = [
+      "Software Engineering Student",
+      "ML Engineer",
+      "Web Developer",
+      "AI Enthusiast"
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const dynamicElement = document.getElementById("dynamicRole");
+    
+    function typeEffect() {
+      const currentRole = roles[roleIndex];
+      if (isDeleting) {
+        dynamicElement.textContent = currentRole.substring(0, charIndex - 1);
+        charIndex--;
+      } else {
+        dynamicElement.textContent = currentRole.substring(0, charIndex + 1);
+        charIndex++;
+      }
+      
+      if (!isDeleting && charIndex === currentRole.length) {
+        isDeleting = true;
+        setTimeout(typeEffect, 2000);
+        return;
+      }
+      
+      if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        roleIndex = (roleIndex + 1) % roles.length;
+        setTimeout(typeEffect, 300);
+        return;
+      }
+      
+      const speed = isDeleting ? 50 : 100;
+      setTimeout(typeEffect, speed);
+    }
+    
+    if (dynamicElement) {
+      typeEffect();
+    }
+
     // Cursor & Scroll Animated Glow Effects
     const cursorGlow = document.getElementById('cursorGlow');
     const scrollGlow = document.getElementById('scrollGlow');
@@ -799,29 +887,25 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
         const x = e.clientX;
         const y = e.clientY;
         cursorGlow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-        
-        // Update CSS custom properties for radial gradient that follows cursor + scroll
         document.documentElement.style.setProperty('--cursor-x', x + 'px');
         document.documentElement.style.setProperty('--cursor-y', y + 'px');
         if (scrollGlow) {
-          scrollGlow.style.background = `radial-gradient(ellipse at ${x}px ${y}px, rgba(92, 156, 191, 0.08), transparent 65%)`;
+          scrollGlow.style.background = `radial-gradient(ellipse at ${x}px ${y}px, rgba(92, 156, 191, 0.09), transparent 70%)`;
         }
       });
     }
     
-    // Enhance scroll effect - dynamic intensity
+    // Scroll effect
     window.addEventListener('scroll', () => {
       const scrollY = window.scrollY;
       const maxScroll = document.body.scrollHeight - window.innerHeight;
       const scrollPercent = scrollY / maxScroll;
       
-      // Subtle background shift based on scroll position
       if (scrollGlow) {
-        const intensity = 0.05 + (scrollPercent * 0.08);
-        scrollGlow.style.opacity = Math.min(0.3, 0.1 + intensity);
+        const intensity = 0.05 + (scrollPercent * 0.1);
+        scrollGlow.style.opacity = Math.min(0.35, 0.1 + intensity);
       }
       
-      // previous orb parallax effect
       const orb = document.querySelector('.bg-orb');
       if (orb) {
         orb.style.transform = `translateY(${scrollY * 0.08}px) scale(${1 + scrollY * 0.0002})`;
@@ -840,7 +924,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
             if (res.ok) {
               window.open(pdfUrl, '_blank');
             } else {
-              const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\nGitHub: github.com/alam-ml | LinkedIn: linkedin.com/in/alam-mir-tazwar\n\nEDUCATION\nBachelor of Computer Science (Software Engineering) | UMPSA (2023–2026)\nCGPA: 3.7+\n\nTECHNICAL SKILLS\n• ML: TensorFlow, Keras, OpenCV, Scikit-learn, CNN/VGG16\n• Languages: Python, Java, C, JavaScript, PHP, Dart\n• Web/Backend: Laravel, MySQL, Flutter, REST APIs\n• Tools: Git, AWS (basic), Power BI\n\nKEY PROJECTS\n1. Car Damage Detection (VGG16 Optimization)\n   - 14.2% mAP improvement, 31% reduction in false negatives\n   - Transfer learning + targeted augmentation\n2. EcoSnap App — Winner, Huawei Hackathon 2025\n3. SamanSphere — 40% query latency reduction\n\nAWARDS\n• Winner, Huawei Hackathon 2025 (top 3/350+ teams)\n\nAvailable for ML Engineering and Software Development roles.`;
+              const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\n\nEDUCATION: Bachelor of CS (Software Engineering) | UMPSA (2023–2026) | CGPA: 3.7+\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL, Flutter\n\nPROJECTS:\n• Car Damage Detection: 14.2% mAP improvement\n• EcoSnap App: Winner - Huawei Hackathon 2025\n• SamanSphere: 40% query latency reduction\n\nAWARDS: Huawei Hackathon 2025 Winner (top 3/350+ teams)`;
               const blob = new Blob([cvContent], { type: 'application/pdf' });
               const url = URL.createObjectURL(blob);
               window.open(url, '_blank');
@@ -848,7 +932,7 @@ Here is an HTML document that centers the profile section, pulls the "About Me" 
             }
           })
           .catch(() => {
-            const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\nEmail: tazwaralam01@gmail.com | Malaysia\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL\nPROJECTS: Car Damage Detection (14.2% mAP improvement), EcoSnap (Hackathon Winner)\nEDUCATION: UMPSA, CS Software Engineering\nAvailable for internship/ML roles.`;
+            const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\nEmail: tazwaralam01@gmail.com | Malaysia\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL\nPROJECTS: Car Damage Detection (14.2% mAP improvement), EcoSnap (Hackathon Winner)\nEDUCATION: UMPSA, CS Software Engineering`;
             const blob = new Blob([cvContent], { type: 'application/pdf' });
             const url = URL.createObjectURL(blob);
             window.open(url, '_blank');
