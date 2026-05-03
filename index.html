@@ -478,14 +478,15 @@
 
     /* Reveal Animation */
     .reveal {
-      opacity: 0;
-      transform: translateY(25px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+  opacity: 0;
+  transform: translateY(40px) scale(0.98);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
   </style>
 </head>
 <body>
@@ -743,8 +744,9 @@ window.addEventListener('scroll', () => {
   const orb = document.querySelector('.bg-orb');
 
   if (orb) {
-    orb.style.transform = `translateY(${scrollY * 0.2}px) scale(${1 + scrollY * 0.0003})`;
-    orb.style.opacity = 0.4 + (scrollY * 0.0005);
+    orb.style.transform = `translateY(${scrollY * 0.08}px) scale(${1 + scrollY * 0.0002})`;
+    const opacity = Math.min(0.4 + scrollY * 0.0005, 0.7);
+orb.style.opacity = opacity;
   }
 });
 </script>
