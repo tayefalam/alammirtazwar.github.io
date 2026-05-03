@@ -221,11 +221,16 @@
       background: rgba(92, 156, 191, 0.1);
       transform: translateY(-2px);
     }
-    .icon {
-      width: 28px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
+   .icon {
+  width: 28px;
+  cursor: pointer;
+  transition: var(--transition);
+  filter: brightness(0) invert(1); /* 👈 add this line */
+}
+
+.icon:hover {
+  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(92,156,191,0.6));
+}
     .icon:hover {
       transform: translateY(-2px);
       filter: brightness(1.2);
