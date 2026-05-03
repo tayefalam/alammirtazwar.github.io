@@ -1,3 +1,5 @@
+Here is a complete, ultra-premium HTML portfolio with a cinematic particle field background that commands attention—designed to impress top-tier recruiters.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +11,6 @@
   <title>Alam Mir Tazwar | Software Engineer | ML & Web Dev</title>
   
   <style>
-    /* ========== GLOBAL RESET & VARIABLES ========== */
     * {
       margin: 0;
       padding: 0;
@@ -17,191 +18,152 @@
     }
 
     :root {
-      --primary-bg: #0a0d14;
-      --secondary-bg: #11161f;
-      --card-bg: rgba(18, 26, 36, 0.7);
-      --text-primary: #edf2f7;
-      --text-secondary: #a0b8cc;
-      --accent: #5c9cbf;
-      --accent-glow: rgba(92, 156, 191, 0.2);
-      --border-light: rgba(72, 92, 112, 0.25);
-      --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      --cursor-x: 0px;
-      --cursor-y: 0px;
+      --text-primary: #FFFFFF;
+      --text-secondary: #B0C4DE;
+      --accent: #5C9CBF;
+      --accent-glow: rgba(92, 156, 191, 0.3);
+      --border-light: rgba(255, 255, 255, 0.1);
+      --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      --card-bg: rgba(10, 15, 25, 0.6);
     }
 
     body {
-      background-color: var(--primary-bg);
+      background-color: #05080f;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
       color: var(--text-primary);
       line-height: 1.5;
       scroll-behavior: smooth;
-      -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    /* ========== PREMIUM BACKGROUND VIDEO - CINEMATIC TECH FLOW ========== */
-    .video-background {
+    /* ========== CINEMATIC 3D PARTICLE FIELD BACKGROUND ========== */
+    #canvas-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: -3;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .video-background video {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      min-width: 100%;
-      min-height: 100%;
-      width: auto;
-      height: auto;
-      transform: translateX(-50%) translateY(-50%);
-      object-fit: cover;
-      filter: blur(2px) brightness(0.6) saturate(0.8);
-      opacity: 0.4;
-    }
-
-    .video-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, rgba(10, 13, 20, 0.85), rgba(10, 13, 20, 0.7));
       z-index: -2;
+      display: block;
+    }
+    
+    /* Gradient overlay for depth and text readability */
+    .gradient-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at 50% 50%, rgba(5, 8, 15, 0.3) 0%, rgba(5, 8, 15, 0.7) 100%);
+      z-index: -1;
       pointer-events: none;
     }
-
-    /* ========== CURSOR & SCROLL ANIMATED GLOW EFFECT ========== */
-    .cursor-glow {
+    
+    /* Premium light beam sweep */
+    .light-beam {
       position: fixed;
-      width: 550px;
-      height: 550px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(92, 156, 191, 0.12), transparent 70%);
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, 
+        transparent 0%, 
+        transparent 35%,
+        rgba(92, 156, 191, 0.04) 40%,
+        rgba(92, 156, 191, 0.08) 45%,
+        rgba(92, 156, 191, 0.12) 50%,
+        rgba(92, 156, 191, 0.08) 55%,
+        rgba(92, 156, 191, 0.04) 60%,
+        transparent 65%,
+        transparent 100%
+      );
+      animation: lightSweep 14s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
+    }
+    
+    @keyframes lightSweep {
+      0% { transform: translateX(-30%); opacity: 0; }
+      50% { transform: translateX(0%); opacity: 1; }
+      100% { transform: translateX(30%); opacity: 0; }
+    }
+    
+    /* Subtle vignette for focus */
+    .vignette {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    /* Premium cursor glow */
+    .cursor-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(92, 156, 191, 0.08), transparent 70%);
+      pointer-events: none;
+      z-index: 1;
       transform: translate(-50%, -50%);
-      transition: transform 0.05s linear;
+      transition: transform 0.03s linear;
       filter: blur(50px);
       will-change: transform;
     }
 
-    .scroll-glow {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: radial-gradient(ellipse at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(92, 156, 191, 0.06), transparent 65%);
-      pointer-events: none;
-      z-index: -1;
-      transition: background 0.12s ease;
-    }
-
-    /* ========== BACKGROUND ORBS ========== */
-    .bg-orb {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .orb-1, .orb-2, .orb-3 {
-      position: absolute;
-      border-radius: 50%;
-      filter: blur(70px);
-      opacity: 0.3;
-      animation: floatSlow 25s ease-in-out infinite;
-    }
-    .orb-1 {
-      top: 10%;
-      left: -10%;
-      width: 50vw;
-      height: 50vw;
-      max-width: 500px;
-      background: radial-gradient(circle, rgba(92, 156, 191, 0.25), transparent);
-      animation-delay: 0s;
-    }
-    .orb-2 {
-      bottom: 0;
-      right: -10%;
-      width: 45vw;
-      height: 45vw;
-      max-width: 450px;
-      background: radial-gradient(circle, rgba(80, 140, 170, 0.2), transparent);
-      animation-delay: -8s;
-    }
-    .orb-3 {
-      top: 40%;
-      left: 25%;
-      width: 35vw;
-      height: 35vw;
-      max-width: 380px;
-      background: radial-gradient(circle, rgba(65, 120, 150, 0.15), transparent);
-      animation-delay: -15s;
-    }
-    @keyframes floatSlow {
-      0%, 100% { transform: translate(0, 0) scale(1); }
-      33% { transform: translate(3%, -2%) scale(1.05); }
-      66% { transform: translate(-2%, 3%) scale(0.98); }
-    }
-
-    /* ========== NAVIGATION ========== */
-    nav, .nav-links {
-      display: flex;
-    }
+    /* ========== NAVIGATION - LUXURY STYLE ========== */
     nav {
+      display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 70px;
+      height: 80px;
       width: 100%;
-      padding: 0 3rem;
-      background: rgba(10, 13, 20, 0.85);
-      backdrop-filter: blur(12px);
+      padding: 0 4rem;
+      background: rgba(5, 8, 15, 0.7);
+      backdrop-filter: blur(20px);
       position: fixed;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid rgba(92, 156, 191, 0.2);
     }
+    
     .logo {
-      font-size: 1.4rem;
-      font-weight: 600;
-      background: linear-gradient(135deg, #fff, var(--accent));
+      font-size: 1.6rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF, var(--accent));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      letter-spacing: -0.3px;
+      letter-spacing: -0.5px;
     }
+    
     .nav-links {
-      gap: 2rem;
+      display: flex;
+      gap: 2.5rem;
       list-style: none;
     }
+    
     .nav-links a {
       color: var(--text-secondary);
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 500;
       transition: var(--transition);
+      letter-spacing: 0.3px;
     }
+    
     .nav-links a:hover {
       color: var(--accent);
     }
+    
     #hamburger-nav {
       display: none;
     }
-    .hamburger-menu {
-      position: relative;
-      cursor: pointer;
-    }
+    
     .hamburger-icon span {
       display: block;
       width: 25px;
@@ -210,67 +172,67 @@
       margin: 5px 0;
       transition: var(--transition);
     }
+    
     .menu-links {
       position: absolute;
       top: 100%;
       right: 0;
-      background: rgba(17, 22, 31, 0.98);
-      backdrop-filter: blur(12px);
-      width: 200px;
+      background: rgba(5, 8, 15, 0.95);
+      backdrop-filter: blur(20px);
+      width: 220px;
       border-radius: 1rem;
-      padding: 1rem;
+      padding: 1.2rem;
       display: none;
       flex-direction: column;
-      gap: 0.8rem;
+      gap: 1rem;
       list-style: none;
-      border: 1px solid var(--border-light);
+      border: 1px solid rgba(92, 156, 191, 0.2);
     }
+    
     .menu-links.open {
       display: flex;
     }
+    
     .menu-links a {
       color: var(--text-secondary);
       text-decoration: none;
+      font-size: 1rem;
     }
 
     /* ========== MAIN CONTENT ========== */
     .container {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 0 2rem;
+      padding: 0 3rem;
+      position: relative;
+      z-index: 2;
     }
     
-    /* Profile section - BIGGER & CENTERED */
     #profile {
       min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 5rem;
-      padding: 70px 0 0;
-      margin-bottom: 0;
+      padding: 80px 0 0;
     }
     
-    /* Bigger profile image container */
     .section__pic-container {
       width: 380px;
       height: 380px;
       border-radius: 50%;
       overflow: hidden;
       background: linear-gradient(135deg, #2c5a7a, #1a3f55);
-      padding: 6px;
-      box-shadow: 0 30px 45px -15px rgba(0,0,0,0.5), 0 0 0 2px rgba(92,156,191,0.2);
-      animation: float 5s ease-in-out infinite;
-      transition: transform 0.3s ease;
+      padding: 5px;
+      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.6), 0 0 0 2px rgba(92,156,191,0.3);
+      animation: floatPremium 6s ease-in-out infinite;
     }
-    .section__pic-container:hover {
-      transform: scale(1.02);
-      box-shadow: 0 35px 55px -18px rgba(0,0,0,0.6), 0 0 0 3px rgba(92,156,191,0.4);
-    }
-    @keyframes float {
+    
+    @keyframes floatPremium {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+      50% { transform: translateY(-12px); }
     }
+    
     .section__pic-container img {
       width: 100%;
       height: 100%;
@@ -278,42 +240,33 @@
       border-radius: 50%;
     }
     
-    /* Bigger text in profile */
     .section__text {
       text-align: left;
       max-width: 650px;
     }
+    
     .section__text h1 {
-      font-size: 4rem;
+      font-size: 4.5rem;
       margin: 0.5rem 0;
-      background: linear-gradient(135deg, #ffffff, var(--accent));
+      background: linear-gradient(135deg, #FFFFFF, var(--accent));
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      letter-spacing: -0.02em;
+      letter-spacing: -1px;
     }
     
-    /* Animated text styling */
     .animated-role {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: var(--text-secondary);
-      min-height: 3rem;
-      margin: 0.5rem 0;
-    }
-    
-    .dynamic-text-wrapper {
-      display: inline-block;
+      min-height: 3.5rem;
+      margin: 0.8rem 0;
     }
     
     #dynamicRole {
       color: var(--accent);
       font-weight: 600;
-      position: relative;
-      display: inline-block;
-      border-right: 2px solid var(--accent);
-      padding-right: 8px;
-      white-space: nowrap;
-      overflow: hidden;
+      border-right: 3px solid var(--accent);
+      padding-right: 10px;
       animation: blinkCursor 0.75s step-end infinite;
     }
     
@@ -322,305 +275,278 @@
       50% { border-color: transparent; }
     }
     
-    /* Animated button hover effects */
     .btn-container {
       display: flex;
       gap: 1.5rem;
       margin: 2rem 0;
     }
+    
     .btn {
-      padding: 0.9rem 2rem;
+      padding: 1rem 2.2rem;
       border-radius: 3rem;
       font-weight: 600;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transition: var(--transition);
       border: none;
       position: relative;
       overflow: hidden;
+      z-index: 1;
     }
+    
     .btn::before {
       content: '';
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.5s, height 0.5s;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+      z-index: -1;
     }
+    
     .btn:hover::before {
-      width: 300px;
-      height: 300px;
+      left: 100%;
     }
+    
     .btn-color-1 {
       background: var(--accent);
       color: white;
-      box-shadow: 0 4px 15px rgba(92, 156, 191, 0.3);
+      box-shadow: 0 4px 20px rgba(92, 156, 191, 0.4);
     }
+    
     .btn-color-1:hover {
       background: #4a8aad;
       transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(92, 156, 191, 0.4);
+      box-shadow: 0 8px 30px rgba(92, 156, 191, 0.5);
     }
+    
     .btn-color-2 {
       background: transparent;
       border: 1.5px solid var(--accent);
       color: var(--text-primary);
     }
+    
     .btn-color-2:hover {
       background: rgba(92, 156, 191, 0.1);
       transform: translateY(-3px);
       border-color: var(--accent);
     }
     
-    /* Animated social icons */
-    #socials-container {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 1.5rem;
-    }
     .icon {
-      width: 32px;
+      width: 34px;
       cursor: pointer;
-      transition: all 0.3s ease;
+      transition: var(--transition);
       filter: brightness(0) invert(1);
     }
+    
     .icon:hover {
       transform: translateY(-5px) scale(1.1);
-      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(92,156,191,0.7));
+      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(92,156,191,0.8));
     }
     
-    /* About section - pulled up */
+    #socials-container {
+      display: flex;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
     #about {
       padding-top: 0;
-      margin-top: -60px;
-      position: relative;
-      z-index: 2;
+      margin-top: -80px;
     }
     
     #experience, #projects, #contact {
-      padding-top: 3rem;
+      padding-top: 4rem;
     }
     
     .section__text__p1 {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
+      font-size: 0.9rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.5rem;
-    }
-    .title {
-      font-size: 2.5rem;
-      font-weight: 600;
-      margin-bottom: 2rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 0.8rem;
     }
     
-    .about-containers {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
+    .title {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.5px;
     }
+    
+    .about-containers, .experience-details-container {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    
     .details-container {
       background: var(--card-bg);
-      backdrop-filter: blur(8px);
+      backdrop-filter: blur(12px);
       border-radius: 1.5rem;
-      padding: 1.5rem;
-      border: 1px solid var(--border-light);
+      padding: 1.8rem;
+      border: 1px solid rgba(92, 156, 191, 0.2);
       transition: var(--transition);
       flex: 1;
-      min-width: 180px;
+      min-width: 200px;
     }
+    
     .details-container:hover {
       border-color: var(--accent);
-      transform: translateY(-4px);
-      background: rgba(24, 34, 46, 0.8);
+      transform: translateY(-5px);
+      background: rgba(20, 30, 45, 0.7);
+      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.3);
     }
+    
+    .details-container h3 {
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+      color: var(--accent);
+    }
+    
     .text-container p {
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.8;
+      font-size: 1.05rem;
     }
-
-    /* Experience / Skills */
-    .experience-details-container {
-      width: 100%;
-    }
+    
     .article-container {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       margin-top: 1rem;
     }
+    
     article {
-      background: rgba(92, 156, 191, 0.1);
-      padding: 0.4rem 1rem;
+      background: rgba(92, 156, 191, 0.12);
+      padding: 0.5rem 1.2rem;
       border-radius: 2rem;
       display: flex;
-      gap: 0.5rem;
+      gap: 0.8rem;
       align-items: baseline;
       transition: var(--transition);
-    }
-    article:hover {
-      background: rgba(92, 156, 191, 0.25);
-      transform: scale(1.02);
-    }
-    article h3 {
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 500;
     }
-    article p {
-      font-size: 0.7rem;
-      color: var(--accent);
+    
+    article:hover {
+      background: rgba(92, 156, 191, 0.3);
+      transform: scale(1.03);
     }
-
-    /* Projects */
-    .project-img {
-      width: 100%;
-      border-radius: 1rem;
-      aspect-ratio: 16/9;
-      object-fit: cover;
-      background: #1a2530;
-      margin-bottom: 1rem;
-    }
-    .color-container {
-      background: rgba(18, 26, 36, 0.6);
-      backdrop-filter: blur(4px);
-    }
+    
     .project-title {
-      font-size: 1.2rem;
-      margin: 0.5rem 0;
+      font-size: 1.3rem;
+      margin: 0.8rem 0;
     }
-
-    /* ========== CONTACT SECTION - FIXED COLORS ========== */
+    
     .contact-info-upper-container {
       display: flex;
       gap: 2.5rem;
       flex-wrap: wrap;
-      background: rgba(18, 26, 36, 0.75);
+      background: var(--card-bg);
       backdrop-filter: blur(12px);
       border-radius: 2rem;
       padding: 2rem 2.5rem;
-      border: 1px solid rgba(92, 156, 191, 0.3);
+      border: 1px solid rgba(92, 156, 191, 0.2);
       justify-content: center;
-      transition: all 0.3s ease;
+      transition: var(--transition);
     }
     
     .contact-info-upper-container:hover {
       border-color: var(--accent);
-      box-shadow: 0 8px 25px rgba(92, 156, 191, 0.15);
     }
     
     .contact-info-container {
       display: flex;
       align-items: center;
       gap: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 3rem;
-      transition: all 0.3s ease;
-      background: rgba(10, 13, 20, 0.4);
     }
     
-    .contact-info-container:hover {
-      background: rgba(92, 156, 191, 0.15);
-      transform: translateY(-2px);
-    }
-    
-    .contact-info-container .icon {
-      width: 28px;
-      height: 28px;
-      filter: brightness(0) invert(1);
-      opacity: 0.9;
-    }
-    
-    .contact-info-container p {
-      margin: 0;
+    .contact-info-container span {
+      font-size: 1.8rem;
     }
     
     .contact-info-container a {
       color: var(--text-primary);
       text-decoration: none;
+      transition: var(--transition);
       font-size: 1rem;
-      font-weight: 500;
-      transition: all 0.3s ease;
-      letter-spacing: -0.2px;
     }
     
     .contact-info-container a:hover {
       color: var(--accent);
-      text-decoration: none;
     }
-
-    /* Footer */
+    
     footer {
-      background: rgba(10, 13, 20, 0.9);
-      padding: 1.5rem;
+      background: rgba(5, 8, 15, 0.9);
+      padding: 2rem;
       text-align: center;
-      border-top: 1px solid var(--border-light);
-      margin-top: 2rem;
+      border-top: 1px solid rgba(92, 156, 191, 0.2);
+      margin-top: 3rem;
     }
+    
     footer .nav-links {
       justify-content: center;
       margin-bottom: 1rem;
     }
-
-    /* Arrow */
+    
     .arrow {
-      width: 30px;
-      margin-top: 2rem;
+      width: 35px;
+      margin-top: 2.5rem;
       cursor: pointer;
-      opacity: 0.7;
+      opacity: 0.6;
       transition: var(--transition);
       display: block;
       margin-left: auto;
       margin-right: auto;
     }
+    
     .arrow:hover {
       opacity: 1;
-      transform: translateY(3px);
+      transform: translateY(5px);
     }
-
-    /* Responsive */
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
     @media (max-width: 1000px) {
       #profile {
-        gap: 3rem;
         flex-direction: column;
         text-align: center;
-        padding: 80px 0 0;
+        gap: 2.5rem;
       }
       .section__pic-container {
         width: 280px;
         height: 280px;
       }
-      .section__text {
-        text-align: center;
-      }
       .section__text h1 {
         font-size: 3rem;
       }
-      .animated-role {
-        font-size: 1.2rem;
+      .section__text {
+        text-align: center;
       }
-      .btn-container {
-        justify-content: center;
-      }
-      #socials-container {
+      .btn-container, #socials-container {
         justify-content: center;
       }
       #about {
         margin-top: -30px;
       }
-      .contact-info-upper-container {
-        padding: 1.5rem;
-        gap: 1.5rem;
-      }
-      .contact-info-container {
-        padding: 0.4rem 0.8rem;
+      .title {
+        font-size: 2.3rem;
       }
     }
+    
     @media (max-width: 900px) {
       #desktop-nav {
         display: none;
@@ -629,13 +555,11 @@
         display: flex;
         padding: 0 1.5rem;
       }
-      .title {
-        font-size: 2rem;
-      }
-      .about-containers {
-        flex-direction: column;
+      nav {
+        padding: 0 1.5rem;
       }
     }
+    
     @media (max-width: 600px) {
       .container {
         padding: 0 1rem;
@@ -648,72 +572,37 @@
         font-size: 2.2rem;
       }
       .animated-role {
-        font-size: 1rem;
+        font-size: 1.1rem;
       }
       .btn {
         padding: 0.7rem 1.5rem;
         font-size: 0.85rem;
       }
-      #about {
-        margin-top: -20px;
+      .title {
+        font-size: 1.8rem;
       }
-      .contact-info-upper-container {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
-        padding: 1.5rem;
-      }
-      .contact-info-container {
-        justify-content: center;
-      }
-    }
-
-    /* Reveal Animation */
-    .reveal {
-      opacity: 0;
-      transform: translateY(40px) scale(0.98);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
     }
   </style>
 </head>
 <body>
 
-  <!-- ========== PREMIUM BACKGROUND VIDEO - ABSTRACT TECH PARTICLES ========== -->
-  <div class="video-background">
-    <video autoplay loop muted playsinline disableRemotePlayback>
-      <!-- Premium abstract digital particle background - smooth, elegant, tech-focused -->
-      <source src="https://assets.mixkit.co/videos/premium/mixkit-abstract-technology-particles-32620-large.mp4" type="video/mp4">
-      <!-- Fallback #1: Gradient particles flow -->
-      <source src="https://cdn.pixabay.com/video/2022/11/10/138646-773460805_large.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="video-overlay"></div>
-
-  <!-- Animated cursor & scroll glow effects -->
+  <!-- CINEMATIC 3D PARTICLE FIELD BACKGROUND -->
+  <canvas id="canvas-bg"></canvas>
+  <div class="gradient-overlay"></div>
+  <div class="light-beam"></div>
+  <div class="vignette"></div>
+  
+  <!-- Premium cursor glow -->
   <div class="cursor-glow" id="cursorGlow"></div>
-  <div class="scroll-glow" id="scrollGlow"></div>
-
-  <!-- animated floating orbs -->
-  <div class="bg-orb">
-    <div class="orb-1"></div>
-    <div class="orb-2"></div>
-    <div class="orb-3"></div>
-  </div>
 
   <nav id="desktop-nav">
     <div class="logo">Alam Mir Tazwar</div>
-    <div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <nav id="hamburger-nav">
@@ -722,27 +611,25 @@
       <div class="hamburger-icon" onclick="toggleMenu()">
         <span></span><span></span><span></span>
       </div>
-      <div class="menu-links">
+      <ul class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
         <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
-      </div>
+      </ul>
     </div>
   </nav>
 
   <div class="container">
     <section id="profile" class="reveal">
       <div class="section__pic-container">
-        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar profile picture" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%232c5a7a\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
+        <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%232c5a7a\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Alam Mir Tazwar</h1>
+        <h1>Alam Mir Tazwar</h1>
         <div class="animated-role">
-          <span class="dynamic-text-wrapper">
-            <span id="dynamicRole"></span>
-          </span>
+          <span id="dynamicRole"></span>
         </div>
         <div class="btn-container">
           <button class="btn btn-color-2" id="downloadCVBtn">Download CV</button>
@@ -758,24 +645,18 @@
     <section id="about" class="reveal">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
-      <div class="section-container">
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img src="./assets/experience.png" class="icon" onerror="this.style.display='none'">
-              <h3>Experience</h3>
-              <p>Web Developer Intern<br />COMNET UNISEL (2021)<br />ML Projects: 3+ deployed</p>
-            </div>
-            <div class="details-container">
-              <img src="./assets/education.png" class="icon" onerror="this.style.display='none'">
-              <h3>Education</h3>
-              <p>Bachelor of CS (Software Engineering)<br />UMPSA (2023–2026)<br />CGPA: 3.7+</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), specializing in Machine Learning and scalable web systems. Built production-ready CNN models achieving <strong>14.2% mAP improvement</strong> for damage detection. Winner of Huawei Hackathon 2025. Passionate about bridging ML optimization with real-world engineering constraints.</p>
-          </div>
+      <div class="about-containers">
+        <div class="details-container">
+          <h3>💼 Experience</h3>
+          <p>Web Developer Intern<br />COMNET UNISEL (2021)<br />ML Projects: 3+ deployed</p>
         </div>
+        <div class="details-container">
+          <h3>🎓 Education</h3>
+          <p>Bachelor of CS (Software Engineering)<br />UMPSA (2023–2026)<br />CGPA: 3.7+</p>
+        </div>
+      </div>
+      <div class="text-container">
+        <p>Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), specializing in Machine Learning and scalable web systems. Built production-ready CNN models achieving <strong>14.2% mAP improvement</strong> for damage detection. Winner of Huawei Hackathon 2025. Passionate about bridging ML optimization with real-world engineering constraints.</p>
       </div>
       <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#experience'" onerror="this.style.display='none'">
     </section>
@@ -786,27 +667,27 @@
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h2>Programming & Development</h2>
+            <h3>💻 Programming & Development</h3>
             <div class="article-container">
-              <article><h3>Python</h3><p>Advanced</p></article>
-              <article><h3>Java</h3><p>Intermediate</p></article>
-              <article><h3>C</h3><p>Intermediate</p></article>
-              <article><h3>HTML/CSS</h3><p>Advanced</p></article>
-              <article><h3>JavaScript</h3><p>Intermediate</p></article>
-              <article><h3>PHP</h3><p>Intermediate</p></article>
-              <article><h3>Flutter/Dart</h3><p>Intermediate</p></article>
+              <article><span>🐍 Python</span> <span>Advanced</span></article>
+              <article><span>☕ Java</span> <span>Intermediate</span></article>
+              <article><span>⚙️ C</span> <span>Intermediate</span></article>
+              <article><span>🌐 HTML/CSS</span> <span>Advanced</span></article>
+              <article><span>📜 JavaScript</span> <span>Intermediate</span></article>
+              <article><span>🐘 PHP</span> <span>Intermediate</span></article>
+              <article><span>📱 Flutter/Dart</span> <span>Intermediate</span></article>
             </div>
           </div>
           <div class="details-container">
-            <h2>ML & Tools</h2>
+            <h3>🤖 ML & Tools</h3>
             <div class="article-container">
-              <article><h3>TensorFlow/Keras</h3><p>Advanced</p></article>
-              <article><h3>OpenCV</h3><p>Intermediate</p></article>
-              <article><h3>Scikit-learn</h3><p>Intermediate</p></article>
-              <article><h3>MySQL</h3><p>Intermediate</p></article>
-              <article><h3>Laravel</h3><p>Intermediate</p></article>
-              <article><h3>Power BI</h3><p>Learning</p></article>
-              <article><h3>AWS Cloud</h3><p>Basic</p></article>
+              <article><span>🧠 TensorFlow/Keras</span> <span>Advanced</span></article>
+              <article><span>👁️ OpenCV</span> <span>Intermediate</span></article>
+              <article><span>📊 Scikit-learn</span> <span>Intermediate</span></article>
+              <article><span>🗄️ MySQL</span> <span>Intermediate</span></article>
+              <article><span>🚀 Laravel</span> <span>Intermediate</span></article>
+              <article><span>📈 Power BI</span> <span>Learning</span></article>
+              <article><span>☁️ AWS Cloud</span> <span>Basic</span></article>
             </div>
           </div>
         </div>
@@ -817,40 +698,29 @@
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-1.png" class="project-img" onerror="this.style.background='#1a2530'">
-            </div>
-            <h2 class="project-title">Car Damage Detection</h2>
-            <p style="text-align:center;">VGG16 optimization. <strong>14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
-            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">TensorFlow</span>
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">OpenCV</span>
-            </div>
+      <div class="about-containers">
+        <div class="details-container">
+          <h3 class="project-title">🚗 Car Damage Detection</h3>
+          <p>VGG16 optimization. <strong style="color:var(--accent)">14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
+          <div style="margin-top:1rem;">
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">TensorFlow</span>
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">OpenCV</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-2.png" class="project-img" onerror="this.style.background='#1a2530'">
-            </div>
-            <h2 class="project-title">EcoSnap App</h2>
-            <p style="text-align:center;">Gamified sustainability platform. <strong>Winner - Huawei Hackathon 2025</strong>.</p>
-            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Flutter</span>
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Firebase</span>
-            </div>
+        </div>
+        <div class="details-container">
+          <h3 class="project-title">🌱 EcoSnap App</h3>
+          <p><strong style="color:var(--accent)">Winner - Huawei Hackathon 2025</strong> (top 3/350+ teams). Gamified sustainability platform.</p>
+          <div style="margin-top:1rem;">
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Flutter</span>
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Firebase</span>
           </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-3.png" class="project-img" onerror="this.style.background='#1a2530'">
-            </div>
-            <h2 class="project-title">SamanSphere</h2>
-            <p style="text-align:center;">Centralized summons system. <strong>40% query latency reduction</strong>.</p>
-            <div style="display:flex; justify-content:center; gap:0.5rem; margin-top:0.8rem;">
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">Laravel</span>
-              <span style="font-size:0.65rem; background:rgba(92,156,191,0.2); padding:0.2rem 0.6rem; border-radius:1rem;">MySQL</span>
-            </div>
+        </div>
+        <div class="details-container">
+          <h3 class="project-title">📋 SamanSphere</h3>
+          <p>Centralized summons system. <strong style="color:var(--accent)">40% query latency reduction</strong> via optimized caching.</p>
+          <div style="margin-top:1rem;">
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Laravel</span>
+            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">MySQL</span>
           </div>
         </div>
       </div>
@@ -862,15 +732,15 @@
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
-          <img src="./assets/email.png" class="icon contact-icon" onerror="this.style.display='none'">
+          <span>📧</span>
           <p><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></p>
         </div>
         <div class="contact-info-container">
-          <img src="./assets/linkedin.png" class="icon contact-icon" onerror="this.style.display='none'">
+          <span>🔗</span>
           <p><a href="https://www.linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></p>
         </div>
         <div class="contact-info-container">
-          <img src="./assets/github.png" class="icon contact-icon" onerror="this.style.display='none'">
+          <span>🐙</span>
           <p><a href="https://github.com/alam-ml" target="_blank">github.com/alam-ml</a></p>
         </div>
       </div>
@@ -878,39 +748,28 @@
   </div>
 
   <footer>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <p>Copyright &#169; 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <p>Copyright © 2026 Alam Mir Tazwar. All Rights Reserved.</p>
   </footer>
 
   <script>
-    // Toggle mobile menu
     function toggleMenu() {
       const menu = document.querySelector('.menu-links');
-      const icon = document.querySelector('.hamburger-icon');
       if (menu) menu.classList.toggle('open');
-      if (icon) icon.classList.toggle('open');
     }
 
-    // ========== ANIMATED TYPING EFFECT ==========
-    const roles = [
-      "Software Engineering Student",
-      "ML Engineer",
-      "Web Developer",
-      "AI Enthusiast"
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
+    // Animated typing effect
+    const roles = ["Software Engineering Student", "ML Engineer", "Web Developer", "AI Enthusiast"];
+    let roleIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicRole");
     
     function typeEffect() {
+      if (!dynamicElement) return;
       const currentRole = roles[roleIndex];
       if (isDeleting) {
         dynamicElement.textContent = currentRole.substring(0, charIndex - 1);
@@ -933,78 +792,123 @@
         return;
       }
       
-      const speed = isDeleting ? 50 : 100;
-      setTimeout(typeEffect, speed);
+      setTimeout(typeEffect, isDeleting ? 50 : 100);
     }
     
-    if (dynamicElement) {
-      typeEffect();
-    }
+    typeEffect();
 
-    // Cursor & Scroll Animated Glow Effects
+    // Premium cursor glow
     const cursorGlow = document.getElementById('cursorGlow');
-    const scrollGlow = document.getElementById('scrollGlow');
-    
-    if (cursorGlow) {
-      document.addEventListener('mousemove', (e) => {
-        const x = e.clientX;
-        const y = e.clientY;
-        cursorGlow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
-        document.documentElement.style.setProperty('--cursor-x', x + 'px');
-        document.documentElement.style.setProperty('--cursor-y', y + 'px');
-        if (scrollGlow) {
-          scrollGlow.style.background = `radial-gradient(ellipse at ${x}px ${y}px, rgba(92, 156, 191, 0.09), transparent 70%)`;
-        }
-      });
-    }
-    
-    // Scroll effect
-    window.addEventListener('scroll', () => {
-      const scrollY = window.scrollY;
-      const maxScroll = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = scrollY / maxScroll;
-      
-      if (scrollGlow) {
-        const intensity = 0.05 + (scrollPercent * 0.1);
-        scrollGlow.style.opacity = Math.min(0.35, 0.1 + intensity);
-      }
-      
-      const orb = document.querySelector('.bg-orb');
-      if (orb) {
-        orb.style.transform = `translateY(${scrollY * 0.08}px) scale(${1 + scrollY * 0.0002})`;
-        const opacity = Math.min(0.4 + scrollY * 0.0005, 0.7);
-        orb.style.opacity = opacity;
-      }
+    document.addEventListener('mousemove', (e) => {
+      cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
 
-    // CV Download with fallback
-    const downloadBtn = document.getElementById('downloadCVBtn');
-    if (downloadBtn) {
-      downloadBtn.addEventListener('click', () => {
-        const pdfUrl = './assets/Alam_Mir_Tazwar_CV.pdf';
-        fetch(pdfUrl, { method: 'HEAD' })
-          .then(res => {
-            if (res.ok) {
-              window.open(pdfUrl, '_blank');
-            } else {
-              const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\n\nEDUCATION: Bachelor of CS (Software Engineering) | UMPSA (2023–2026) | CGPA: 3.7+\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL, Flutter\n\nPROJECTS:\n• Car Damage Detection: 14.2% mAP improvement\n• EcoSnap App: Winner - Huawei Hackathon 2025\n• SamanSphere: 40% query latency reduction\n\nAWARDS: Huawei Hackathon 2025 Winner (top 3/350+ teams)`;
-              const blob = new Blob([cvContent], { type: 'application/pdf' });
-              const url = URL.createObjectURL(blob);
-              window.open(url, '_blank');
-              setTimeout(() => URL.revokeObjectURL(url), 1000);
-            }
-          })
-          .catch(() => {
-            const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\nEmail: tazwaralam01@gmail.com | Malaysia\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL\nPROJECTS: Car Damage Detection (14.2% mAP improvement), EcoSnap (Hackathon Winner)\nEDUCATION: UMPSA, CS Software Engineering`;
-            const blob = new Blob([cvContent], { type: 'application/pdf' });
-            const url = URL.createObjectURL(blob);
-            window.open(url, '_blank');
-            setTimeout(() => URL.revokeObjectURL(url), 1000);
-          });
-      });
+    // ========== CINEMATIC PARTICLE FIELD BACKGROUND ==========
+    const canvas = document.getElementById('canvas-bg');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+    let particleCount = 180;
+    let mouseX = 0, mouseY = 0;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     }
 
-    // Scroll reveal animation
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.2;
+        this.opacity = Math.random() * 0.4 + 0.1;
+        this.color = `rgba(92, 156, 191, ${this.opacity})`;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        // Mouse attraction effect
+        const dx = mouseX - this.x;
+        const dy = mouseY - this.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        if (distance < 200) {
+          const angle = Math.atan2(dy, dx);
+          const force = (200 - distance) / 200 * 0.5;
+          this.x += Math.cos(angle) * force;
+          this.y += Math.sin(angle) * force;
+        }
+        
+        if (this.x < 0) this.x = canvas.width;
+        if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height;
+        if (this.y > canvas.height) this.y = 0;
+      }
+      
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function connectParticles() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            const opacity = 0.12 * (1 - distance / 120);
+            ctx.strokeStyle = `rgba(92, 156, 191, ${opacity})`;
+            ctx.lineWidth = 0.8;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateBackground() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      for (let i = 0; i < particles.length; i++) {
+        particles[i].update();
+        particles[i].draw();
+      }
+      
+      connectParticles();
+      requestAnimationFrame(animateBackground);
+    }
+
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+    
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    resizeCanvas();
+    initParticles();
+    animateBackground();
+
+    // Scroll reveal
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -1013,15 +917,16 @@
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+    }, { threshold: 0.1 });
     revealElements.forEach(el => observer.observe(el));
 
-    // Close mobile menu on link click
-    document.querySelectorAll('.menu-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        const menu = document.querySelector('.menu-links');
-        if (menu) menu.classList.remove('open');
-      });
+    // CV Download
+    document.getElementById('downloadCVBtn')?.addEventListener('click', () => {
+      const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\n\nEDUCATION: Bachelor of CS (Software Engineering) | UMPSA (2023–2026) | CGPA: 3.7+\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL, Flutter\n\nPROJECTS:\n• Car Damage Detection: 14.2% mAP improvement\n• EcoSnap App: Winner - Huawei Hackathon 2025\n• SamanSphere: 40% query latency reduction\n\nAWARDS: Huawei Hackathon 2025 Winner (top 3/350+ teams)\n\nAvailable for ML Engineering and Software Development roles.`;
+      const blob = new Blob([cvContent], { type: 'application/pdf' });
+      const url = URL.createObjectURL(blob);
+      window.open(url, '_blank');
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
     });
   </script>
 </body>
