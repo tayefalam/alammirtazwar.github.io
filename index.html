@@ -1,4 +1,4 @@
-Here is the complete HTML portfolio with the **original LinkedIn and GitHub logo images** restored in the profile section (using Font Awesome as a reliable fallback since external image files may not exist), plus all your requested features: premium particle background, card-based About Me section, contact form, and Facebook/Instagram social links.
+Here is the complete HTML portfolio with the Download CV button now properly pointing to your `resume-example.pdf` file in the assets folder, plus all the premium features you requested.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -396,7 +396,7 @@ Here is the complete HTML portfolio with the **original LinkedIn and GitHub logo
       border-color: var(--accent);
     }
     
-    /* Social Icons - Original Logo Style */
+    /* Social Icons */
     .social-icon {
       width: 48px;
       height: 48px;
@@ -875,6 +875,8 @@ Here is the complete HTML portfolio with the **original LinkedIn and GitHub logo
       display: block;
       margin-left: auto;
       margin-right: auto;
+      text-align: center;
+      font-size: 2rem;
     }
     
     .arrow:hover {
@@ -1193,6 +1195,17 @@ Here is the complete HTML portfolio with the **original LinkedIn and GitHub logo
       setTimeout(() => { formStatus.innerHTML = ''; }, 5000);
     });
     
+    // CV Download - Points to your resume-example.pdf in assets folder
+    document.getElementById('downloadCVBtn').addEventListener('click', function() {
+      const pdfPath = './assets/resume-example.pdf';
+      const link = document.createElement('a');
+      link.href = pdfPath;
+      link.download = 'Alam_Mir_Tazwar_Resume.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+    
     // PARTICLE BACKGROUND
     const canvas = document.getElementById('canvas-bg');
     const ctx = canvas.getContext('2d');
@@ -1254,19 +1267,6 @@ Here is the complete HTML portfolio with the **original LinkedIn and GitHub logo
       entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); } }); 
     }, { threshold: 0.1, rootMargin: "0px 0px -60px 0px" });
     revealElements.forEach(el => observer.observe(el));
-    
-    document.getElementById('downloadCVBtn')?.addEventListener('click', () => { 
-      const cvContent = `ALAM MIR TAZWAR - SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Phone: +60 10-465 0774\nLocation: Pekan, Pahang, Malaysia\n\nEDUCATION\n- Bachelor of CS (Software Engineering) Hons. | UMPSA (2023-Present)\n- Diploma in CS (Information Technology) | UNISEL (2018-2022)\n\nWORK EXPERIENCE\nWeb Developer Intern @ COMNET UNISEL (Sep 2021 - Dec 2021)\n- Developed 20+ full-stack WordPress websites\n- Managed SEO improvements and database integration\n- Conducted training for ~100 students\n\nTECHNICAL SKILLS\nProgramming: Python, Java, C, JavaScript, PHP, Dart\nML/AI: TensorFlow, Keras, OpenCV, Scikit-learn\nWeb: Laravel, WordPress, MySQL, HTML/CSS\nTools: Power BI, AWS, Git\n\nPROJECTS\n- Car Damage Detection: VGG16, TensorFlow, OpenCV\n- EcoSnap: Huawei Hackathon 2025 WINNER (Best Game App)\n- SamanSphere: Laravel-based summons platform\n- DengueSense & Datathon Financial Forecasting\n\nCERTIFICATIONS\n- Huawei Hackathon 2025 Winner\n- Google Cloud Engineering Badge\n- AWS Cloud Practitioner Essentials\n- CCNA: Introduction to Networks\n\nLANGUAGES: English (Fluent) | Bangla (Fluent) | Hindi (Intermediate) | Malay (Basic)`; 
-      const blob = new Blob([cvContent], { type: 'text/plain' }); 
-      const url = URL.createObjectURL(blob); 
-      const a = document.createElement('a'); 
-      a.href = url; 
-      a.download = 'Alam_Mir_Tazwar_CV.txt'; 
-      document.body.appendChild(a); 
-      a.click(); 
-      document.body.removeChild(a); 
-      URL.revokeObjectURL(url); 
-    });
   </script>
 </body>
 </html>
