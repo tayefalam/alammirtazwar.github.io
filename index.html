@@ -1,4 +1,4 @@
-Here is the complete HTML portfolio with the Download CV button now properly pointing to your `resume-example.pdf` file in the assets folder, plus all the premium features you requested.
+Here is the complete HTML portfolio with the Download CV button now using the original PDF icon/logo, plus all your premium features.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -354,6 +354,13 @@ Here is the complete HTML portfolio with the Download CV button now properly poi
       overflow: hidden;
       z-index: 1;
       backdrop-filter: blur(5px);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .btn i {
+      font-size: 1.1rem;
     }
     
     .btn::before {
@@ -979,8 +986,8 @@ Here is the complete HTML portfolio with the Download CV button now properly poi
         </div>
         <div class="location-text">📍 Pekan, Pahang, Malaysia</div>
         <div class="btn-container">
-          <button class="btn btn-color-2" id="downloadCVBtn">📄 Download CV</button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">✉️ Contact Me</button>
+          <button class="btn btn-color-2" id="downloadCVBtn"><i class="fas fa-file-pdf"></i> Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'"><i class="fas fa-envelope"></i> Contact Me</button>
         </div>
         <div id="socials-container">
           <div class="social-icon" onclick="window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank')"><i class="fab fa-linkedin-in"></i></div>
@@ -1139,7 +1146,7 @@ Here is the complete HTML portfolio with the Download CV button now properly poi
             <div class="form-group">
               <textarea id="message" placeholder="Your Message..." required></textarea>
             </div>
-            <button type="submit" class="submit-btn">✉️ Send Message</button>
+            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
             <div id="formStatus" class="form-status"></div>
           </form>
         </div>
@@ -1195,7 +1202,7 @@ Here is the complete HTML portfolio with the Download CV button now properly poi
       setTimeout(() => { formStatus.innerHTML = ''; }, 5000);
     });
     
-    // CV Download - Points to your resume-example.pdf in assets folder
+    // CV Download - Points to your resume-example.pdf in assets folder with PDF icon
     document.getElementById('downloadCVBtn').addEventListener('click', function() {
       const pdfPath = './assets/resume-example.pdf';
       const link = document.createElement('a');
