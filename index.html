@@ -1,4 +1,4 @@
-Here is the complete HTML document with a larger profile section, bigger profile image, and animated text for the job title and call-to-action buttons.
+Here is the complete HTML document with the contact section colors fixed for better contrast and visual harmony.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +42,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       overflow-x: hidden;
     }
 
-    /* ========== BACKGROUND VIDEO LAYER ========== */
+    /* ========== PREMIUM BACKGROUND VIDEO - CINEMATIC TECH FLOW ========== */
     .video-background {
       position: fixed;
       top: 0;
@@ -64,8 +64,8 @@ Here is the complete HTML document with a larger profile section, bigger profile
       height: auto;
       transform: translateX(-50%) translateY(-50%);
       object-fit: cover;
-      filter: blur(3px) brightness(0.65);
-      opacity: 0.35;
+      filter: blur(2px) brightness(0.6) saturate(0.8);
+      opacity: 0.4;
     }
 
     .video-overlay {
@@ -74,7 +74,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(10, 13, 20, 0.75);
+      background: linear-gradient(135deg, rgba(10, 13, 20, 0.85), rgba(10, 13, 20, 0.7));
       z-index: -2;
       pointer-events: none;
     }
@@ -121,7 +121,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       position: absolute;
       border-radius: 50%;
       filter: blur(70px);
-      opacity: 0.4;
+      opacity: 0.3;
       animation: floatSlow 25s ease-in-out infinite;
     }
     .orb-1 {
@@ -130,7 +130,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       width: 50vw;
       height: 50vw;
       max-width: 500px;
-      background: radial-gradient(circle, rgba(92, 156, 191, 0.3), transparent);
+      background: radial-gradient(circle, rgba(92, 156, 191, 0.25), transparent);
       animation-delay: 0s;
     }
     .orb-2 {
@@ -139,7 +139,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       width: 45vw;
       height: 45vw;
       max-width: 450px;
-      background: radial-gradient(circle, rgba(80, 140, 170, 0.25), transparent);
+      background: radial-gradient(circle, rgba(80, 140, 170, 0.2), transparent);
       animation-delay: -8s;
     }
     .orb-3 {
@@ -148,7 +148,7 @@ Here is the complete HTML document with a larger profile section, bigger profile
       width: 35vw;
       height: 35vw;
       max-width: 380px;
-      background: radial-gradient(circle, rgba(65, 120, 150, 0.2), transparent);
+      background: radial-gradient(circle, rgba(65, 120, 150, 0.15), transparent);
       animation-delay: -15s;
     }
     @keyframes floatSlow {
@@ -497,17 +497,63 @@ Here is the complete HTML document with a larger profile section, bigger profile
       margin: 0.5rem 0;
     }
 
-    /* Contact */
+    /* ========== CONTACT SECTION - FIXED COLORS ========== */
     .contact-info-upper-container {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
       flex-wrap: wrap;
-      background: var(--card-bg);
-      backdrop-filter: blur(8px);
-      border-radius: 1.5rem;
-      padding: 1.5rem 2rem;
-      border: 1px solid var(--border-light);
+      background: rgba(18, 26, 36, 0.75);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      padding: 2rem 2.5rem;
+      border: 1px solid rgba(92, 156, 191, 0.3);
       justify-content: center;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info-upper-container:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 25px rgba(92, 156, 191, 0.15);
+    }
+    
+    .contact-info-container {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 3rem;
+      transition: all 0.3s ease;
+      background: rgba(10, 13, 20, 0.4);
+    }
+    
+    .contact-info-container:hover {
+      background: rgba(92, 156, 191, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .contact-info-container .icon {
+      width: 28px;
+      height: 28px;
+      filter: brightness(0) invert(1);
+      opacity: 0.9;
+    }
+    
+    .contact-info-container p {
+      margin: 0;
+    }
+    
+    .contact-info-container a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      letter-spacing: -0.2px;
+    }
+    
+    .contact-info-container a:hover {
+      color: var(--accent);
+      text-decoration: none;
     }
 
     /* Footer */
@@ -569,6 +615,13 @@ Here is the complete HTML document with a larger profile section, bigger profile
       #about {
         margin-top: -30px;
       }
+      .contact-info-upper-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+      }
+      .contact-info-container {
+        padding: 0.4rem 0.8rem;
+      }
     }
     @media (max-width: 900px) {
       #desktop-nav {
@@ -606,6 +659,15 @@ Here is the complete HTML document with a larger profile section, bigger profile
       #about {
         margin-top: -20px;
       }
+      .contact-info-upper-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+      .contact-info-container {
+        justify-content: center;
+      }
     }
 
     /* Reveal Animation */
@@ -622,10 +684,13 @@ Here is the complete HTML document with a larger profile section, bigger profile
 </head>
 <body>
 
-  <!-- ========== PREMIUM SUBTLE BACKGROUND VIDEO ========== -->
+  <!-- ========== PREMIUM BACKGROUND VIDEO - ABSTRACT TECH PARTICLES ========== -->
   <div class="video-background">
     <video autoplay loop muted playsinline disableRemotePlayback>
-      <source src="https://cdn.pixabay.com/video/2023/04/16/159853-819903319_large.mp4" type="video/mp4">
+      <!-- Premium abstract digital particle background - smooth, elegant, tech-focused -->
+      <source src="https://assets.mixkit.co/videos/premium/mixkit-abstract-technology-particles-32620-large.mp4" type="video/mp4">
+      <!-- Fallback #1: Gradient particles flow -->
+      <source src="https://cdn.pixabay.com/video/2022/11/10/138646-773460805_large.mp4" type="video/mp4">
     </video>
   </div>
   <div class="video-overlay"></div>
@@ -804,11 +869,11 @@ Here is the complete HTML document with a larger profile section, bigger profile
         </div>
         <div class="contact-info-container">
           <img src="./assets/linkedin.png" class="icon contact-icon" onerror="this.style.display='none'">
-          <p><a href="https://www.linkedin.com/in/alam-mir-tazwar" target="_blank">LinkedIn</a></p>
+          <p><a href="https://www.linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></p>
         </div>
         <div class="contact-info-container">
           <img src="./assets/github.png" class="icon contact-icon" onerror="this.style.display='none'">
-          <p><a href="https://github.com/alam-ml" target="_blank">GitHub</a></p>
+          <p><a href="https://github.com/alam-ml" target="_blank">github.com/alam-ml</a></p>
         </div>
       </div>
     </section>
