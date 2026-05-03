@@ -1,3 +1,5 @@
+Here is an HTML document that centers the profile section, pulls the "About Me" section closer to it, and adds a subtle animated cursor/scrolling background effect.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,6 +28,8 @@
       --accent-glow: rgba(92, 156, 191, 0.2);
       --border-light: rgba(72, 92, 112, 0.25);
       --transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      --cursor-x: 0px;
+      --cursor-y: 0px;
     }
 
     body {
@@ -38,7 +42,7 @@
       overflow-x: hidden;
     }
 
-    /* ========== BACKGROUND VIDEO LAYER (subtle, premium) ========== */
+    /* ========== BACKGROUND VIDEO LAYER ========== */
     .video-background {
       position: fixed;
       top: 0;
@@ -61,7 +65,7 @@
       transform: translateX(-50%) translateY(-50%);
       object-fit: cover;
       filter: blur(3px) brightness(0.65);
-      opacity: 0.35;  /* ultra subtle */
+      opacity: 0.35;
     }
 
     .video-overlay {
@@ -75,7 +79,34 @@
       pointer-events: none;
     }
 
-    /* ========== BACKGROUND ORBS (above video) ========== */
+    /* ========== CURSOR & SCROLL ANIMATED GLOW EFFECT ========== */
+    .cursor-glow {
+      position: fixed;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(92, 156, 191, 0.12), transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+      transform: translate(-50%, -50%);
+      transition: transform 0.08s linear;
+      filter: blur(40px);
+      will-change: transform;
+    }
+
+    .scroll-glow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(ellipse at var(--cursor-x, 50%) var(--cursor-y, 50%), rgba(92, 156, 191, 0.05), transparent 60%);
+      pointer-events: none;
+      z-index: -1;
+      transition: background 0.15s ease;
+    }
+
+    /* ========== BACKGROUND ORBS (above video, below glow) ========== */
     .bg-orb {
       position: fixed;
       top: 0;
@@ -210,9 +241,25 @@
       margin: 0 auto;
       padding: 0 2rem;
     }
-    section {
-      padding: 6rem 0 4rem;
+    
+    /* Profile section - FULL VIEWPORT HEIGHT & CENTERED */
+    #profile {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      padding: 70px 0 30px;   /* reduced bottom padding to bring about section closer */
+      margin-bottom: 0;
     }
+    
+    /* About section - reduced top margin/padding to sit closer to profile */
+    #about {
+      padding-top: 0;
+      margin-top: -20px;
+      position: relative;
+    }
+    
     .section__text__p1 {
       font-size: 0.85rem;
       letter-spacing: 2px;
@@ -259,25 +306,18 @@
       transform: translateY(-2px);
     }
    .icon {
-  width: 28px;
-  cursor: pointer;
-  transition: var(--transition);
-  filter: brightness(0) invert(1);
-}
+      width: 28px;
+      cursor: pointer;
+      transition: var(--transition);
+      filter: brightness(0) invert(1);
+    }
 
-.icon:hover {
-  transform: translateY(-2px);
-  filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(92,156,191,0.6));
-}
+    .icon:hover {
+      transform: translateY(-2px);
+      filter: brightness(0) invert(1) drop-shadow(0 0 6px rgba(92,156,191,0.6));
+    }
 
-    /* Profile Section */
-    #profile {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 4rem;
-  padding: 110px 0 40px;
-}
+    /* Profile Section - centered content */
     .section__pic-container {
       width: 280px;
       height: 280px;
@@ -473,6 +513,12 @@
         flex-direction: column;
         text-align: center;
         gap: 2rem;
+        min-height: 100vh;
+        padding: 80px 0 20px;
+      }
+      #about {
+        margin-top: 0;
+        padding-top: 1rem;
       }
       .section__text {
         text-align: center;
@@ -504,39 +550,45 @@
       .container {
         padding: 0 1rem;
       }
-      section {
-        padding: 4rem 0 2rem;
-      }
       .section__pic-container {
         width: 200px;
         height: 200px;
+      }
+      #profile {
+        min-height: 100vh;
+        padding: 70px 0 20px;
+      }
+      #about {
+        margin-top: -10px;
       }
     }
 
     /* Reveal Animation */
     .reveal {
-  opacity: 0;
-  transform: translateY(40px) scale(0.98);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
+      opacity: 0;
+      transform: translateY(40px) scale(0.98);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0) scale(1);
-}
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
   </style>
 </head>
 <body>
 
   <!-- ========== PREMIUM SUBTLE BACKGROUND VIDEO ========== -->
   <div class="video-background">
-    <!-- Lightweight abstract tech motion – muted, autoplay, loop, mobile-friendly -->
     <video autoplay loop muted playsinline disableRemotePlayback>
       <source src="https://cdn.pixabay.com/video/2023/04/16/159853-819903319_large.mp4" type="video/mp4">
-      <!-- fallback: silent; existing orbs/gradient will remain if video fails -->
     </video>
   </div>
   <div class="video-overlay"></div>
+
+  <!-- Animated cursor & scroll glow effects -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+  <div class="scroll-glow" id="scrollGlow"></div>
 
   <!-- animated floating orbs (above video) -->
   <div class="bg-orb">
@@ -738,6 +790,46 @@
       if (icon) icon.classList.toggle('open');
     }
 
+    // Cursor & Scroll Animated Glow Effects
+    const cursorGlow = document.getElementById('cursorGlow');
+    const scrollGlow = document.getElementById('scrollGlow');
+    
+    if (cursorGlow) {
+      document.addEventListener('mousemove', (e) => {
+        const x = e.clientX;
+        const y = e.clientY;
+        cursorGlow.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        
+        // Update CSS custom properties for radial gradient that follows cursor + scroll
+        document.documentElement.style.setProperty('--cursor-x', x + 'px');
+        document.documentElement.style.setProperty('--cursor-y', y + 'px');
+        if (scrollGlow) {
+          scrollGlow.style.background = `radial-gradient(ellipse at ${x}px ${y}px, rgba(92, 156, 191, 0.08), transparent 65%)`;
+        }
+      });
+    }
+    
+    // Enhance scroll effect - dynamic intensity
+    window.addEventListener('scroll', () => {
+      const scrollY = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = scrollY / maxScroll;
+      
+      // Subtle background shift based on scroll position
+      if (scrollGlow) {
+        const intensity = 0.05 + (scrollPercent * 0.08);
+        scrollGlow.style.opacity = Math.min(0.3, 0.1 + intensity);
+      }
+      
+      // previous orb parallax effect
+      const orb = document.querySelector('.bg-orb');
+      if (orb) {
+        orb.style.transform = `translateY(${scrollY * 0.08}px) scale(${1 + scrollY * 0.0002})`;
+        const opacity = Math.min(0.4 + scrollY * 0.0005, 0.7);
+        orb.style.opacity = opacity;
+      }
+    });
+
     // CV Download with fallback
     const downloadBtn = document.getElementById('downloadCVBtn');
     if (downloadBtn) {
@@ -785,19 +877,6 @@
       });
     });
   </script>
-<script>
-window.addEventListener('scroll', () => {
-  const scrollY = window.scrollY;
-
-  const orb = document.querySelector('.bg-orb');
-
-  if (orb) {
-    orb.style.transform = `translateY(${scrollY * 0.08}px) scale(${1 + scrollY * 0.0002})`;
-    const opacity = Math.min(0.4 + scrollY * 0.0005, 0.7);
-orb.style.opacity = opacity;
-  }
-});
-</script>
-  
 </body>
 </html>
+```
