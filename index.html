@@ -1,4 +1,4 @@
-Here is a complete, ultra-premium HTML portfolio with a cinematic particle field background that commands attention—designed to impress top-tier recruiters.
+Here is a complete, ultra-premium HTML portfolio with a stunning animated particle field background, smooth interactions, and a refined layout designed to impress elite recruiters.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -19,16 +19,18 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
 
     :root {
       --text-primary: #FFFFFF;
-      --text-secondary: #B0C4DE;
-      --accent: #5C9CBF;
-      --accent-glow: rgba(92, 156, 191, 0.3);
-      --border-light: rgba(255, 255, 255, 0.1);
+      --text-secondary: #C0D4E8;
+      --accent: #6BB5D9;
+      --accent-dark: #4A90B0;
+      --accent-glow: rgba(107, 181, 217, 0.25);
+      --border-light: rgba(255, 255, 255, 0.08);
       --transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
-      --card-bg: rgba(10, 15, 25, 0.6);
+      --card-bg: rgba(8, 12, 20, 0.55);
+      --card-bg-hover: rgba(15, 25, 40, 0.75);
     }
 
     body {
-      background-color: #05080f;
+      background-color: #03060c;
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
       color: var(--text-primary);
       line-height: 1.5;
@@ -36,7 +38,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       overflow-x: hidden;
     }
 
-    /* ========== CINEMATIC 3D PARTICLE FIELD BACKGROUND ========== */
+    /* ========== CINEMATIC 3D PARTICLE NEBULA BACKGROUND ========== */
     #canvas-bg {
       position: fixed;
       top: 0;
@@ -47,103 +49,115 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       display: block;
     }
     
-    /* Gradient overlay for depth and text readability */
+    /* Multi-layer gradient overlay for depth and readability */
     .gradient-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at 50% 50%, rgba(5, 8, 15, 0.3) 0%, rgba(5, 8, 15, 0.7) 100%);
+      background: radial-gradient(ellipse at 50% 40%, rgba(3, 6, 12, 0.2) 0%, rgba(3, 6, 12, 0.75) 100%);
       z-index: -1;
       pointer-events: none;
     }
     
-    /* Premium light beam sweep */
-    .light-beam {
+    /* Premium animated light sweep */
+    .light-sweep {
       position: fixed;
       top: 0;
       left: -50%;
       width: 200%;
       height: 100%;
-      background: linear-gradient(90deg, 
+      background: linear-gradient(105deg, 
         transparent 0%, 
-        transparent 35%,
-        rgba(92, 156, 191, 0.04) 40%,
-        rgba(92, 156, 191, 0.08) 45%,
-        rgba(92, 156, 191, 0.12) 50%,
-        rgba(92, 156, 191, 0.08) 55%,
-        rgba(92, 156, 191, 0.04) 60%,
-        transparent 65%,
+        transparent 30%,
+        rgba(107, 181, 217, 0.03) 35%,
+        rgba(107, 181, 217, 0.07) 40%,
+        rgba(107, 181, 217, 0.1) 45%,
+        rgba(107, 181, 217, 0.07) 50%,
+        rgba(107, 181, 217, 0.03) 55%,
+        transparent 60%,
         transparent 100%
       );
-      animation: lightSweep 14s ease-in-out infinite;
+      animation: lightSweepPremium 16s ease-in-out infinite;
       pointer-events: none;
       z-index: -1;
     }
     
-    @keyframes lightSweep {
-      0% { transform: translateX(-30%); opacity: 0; }
-      50% { transform: translateX(0%); opacity: 1; }
-      100% { transform: translateX(30%); opacity: 0; }
+    @keyframes lightSweepPremium {
+      0% { transform: translateX(-40%); opacity: 0; }
+      40% { opacity: 1; }
+      60% { opacity: 1; }
+      100% { transform: translateX(40%); opacity: 0; }
     }
     
-    /* Subtle vignette for focus */
+    /* Elegant vignette for focus */
     .vignette {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(ellipse at center, transparent 40%, rgba(0, 0, 0, 0.5) 100%);
+      background: radial-gradient(ellipse at center, transparent 35%, rgba(0, 0, 0, 0.6) 100%);
       z-index: -1;
       pointer-events: none;
     }
     
-    /* Premium cursor glow */
+    /* Premium cursor glow - larger, more elegant */
     .cursor-glow {
       position: fixed;
-      width: 600px;
-      height: 600px;
+      width: 700px;
+      height: 700px;
       border-radius: 50%;
-      background: radial-gradient(circle, rgba(92, 156, 191, 0.08), transparent 70%);
+      background: radial-gradient(circle, rgba(107, 181, 217, 0.07), transparent 75%);
       pointer-events: none;
       z-index: 1;
       transform: translate(-50%, -50%);
-      transition: transform 0.03s linear;
-      filter: blur(50px);
+      transition: transform 0.02s linear;
+      filter: blur(60px);
       will-change: transform;
     }
 
-    /* ========== NAVIGATION - LUXURY STYLE ========== */
+    /* ========== NAVIGATION - LUXURY PREMIUM ========== */
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 80px;
+      height: 85px;
       width: 100%;
       padding: 0 4rem;
-      background: rgba(5, 8, 15, 0.7);
-      backdrop-filter: blur(20px);
+      background: rgba(3, 6, 12, 0.6);
+      backdrop-filter: blur(25px);
       position: fixed;
       top: 0;
       z-index: 1000;
-      border-bottom: 1px solid rgba(92, 156, 191, 0.2);
+      border-bottom: 1px solid rgba(107, 181, 217, 0.2);
     }
     
     .logo {
-      font-size: 1.6rem;
+      font-size: 1.8rem;
       font-weight: 700;
-      background: linear-gradient(135deg, #FFFFFF, var(--accent));
+      background: linear-gradient(135deg, #FFFFFF, var(--accent), #FFFFFF);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
       letter-spacing: -0.5px;
+      position: relative;
+    }
+    
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 40%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), transparent);
     }
     
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 2.8rem;
       list-style: none;
     }
     
@@ -153,7 +167,23 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       font-size: 0.95rem;
       font-weight: 500;
       transition: var(--transition);
-      letter-spacing: 0.3px;
+      letter-spacing: 0.5px;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
     }
     
     .nav-links a:hover {
@@ -166,10 +196,10 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     
     .hamburger-icon span {
       display: block;
-      width: 25px;
+      width: 27px;
       height: 2px;
       background: var(--text-primary);
-      margin: 5px 0;
+      margin: 6px 0;
       transition: var(--transition);
     }
     
@@ -177,26 +207,20 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       position: absolute;
       top: 100%;
       right: 0;
-      background: rgba(5, 8, 15, 0.95);
-      backdrop-filter: blur(20px);
-      width: 220px;
-      border-radius: 1rem;
-      padding: 1.2rem;
+      background: rgba(3, 6, 12, 0.95);
+      backdrop-filter: blur(25px);
+      width: 240px;
+      border-radius: 1.2rem;
+      padding: 1.5rem;
       display: none;
       flex-direction: column;
-      gap: 1rem;
+      gap: 1.2rem;
       list-style: none;
-      border: 1px solid rgba(92, 156, 191, 0.2);
+      border: 1px solid rgba(107, 181, 217, 0.25);
     }
     
     .menu-links.open {
       display: flex;
-    }
-    
-    .menu-links a {
-      color: var(--text-secondary);
-      text-decoration: none;
-      font-size: 1rem;
     }
 
     /* ========== MAIN CONTENT ========== */
@@ -213,19 +237,40 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 5rem;
-      padding: 80px 0 0;
+      gap: 6rem;
+      padding: 85px 0 0;
     }
     
+    /* Premium profile image with luxury ring */
     .section__pic-container {
-      width: 380px;
-      height: 380px;
+      width: 400px;
+      height: 400px;
       border-radius: 50%;
       overflow: hidden;
-      background: linear-gradient(135deg, #2c5a7a, #1a3f55);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       padding: 5px;
-      box-shadow: 0 30px 50px -20px rgba(0,0,0,0.6), 0 0 0 2px rgba(92,156,191,0.3);
+      box-shadow: 0 40px 60px -25px rgba(0,0,0,0.6), 0 0 0 3px rgba(107, 181, 217, 0.4);
       animation: floatPremium 6s ease-in-out infinite;
+      position: relative;
+    }
+    
+    .section__pic-container::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: -15px;
+      bottom: -15px;
+      border-radius: 50%;
+      background: conic-gradient(from 0deg, var(--accent), transparent, var(--accent), transparent);
+      opacity: 0.3;
+      animation: rotateRing 8s linear infinite;
+      z-index: -1;
+    }
+    
+    @keyframes rotateRing {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
     
     @keyframes floatPremium {
@@ -242,31 +287,39 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     
     .section__text {
       text-align: left;
-      max-width: 650px;
+      max-width: 680px;
+    }
+    
+    .greeting {
+      font-size: 1rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
     }
     
     .section__text h1 {
-      font-size: 4.5rem;
+      font-size: 5rem;
       margin: 0.5rem 0;
-      background: linear-gradient(135deg, #FFFFFF, var(--accent));
+      background: linear-gradient(135deg, #FFFFFF, var(--accent), #E0F0FF);
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      letter-spacing: -1px;
+      letter-spacing: -1.5px;
     }
     
     .animated-role {
-      font-size: 1.6rem;
+      font-size: 1.7rem;
       color: var(--text-secondary);
-      min-height: 3.5rem;
-      margin: 0.8rem 0;
+      min-height: 4rem;
+      margin: 1rem 0;
     }
     
     #dynamicRole {
       color: var(--accent);
       font-weight: 600;
       border-right: 3px solid var(--accent);
-      padding-right: 10px;
+      padding-right: 12px;
       animation: blinkCursor 0.75s step-end infinite;
     }
     
@@ -277,12 +330,12 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     
     .btn-container {
       display: flex;
-      gap: 1.5rem;
+      gap: 1.8rem;
       margin: 2rem 0;
     }
     
     .btn {
-      padding: 1rem 2.2rem;
+      padding: 1rem 2.4rem;
       border-radius: 3rem;
       font-weight: 600;
       font-size: 1rem;
@@ -301,8 +354,8 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-      transition: left 0.5s;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+      transition: left 0.6s;
       z-index: -1;
     }
     
@@ -311,15 +364,14 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     }
     
     .btn-color-1 {
-      background: var(--accent);
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       color: white;
-      box-shadow: 0 4px 20px rgba(92, 156, 191, 0.4);
+      box-shadow: 0 5px 25px rgba(107, 181, 217, 0.4);
     }
     
     .btn-color-1:hover {
-      background: #4a8aad;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px rgba(92, 156, 191, 0.5);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 35px rgba(107, 181, 217, 0.5);
     }
     
     .btn-color-2 {
@@ -329,27 +381,27 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     }
     
     .btn-color-2:hover {
-      background: rgba(92, 156, 191, 0.1);
-      transform: translateY(-3px);
+      background: rgba(107, 181, 217, 0.12);
+      transform: translateY(-4px);
       border-color: var(--accent);
     }
     
     .icon {
-      width: 34px;
+      width: 36px;
       cursor: pointer;
       transition: var(--transition);
       filter: brightness(0) invert(1);
     }
     
     .icon:hover {
-      transform: translateY(-5px) scale(1.1);
-      filter: brightness(0) invert(1) drop-shadow(0 0 8px rgba(92,156,191,0.8));
+      transform: translateY(-6px) scale(1.1);
+      filter: brightness(0) invert(1) drop-shadow(0 0 12px rgba(107,181,217,0.8));
     }
     
     #socials-container {
       display: flex;
       gap: 1.5rem;
-      margin-top: 1.5rem;
+      margin-top: 1.8rem;
     }
     
     #about {
@@ -358,22 +410,27 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     }
     
     #experience, #projects, #contact {
-      padding-top: 4rem;
+      padding-top: 5rem;
     }
     
     .section__text__p1 {
       font-size: 0.9rem;
-      letter-spacing: 3px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--accent);
       margin-bottom: 0.8rem;
     }
     
     .title {
-      font-size: 3rem;
+      font-size: 3.2rem;
       font-weight: 700;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.8rem;
       letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #FFFFFF, var(--accent));
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      display: inline-block;
     }
     
     .about-containers, .experience-details-container {
@@ -385,25 +442,25 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     
     .details-container {
       background: var(--card-bg);
-      backdrop-filter: blur(12px);
-      border-radius: 1.5rem;
-      padding: 1.8rem;
-      border: 1px solid rgba(92, 156, 191, 0.2);
+      backdrop-filter: blur(15px);
+      border-radius: 2rem;
+      padding: 2rem;
+      border: 1px solid rgba(107, 181, 217, 0.15);
       transition: var(--transition);
       flex: 1;
-      min-width: 200px;
+      min-width: 220px;
     }
     
     .details-container:hover {
       border-color: var(--accent);
-      transform: translateY(-5px);
-      background: rgba(20, 30, 45, 0.7);
-      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.3);
+      transform: translateY(-6px);
+      background: var(--card-bg-hover);
+      box-shadow: 0 25px 40px -20px rgba(0,0,0,0.4);
     }
     
     .details-container h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      margin-bottom: 1.2rem;
       color: var(--accent);
     }
     
@@ -417,11 +474,11 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
-      margin-top: 1rem;
+      margin-top: 1.2rem;
     }
     
     article {
-      background: rgba(92, 156, 191, 0.12);
+      background: rgba(107, 181, 217, 0.1);
       padding: 0.5rem 1.2rem;
       border-radius: 2rem;
       display: flex;
@@ -430,27 +487,37 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       transition: var(--transition);
       font-size: 0.9rem;
       font-weight: 500;
+      backdrop-filter: blur(4px);
     }
     
     article:hover {
-      background: rgba(92, 156, 191, 0.3);
+      background: rgba(107, 181, 217, 0.25);
       transform: scale(1.03);
     }
     
     .project-title {
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       margin: 0.8rem 0;
+    }
+    
+    .project-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      background: rgba(107, 181, 217, 0.2);
+      padding: 0.3rem 0.8rem;
+      border-radius: 1rem;
+      margin-top: 1rem;
     }
     
     .contact-info-upper-container {
       display: flex;
-      gap: 2.5rem;
+      gap: 3rem;
       flex-wrap: wrap;
       background: var(--card-bg);
-      backdrop-filter: blur(12px);
+      backdrop-filter: blur(15px);
       border-radius: 2rem;
-      padding: 2rem 2.5rem;
-      border: 1px solid rgba(92, 156, 191, 0.2);
+      padding: 2rem 3rem;
+      border: 1px solid rgba(107, 181, 217, 0.2);
       justify-content: center;
       transition: var(--transition);
     }
@@ -463,6 +530,14 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       display: flex;
       align-items: center;
       gap: 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 3rem;
+      transition: var(--transition);
+    }
+    
+    .contact-info-container:hover {
+      background: rgba(107, 181, 217, 0.1);
+      transform: translateY(-2px);
     }
     
     .contact-info-container span {
@@ -474,6 +549,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       text-decoration: none;
       transition: var(--transition);
       font-size: 1rem;
+      font-weight: 500;
     }
     
     .contact-info-container a:hover {
@@ -481,20 +557,20 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     }
     
     footer {
-      background: rgba(5, 8, 15, 0.9);
+      background: rgba(3, 6, 12, 0.8);
       padding: 2rem;
       text-align: center;
-      border-top: 1px solid rgba(92, 156, 191, 0.2);
-      margin-top: 3rem;
+      border-top: 1px solid rgba(107, 181, 217, 0.2);
+      margin-top: 4rem;
     }
     
     footer .nav-links {
       justify-content: center;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
     }
     
     .arrow {
-      width: 35px;
+      width: 38px;
       margin-top: 2.5rem;
       cursor: pointer;
       opacity: 0.6;
@@ -512,12 +588,25 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     .reveal {
       opacity: 0;
       transform: translateY(50px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+      transition: opacity 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
     }
     
     .reveal.visible {
       opacity: 1;
       transform: translateY(0);
+    }
+    
+    @media (max-width: 1100px) {
+      #profile {
+        gap: 3rem;
+      }
+      .section__pic-container {
+        width: 320px;
+        height: 320px;
+      }
+      .section__text h1 {
+        font-size: 3.5rem;
+      }
     }
     
     @media (max-width: 1000px) {
@@ -544,6 +633,9 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       }
       .title {
         font-size: 2.3rem;
+      }
+      .animated-role {
+        font-size: 1.3rem;
       }
     }
     
@@ -572,7 +664,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
         font-size: 2.2rem;
       }
       .animated-role {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
       .btn {
         padding: 0.7rem 1.5rem;
@@ -581,15 +673,21 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       .title {
         font-size: 1.8rem;
       }
+      .contact-info-upper-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- CINEMATIC 3D PARTICLE FIELD BACKGROUND -->
+  <!-- CINEMATIC 3D PARTICLE NEBULA BACKGROUND -->
   <canvas id="canvas-bg"></canvas>
   <div class="gradient-overlay"></div>
-  <div class="light-beam"></div>
+  <div class="light-sweep"></div>
   <div class="vignette"></div>
   
   <!-- Premium cursor glow -->
@@ -626,14 +724,14 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
         <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%232c5a7a\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
+        <div class="greeting">✦ WELCOME TO MY REALM ✦</div>
         <h1>Alam Mir Tazwar</h1>
         <div class="animated-role">
           <span id="dynamicRole"></span>
         </div>
         <div class="btn-container">
-          <button class="btn btn-color-2" id="downloadCVBtn">Download CV</button>
-          <button class="btn btn-color-1" onclick="location.href='#contact'">Contact Info</button>
+          <button class="btn btn-color-2" id="downloadCVBtn">📄 Download CV</button>
+          <button class="btn btn-color-1" onclick="location.href='#contact'">✉️ Contact Info</button>
         </div>
         <div id="socials-container">
           <img src="./assets/linkedin.png" alt="LinkedIn" class="icon" onclick="window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank')" onerror="this.style.display='none'">
@@ -647,44 +745,44 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       <h1 class="title">About Me</h1>
       <div class="about-containers">
         <div class="details-container">
-          <h3>💼 Experience</h3>
-          <p>Web Developer Intern<br />COMNET UNISEL (2021)<br />ML Projects: 3+ deployed</p>
+          <h3>💼 Professional Experience</h3>
+          <p>Web Developer Intern<br />COMNET UNISEL (2021)<br />ML Projects: 3+ deployed to production</p>
         </div>
         <div class="details-container">
-          <h3>🎓 Education</h3>
-          <p>Bachelor of CS (Software Engineering)<br />UMPSA (2023–2026)<br />CGPA: 3.7+</p>
+          <h3>🎓 Academic Excellence</h3>
+          <p>Bachelor of CS (Software Engineering)<br />UMPSA (2023–2026)<br />CGPA: 3.7+ | Dean's List</p>
         </div>
       </div>
       <div class="text-container">
-        <p>Software Engineering student at Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA), specializing in Machine Learning and scalable web systems. Built production-ready CNN models achieving <strong>14.2% mAP improvement</strong> for damage detection. Winner of Huawei Hackathon 2025. Passionate about bridging ML optimization with real-world engineering constraints.</p>
+        <p>I'm a passionate Software Engineering student at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, specializing in <strong>Machine Learning</strong> and <strong>scalable web architecture</strong>. I've built production-ready CNN models achieving <strong style="color:var(--accent)">14.2% mAP improvement</strong> for damage detection and won the <strong style="color:var(--accent)">Huawei Hackathon 2025</strong> among 350+ teams. I thrive at the intersection of ML optimization and real-world engineering constraints, delivering solutions that are both innovative and practical.</p>
       </div>
       <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#experience'" onerror="this.style.display='none'">
     </section>
 
     <section id="experience" class="reveal">
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Technical Skills</h1>
+      <h1 class="title">Technical Arsenal</h1>
       <div class="experience-details-container">
         <div class="about-containers">
           <div class="details-container">
-            <h3>💻 Programming & Development</h3>
+            <h3>💻 Core Engineering</h3>
             <div class="article-container">
               <article><span>🐍 Python</span> <span>Advanced</span></article>
               <article><span>☕ Java</span> <span>Intermediate</span></article>
-              <article><span>⚙️ C</span> <span>Intermediate</span></article>
-              <article><span>🌐 HTML/CSS</span> <span>Advanced</span></article>
-              <article><span>📜 JavaScript</span> <span>Intermediate</span></article>
+              <article><span>⚙️ C/C++</span> <span>Intermediate</span></article>
+              <article><span>🌐 HTML5/CSS3</span> <span>Advanced</span></article>
+              <article><span>📜 JavaScript/TS</span> <span>Intermediate</span></article>
               <article><span>🐘 PHP</span> <span>Intermediate</span></article>
               <article><span>📱 Flutter/Dart</span> <span>Intermediate</span></article>
             </div>
           </div>
           <div class="details-container">
-            <h3>🤖 ML & Tools</h3>
+            <h3>🤖 AI & Data Ecosystem</h3>
             <div class="article-container">
               <article><span>🧠 TensorFlow/Keras</span> <span>Advanced</span></article>
               <article><span>👁️ OpenCV</span> <span>Intermediate</span></article>
               <article><span>📊 Scikit-learn</span> <span>Intermediate</span></article>
-              <article><span>🗄️ MySQL</span> <span>Intermediate</span></article>
+              <article><span>🗄️ MySQL/PostgreSQL</span> <span>Intermediate</span></article>
               <article><span>🚀 Laravel</span> <span>Intermediate</span></article>
               <article><span>📈 Power BI</span> <span>Learning</span></article>
               <article><span>☁️ AWS Cloud</span> <span>Basic</span></article>
@@ -697,31 +795,22 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
 
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
+      <h1 class="title">Featured Projects</h1>
       <div class="about-containers">
         <div class="details-container">
           <h3 class="project-title">🚗 Car Damage Detection</h3>
-          <p>VGG16 optimization. <strong style="color:var(--accent)">14.2% mAP improvement</strong>, 31% fewer false negatives.</p>
-          <div style="margin-top:1rem;">
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">TensorFlow</span>
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">OpenCV</span>
-          </div>
+          <p>Fine-tuned VGG16 architecture for subtle vehicle damage classification. Achieved <strong style="color:var(--accent)">14.2% mAP improvement</strong> and <strong style="color:var(--accent)">31% reduction in false negatives</strong> through targeted data augmentation and transfer learning.</p>
+          <div class="project-badge">TensorFlow · OpenCV · CNN</div>
         </div>
         <div class="details-container">
-          <h3 class="project-title">🌱 EcoSnap App</h3>
-          <p><strong style="color:var(--accent)">Winner - Huawei Hackathon 2025</strong> (top 3/350+ teams). Gamified sustainability platform.</p>
-          <div style="margin-top:1rem;">
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Flutter</span>
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Firebase</span>
-          </div>
+          <h3 class="project-title">🌱 EcoSnap</h3>
+          <p><strong style="color:var(--accent)">🏆 Winner - Huawei Hackathon 2025</strong> (Top 3 out of 350+ international teams). A Flutter-based gamified sustainability platform encouraging eco-friendly habits through social challenges and real-time carbon tracking.</p>
+          <div class="project-badge">Flutter · Firebase · REST APIs</div>
         </div>
         <div class="details-container">
           <h3 class="project-title">📋 SamanSphere</h3>
-          <p>Centralized summons system. <strong style="color:var(--accent)">40% query latency reduction</strong> via optimized caching.</p>
-          <div style="margin-top:1rem;">
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">Laravel</span>
-            <span style="font-size:0.7rem; background:rgba(92,156,191,0.2); padding:0.3rem 0.8rem; border-radius:1rem;">MySQL</span>
-          </div>
+          <p>Enterprise-grade centralized traffic summons management system. Engineered optimized indexing and Redis caching strategies resulting in <strong style="color:var(--accent)">40% query latency reduction</strong> and improved concurrent user handling.</p>
+          <div class="project-badge">Laravel · MySQL · Redis</div>
         </div>
       </div>
       <img src="./assets/arrow.png" class="icon arrow" onclick="location.href='#contact'" onerror="this.style.display='none'">
@@ -729,7 +818,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
 
     <section id="contact" class="reveal">
       <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
+      <h1 class="title">Let's Connect</h1>
       <div class="contact-info-upper-container">
         <div class="contact-info-container">
           <span>📧</span>
@@ -754,7 +843,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <p>Copyright © 2026 Alam Mir Tazwar. All Rights Reserved.</p>
+    <p>Copyright © 2026 Alam Mir Tazwar. All Rights Reserved. | Crafted with precision</p>
   </footer>
 
   <script>
@@ -763,8 +852,8 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       if (menu) menu.classList.toggle('open');
     }
 
-    // Animated typing effect
-    const roles = ["Software Engineering Student", "ML Engineer", "Web Developer", "AI Enthusiast"];
+    // Premium animated typing effect
+    const roles = ["Software Engineering Student", "ML Engineer", "Web Architect", "AI Innovator"];
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicRole");
     
@@ -781,7 +870,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       
       if (!isDeleting && charIndex === currentRole.length) {
         isDeleting = true;
-        setTimeout(typeEffect, 2000);
+        setTimeout(typeEffect, 2200);
         return;
       }
       
@@ -792,22 +881,22 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
         return;
       }
       
-      setTimeout(typeEffect, isDeleting ? 50 : 100);
+      setTimeout(typeEffect, isDeleting ? 45 : 85);
     }
     
     typeEffect();
 
-    // Premium cursor glow
+    // Premium cursor glow tracker
     const cursorGlow = document.getElementById('cursorGlow');
     document.addEventListener('mousemove', (e) => {
       cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
     });
 
-    // ========== CINEMATIC PARTICLE FIELD BACKGROUND ==========
+    // ========== CINEMATIC PARTICLE FIELD ==========
     const canvas = document.getElementById('canvas-bg');
     const ctx = canvas.getContext('2d');
     let particles = [];
-    let particleCount = 180;
+    let particleCount = 220;
     let mouseX = 0, mouseY = 0;
 
     function resizeCanvas() {
@@ -819,24 +908,24 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2.5 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.3;
-        this.speedY = (Math.random() - 0.5) * 0.2;
-        this.opacity = Math.random() * 0.4 + 0.1;
-        this.color = `rgba(92, 156, 191, ${this.opacity})`;
+        this.size = Math.random() * 2.8 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.25;
+        this.speedY = (Math.random() - 0.5) * 0.18;
+        this.opacity = Math.random() * 0.45 + 0.1;
+        this.color = `rgba(107, 181, 217, ${this.opacity})`;
       }
       
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
         
-        // Mouse attraction effect
+        // Elegant mouse interaction
         const dx = mouseX - this.x;
         const dy = mouseY - this.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        if (distance < 200) {
+        if (distance < 180) {
           const angle = Math.atan2(dy, dx);
-          const force = (200 - distance) / 200 * 0.5;
+          const force = (180 - distance) / 180 * 0.4;
           this.x += Math.cos(angle) * force;
           this.y += Math.sin(angle) * force;
         }
@@ -869,13 +958,13 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
           const dy = particles[i].y - particles[j].y;
           const distance = Math.sqrt(dx * dx + dy * dy);
           
-          if (distance < 120) {
+          if (distance < 130) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            const opacity = 0.12 * (1 - distance / 120);
-            ctx.strokeStyle = `rgba(92, 156, 191, ${opacity})`;
-            ctx.lineWidth = 0.8;
+            const opacity = 0.1 * (1 - distance / 130);
+            ctx.strokeStyle = `rgba(107, 181, 217, ${opacity})`;
+            ctx.lineWidth = 0.7;
             ctx.stroke();
           }
         }
@@ -908,7 +997,7 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
     initParticles();
     animateBackground();
 
-    // Scroll reveal
+    // Scroll reveal animation
     const revealElements = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -917,12 +1006,56 @@ Here is a complete, ultra-premium HTML portfolio with a cinematic particle field
           observer.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
     revealElements.forEach(el => observer.observe(el));
 
-    // CV Download
+    // Premium CV Download
     document.getElementById('downloadCVBtn')?.addEventListener('click', () => {
-      const cvContent = `ALAM MIR TAZWAR — SOFTWARE ENGINEERING STUDENT\n==============================================\nEmail: tazwaralam01@gmail.com | Malaysia\n\nEDUCATION: Bachelor of CS (Software Engineering) | UMPSA (2023–2026) | CGPA: 3.7+\n\nSKILLS: Python, TensorFlow, OpenCV, Java, Laravel, MySQL, Flutter\n\nPROJECTS:\n• Car Damage Detection: 14.2% mAP improvement\n• EcoSnap App: Winner - Huawei Hackathon 2025\n• SamanSphere: 40% query latency reduction\n\nAWARDS: Huawei Hackathon 2025 Winner (top 3/350+ teams)\n\nAvailable for ML Engineering and Software Development roles.`;
+      const cvContent = `═══════════════════════════════════════
+     ALAM MIR TAZWAR — SOFTWARE ENGINEER
+═══════════════════════════════════════
+
+📧 Email: tazwaralam01@gmail.com
+📍 Location: Malaysia
+🔗 LinkedIn: linkedin.com/in/alam-mir-tazwar
+🐙 GitHub: github.com/alam-ml
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎓 EDUCATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Bachelor of Computer Science (Software Engineering)
+Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)
+2023 – 2026 | CGPA: 3.7+ | Dean's List
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+⚡ TECHNICAL SKILLS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• ML/AI: TensorFlow, Keras, OpenCV, Scikit-learn, CNN
+• Languages: Python, Java, C, JavaScript, PHP, Dart
+• Web: Laravel, Flutter, REST APIs, MySQL
+• Tools: Git, AWS (basic), Power BI
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏆 KEY PROJECTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Car Damage Detection
+   → 14.2% mAP improvement, 31% fewer false negatives
+   → VGG16 optimization with targeted augmentation
+
+2. EcoSnap App — Winner, Huawei Hackathon 2025
+   → Top 3 out of 350+ international teams
+
+3. SamanSphere
+   → 40% query latency reduction via optimized caching
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏅 AWARDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Winner, Huawei Hackathon 2025 (top 3/350+ teams)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Open to ML Engineering and Software Development roles.
+Let's build something extraordinary.`;
       const blob = new Blob([cvContent], { type: 'application/pdf' });
       const url = URL.createObjectURL(blob);
       window.open(url, '_blank');
