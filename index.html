@@ -1,8 +1,3 @@
-You are absolutely right! The pointing down emoji (👇) is too casual for a professional portfolio. Let me replace it with a proper, formal chevron/down arrow icon (Font Awesome) that looks much more professional.
-
-Here is the complete fixed HTML with **formal icons** throughout:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -42,7 +37,7 @@ Here is the complete fixed HTML with **formal icons** throughout:
       overflow-x: hidden;
     }
 
-    /* ========== ORIGINAL PREMIUM PARTICLE BACKGROUND ========== */
+    /* ========== PARTICLE BACKGROUND ========== */
     #canvas-bg {
       position: fixed;
       top: 0;
@@ -233,6 +228,10 @@ Here is the complete fixed HTML with **formal icons** throughout:
       z-index: 2;
     }
     
+    section {
+      padding-top: 5rem;
+    }
+    
     #profile {
       min-height: 100vh;
       display: flex;
@@ -406,7 +405,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       border-color: var(--accent);
     }
     
-    /* Social Icons */
     .social-icon {
       width: 48px;
       height: 48px;
@@ -437,15 +435,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       flex-wrap: wrap;
     }
     
-    #about {
-      padding-top: 0;
-      margin-top: -60px;
-    }
-    
-    #experience, #projects, #contact {
-      padding-top: 5rem;
-    }
-    
     .section__text__p1 {
       font-size: 0.9rem;
       letter-spacing: 5px;
@@ -468,7 +457,7 @@ Here is the complete fixed HTML with **formal icons** throughout:
       padding-bottom: 0.5rem;
     }
     
-    /* ========== ABOUT ME CARD LAYOUT ========== */
+    /* About Section */
     .about-bio-card {
       background: var(--card-bg);
       backdrop-filter: blur(18px);
@@ -577,7 +566,7 @@ Here is the complete fixed HTML with **formal icons** throughout:
       font-size: 0.9rem;
     }
     
-    /* SKILLS SECTION */
+    /* Skills Section */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -632,9 +621,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
     }
     
     .skill-tag:hover {
@@ -642,13 +628,215 @@ Here is the complete fixed HTML with **formal icons** throughout:
       transform: scale(1.03);
     }
     
-    .skill-level {
-      color: var(--accent);
-      font-size: 0.7rem;
-      font-weight: 400;
+    /* Awards & Certifications Section */
+    .awards-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
     }
     
-    /* PROJECTS SECTION */
+    .award-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 2rem;
+      padding: 1.8rem;
+      border: var(--glass-border);
+      transition: all 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      flex: 1;
+      min-width: 320px;
+      display: flex;
+      gap: 1.5rem;
+    }
+    
+    .award-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-8px);
+      background: var(--card-bg-hover);
+      box-shadow: 0 25px 40px -20px rgba(126,200,227,0.25);
+    }
+    
+    .certificate-placeholder {
+      width: 80px;
+      height: 80px;
+      background: rgba(126, 200, 227, 0.1);
+      border-radius: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      border: 1px dashed rgba(126, 200, 227, 0.4);
+      cursor: pointer;
+      transition: var(--transition);
+      flex-shrink: 0;
+    }
+    
+    .certificate-placeholder:hover {
+      background: rgba(126, 200, 227, 0.2);
+      border-color: var(--accent);
+    }
+    
+    .certificate-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 1rem;
+    }
+    
+    .award-content {
+      flex: 1;
+    }
+    
+    .award-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 0.3rem;
+    }
+    
+    .award-date {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+      display: inline-block;
+      background: rgba(126,200,227,0.15);
+      padding: 0.2rem 0.6rem;
+      border-radius: 1rem;
+    }
+    
+    .award-description {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    
+    /* DIGITAL SKILLS - MODERN CARD LAYOUT */
+    .digital-skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .digital-skill-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      border: var(--glass-border);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 180px;
+      flex: 1 0 auto;
+    }
+    
+    .digital-skill-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      background: var(--card-bg-hover);
+    }
+    
+    .digital-skill-icon {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    
+    .digital-skill-text {
+      font-size: 1rem;
+      font-weight: 500;
+    }
+    
+    /* EXPERTISE CARDS */
+    .expertise-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .expertise-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.5rem;
+      border: var(--glass-border);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 220px;
+      flex: 1 0 auto;
+    }
+    
+    .expertise-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      background: var(--card-bg-hover);
+    }
+    
+    .expertise-icon {
+      font-size: 1.8rem;
+      color: var(--accent);
+    }
+    
+    .expertise-text {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+    
+    /* LANGUAGE CARDS */
+    .language-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    
+    .language-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      border-radius: 1.5rem;
+      padding: 1.2rem 1.8rem;
+      border: var(--glass-border);
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      min-width: 160px;
+      text-align: center;
+      justify-content: center;
+    }
+    
+    .language-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      background: var(--card-bg-hover);
+    }
+    
+    .language-flag {
+      font-size: 2rem;
+    }
+    
+    .language-info {
+      text-align: left;
+    }
+    
+    .language-name {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+    
+    .language-level {
+      font-size: 0.75rem;
+      color: var(--accent);
+    }
+    
+    /* Projects Section */
     .projects-grid {
       display: flex;
       flex-wrap: wrap;
@@ -689,7 +877,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       border-color: var(--accent);
       transform: translateY(-8px);
       background: var(--card-bg-hover);
-      box-shadow: 0 25px 40px -20px rgba(126,200,227,0.25);
     }
     
     .project-icon {
@@ -701,7 +888,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       font-size: 1.4rem;
       font-weight: 700;
       margin: 0.5rem 0;
-      color: var(--text-primary);
     }
     
     .project-description {
@@ -724,11 +910,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
       border-radius: 2rem;
       font-size: 0.7rem;
       font-weight: 500;
-      transition: all 0.3s ease;
-    }
-    
-    .project-tech span:hover {
-      background: rgba(126, 200, 227, 0.3);
     }
     
     .award-badge {
@@ -743,130 +924,47 @@ Here is the complete fixed HTML with **formal icons** throughout:
       margin-top: 0.8rem;
     }
     
-    /* CONTACT SECTION WITH FORM */
-    .contact-wrapper {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
-      justify-content: center;
-    }
-    
-    .contact-info-upper-container {
-      flex: 1;
-      min-width: 280px;
-      background: var(--card-bg);
-      backdrop-filter: blur(18px);
-      border-radius: 2rem;
-      padding: 2rem;
-      border: var(--glass-border);
-      transition: var(--transition);
-    }
-    
-    .contact-info-upper-container:hover {
-      border-color: var(--accent);
-    }
-    
+    /* Contact Section */
     .contact-info-container {
       display: flex;
-      align-items: center;
-      gap: 1rem;
-      padding: 0.8rem 1rem;
-      border-radius: 1rem;
-      transition: var(--transition);
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: center;
     }
     
-    .contact-info-container:hover {
-      background: rgba(126, 200, 227, 0.12);
-      transform: translateX(5px);
-    }
-    
-    .contact-info-container span {
-      font-size: 1.5rem;
-    }
-    
-    .contact-info-container a {
-      color: var(--text-primary);
-      text-decoration: none;
-      transition: var(--transition);
-      font-size: 0.9rem;
-      word-break: break-all;
-    }
-    
-    .contact-info-container a:hover {
-      color: var(--accent);
-    }
-    
-    .contact-form-container {
-      flex: 1.5;
-      min-width: 300px;
+    .contact-card {
       background: var(--card-bg);
       backdrop-filter: blur(18px);
-      border-radius: 2rem;
-      padding: 2rem;
+      border-radius: 1.5rem;
+      padding: 1rem 1.5rem;
       border: var(--glass-border);
       transition: var(--transition);
-    }
-    
-    .contact-form-container:hover {
-      border-color: var(--accent);
-    }
-    
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    
-    .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 1rem;
-      background: rgba(2, 4, 8, 0.6);
-      border: 1px solid rgba(126, 200, 227, 0.2);
-      border-radius: 1rem;
-      color: var(--text-primary);
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      font-family: inherit;
-    }
-    
-    .form-group input:focus, .form-group textarea:focus {
-      outline: none;
-      border-color: var(--accent);
-      background: rgba(2, 4, 8, 0.8);
-    }
-    
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-    
-    .submit-btn {
-      background: linear-gradient(135deg, var(--accent), var(--accent-deep));
-      color: white;
-      padding: 1rem 2rem;
-      border: none;
-      border-radius: 3rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      width: 100%;
-      font-size: 1rem;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 0.8rem;
     }
     
-    .submit-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(126,200,227,0.4);
+    .contact-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-5px);
+      background: var(--card-bg-hover);
     }
     
-    .form-status {
-      margin-top: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
+    .contact-card i {
+      font-size: 1.5rem;
     }
     
-    /* Formal chevron arrows for navigation */
+    .contact-card a {
+      color: var(--text-primary);
+      text-decoration: none;
+      transition: var(--transition);
+      font-size: 0.85rem;
+    }
+    
+    .contact-card a:hover {
+      color: var(--accent);
+    }
+    
     .nav-arrow {
       display: block;
       text-align: center;
@@ -919,11 +1017,13 @@ Here is the complete fixed HTML with **formal icons** throughout:
       .section__text h1 { font-size: 3rem; }
       .section__text { text-align: center; }
       .btn-container, #socials-container { justify-content: center; }
-      #about { margin-top: -30px; }
       .title { font-size: 2.3rem; }
       .animated-role { font-size: 1.2rem; }
       nav { padding: 0 2rem; }
       .container { padding: 0 2rem; }
+      .award-card { flex-direction: column; align-items: center; text-align: center; min-width: 280px; }
+      .certificate-placeholder { width: 100px; height: 100px; }
+      .digital-skill-card, .expertise-card { min-width: 100%; }
     }
     
     @media (max-width: 900px) {
@@ -938,16 +1038,16 @@ Here is the complete fixed HTML with **formal icons** throughout:
       .animated-role { font-size: 1rem; }
       .btn { padding: 0.7rem 1.5rem; font-size: 0.8rem; }
       .title { font-size: 1.8rem; }
-      .skill-card, .project-card { min-width: 100%; }
-      .contact-wrapper { flex-direction: column; }
+      .skill-card, .project-card, .award-card { min-width: 100%; }
+      .contact-card { width: 100%; justify-content: center; }
       .social-icon { width: 40px; height: 40px; font-size: 1.3rem; }
-      .nav-arrow { font-size: 1.5rem; }
+      .digital-skill-card, .expertise-card { min-width: 100%; }
+      .language-card { min-width: 100%; justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ORIGINAL PREMIUM PARTICLE BACKGROUND -->
   <canvas id="canvas-bg"></canvas>
   <div class="gradient-overlay"></div>
   <div class="gradient-overlay-2"></div>
@@ -959,7 +1059,8 @@ Here is the complete fixed HTML with **formal icons** throughout:
     <div class="logo">Alam Mir Tazwar</div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
-      <li><a href="#experience">Skills</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -973,7 +1074,8 @@ Here is the complete fixed HTML with **formal icons** throughout:
       </div>
       <ul class="menu-links">
         <li><a href="#about" onclick="toggleMenu()">About</a></li>
-        <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
+        <li><a href="#awards" onclick="toggleMenu()">Awards</a></li>
+        <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
         <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
         <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
       </ul>
@@ -988,9 +1090,7 @@ Here is the complete fixed HTML with **formal icons** throughout:
       <div class="section__text">
         <p class="greeting">Hello, I'm</p>
         <h1>Alam Mir Tazwar</h1>
-        <div class="animated-role">
-          <span id="dynamicRole"></span>
-        </div>
+        <div class="animated-role"><span id="dynamicRole"></span></div>
         <div class="location-text">📍 Pekan, Pahang, Malaysia</div>
         <div class="btn-container">
           <button class="btn btn-color-2" id="downloadCVBtn"><i class="fas fa-file-pdf"></i> Download CV</button>
@@ -1008,19 +1108,16 @@ Here is the complete fixed HTML with **formal icons** throughout:
     <section id="about" class="reveal">
       <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
-      
       <div class="about-bio-card">
         <div class="bio-text">
-          I'm a <strong>Software Engineering student</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, passionate about <strong>Machine Learning</strong> and <strong>Web Development</strong>. I built a <strong>Car Damage Detection system</strong> using VGG16, TensorFlow, and OpenCV, and won <strong>🏆 Huawei Hackathon 2025 UMPSA (Best Game App)</strong> representing my team <strong>AceEngineers</strong>. Currently expanding my skills in <strong>Machine Learning, Microsoft Power Platform (Power BI, Power Apps)</strong> to drive data-informed business decisions. I thrive at the intersection of AI innovation and practical engineering.
+          I'm a <strong>Software Engineering student</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, passionate about <strong>Machine Learning</strong> and <strong>Web Development</strong>. I built a <strong>Car Damage Detection system</strong> using VGG16, TensorFlow, and OpenCV, and won <strong>🏆 Huawei Hackathon 2025 UMPSA (Best Game App)</strong> representing my team <strong>AceEngineers</strong>. Currently expanding my skills in <strong>Machine Learning, Microsoft Power Platform (Power BI, Power Apps)</strong> to drive data-informed business decisions.
         </div>
-        
         <div>
           <span class="highlight-badge">🏆 Hackathon Winner 2025</span>
           <span class="highlight-badge">🤖 ML Engineer</span>
           <span class="highlight-badge">💻 Full-Stack Developer</span>
           <span class="highlight-badge">📊 Power Platform</span>
         </div>
-        
         <div class="stats-row">
           <div class="stat-item"><span class="stat-number">3+</span><span class="stat-label">Production Projects</span></div>
           <div class="stat-item"><span class="stat-number">20+</span><span class="stat-label">Websites Delivered</span></div>
@@ -1028,150 +1125,111 @@ Here is the complete fixed HTML with **formal icons** throughout:
           <div class="stat-item"><span class="stat-number">100+</span><span class="stat-label">Students Trained</span></div>
         </div>
       </div>
-      
       <div class="about-cards">
         <div class="info-card">
-          <h3><i class="fas fa-briefcase" style="margin-right: 0.5rem;"></i> Work Experience</h3>
+          <h3><i class="fas fa-briefcase"></i> Work Experience</h3>
           <p><strong>Web Developer Intern — COMNET UNISEL</strong><br>Sep 2021 – Dec 2021</p>
-          <p style="margin-top:0.5rem">• Developed 20+ full-stack WordPress websites<br>• Managed SEO improvements & database integration<br>• Conducted training for ~100 students<br>• Represented organization at SDEC conference</p>
+          <p style="margin-top:0.5rem">• Developed 20+ full-stack WordPress websites<br>• Managed SEO & database integration<br>• Trained ~100 students</p>
         </div>
         <div class="info-card">
-          <h3><i class="fas fa-graduation-cap" style="margin-right: 0.5rem;"></i> Education</h3>
+          <h3><i class="fas fa-graduation-cap"></i> Education</h3>
           <p><strong>Bachelor of CS (Software Engineering) Hons.</strong><br>UMPSA (2023–Present)</p>
-          <p style="margin-top:0.5rem"><strong>Diploma in CS (Information Technology)</strong><br>UNISEL (2018–2022)</p>
-          <p style="margin-top:0.5rem"><strong>Focus:</strong> Programming, Algorithms, Data Structures</p>
+          <p><strong>Diploma in CS (Information Technology)</strong><br>UNISEL (2018–2022)</p>
         </div>
       </div>
-      
-      <div class="nav-arrow" onclick="location.href='#experience'">
-        <i class="fas fa-chevron-down"></i>
-      </div>
+      <div class="nav-arrow" onclick="location.href='#awards'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
-    <section id="experience" class="reveal">
+    <!-- AWARDS & CERTIFICATIONS SECTION -->
+    <section id="awards" class="reveal">
+      <p class="section__text__p1">Recognitions</p>
+      <h1 class="title">Awards & Certifications</h1>
+      <div class="awards-grid">
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">🏆 Hackathon UMPSA x Huawei 2025 (Track B) - Winner of Best Game App</div><span class="award-date">November 2025</span><div class="award-description">Built EcoSnap, a Flutter-based social game app with strong UI/UX</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">🏆 Hackathon Top 10 Finalist - Innovation Mobile App Competition</div><span class="award-date">November 2025</span><div class="award-description">Contributed to EcoSnap development using Flutter (Team AceEngineers)</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">📱 Huawei AppGallery Mobile App Competition 2025</div><span class="award-date">November 2025</span><div class="award-description">Designed and pitched DengueSense, a mobile app for dengue risk awareness</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">💻 Hackathon X UMPSA – SamanSphere</div><span class="award-date">August 2025</span><div class="award-description">Developed a Laravel-based platform to centralize multi-agency summons payments</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">📊 Datathon 2025 - Universiti Malaya</div><span class="award-date">December 2025</span><div class="award-description">Performed financial data analysis and built time series forecasting models</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">☁️ Google Cloud Engineering Badge</div><span class="award-date">December 2025</span><div class="award-description">Hands-on experience with cloud infrastructure (IAM, VPC, Compute Engine)</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">☁️ AWS Cloud Practitioner Essentials</div><span class="award-date">December 2025</span><div class="award-description">Knowledge of cloud services, security, and AWS global infrastructure</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">🌐 CCNA: Introduction to Networks</div><span class="award-date">July 2024</span><div class="award-description">Learned networking fundamentals and performed configuration labs</div></div></div>
+        <div class="award-card"><div class="certificate-placeholder" onclick="alert('Add certificate image here')"><i class="fas fa-certificate"></i></div><div class="award-content"><div class="award-title">💻 ICT Training Certification (Web Development)</div><span class="award-date">October 2021</span><div class="award-description">Built responsive websites using HTML, CSS, PHP, and Bootstrap</div></div></div>
+      </div>
+      <div class="nav-arrow" onclick="location.href='#skills'"><i class="fas fa-chevron-down"></i></div>
+    </section>
+
+    <!-- SKILLS & EXPERTISE SECTION -->
+    <section id="skills" class="reveal">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Technical Skills</h1>
       <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-header"><span>💻</span> Programming Languages</div>
-          <div class="skill-items">
-            <div class="skill-tag">Python <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">Java <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">C <span class="skill-level">Intermediate</span></div>
-            <div class="skill-tag">JavaScript <span class="skill-level">Intermediate</span></div>
-            <div class="skill-tag">PHP <span class="skill-level">Intermediate</span></div>
-            <div class="skill-tag">Dart <span class="skill-level">Intermediate</span></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header"><span>🧠</span> ML & AI Tools</div>
-          <div class="skill-items">
-            <div class="skill-tag">TensorFlow/Keras <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">OpenCV <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">Scikit-learn <span class="skill-level">Intermediate</span></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header"><span>🌐</span> Web & Database</div>
-          <div class="skill-items">
-            <div class="skill-tag">Laravel <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">WordPress <span class="skill-level">Expert</span></div>
-            <div class="skill-tag">MySQL <span class="skill-level">Advanced</span></div>
-            <div class="skill-tag">HTML/CSS <span class="skill-level">Expert</span></div>
-          </div>
-        </div>
-        <div class="skill-card">
-          <div class="skill-header"><span>⚙️</span> Other Tools</div>
-          <div class="skill-items">
-            <div class="skill-tag">Power BI <span class="skill-level">Intermediate</span></div>
-            <div class="skill-tag">AWS/GCP <span class="skill-level">Basic</span></div>
-            <div class="skill-tag">Leadership <span class="skill-level">Strong</span></div>
-            <div class="skill-tag">Problem Solving <span class="skill-level">Strong</span></div>
-          </div>
-        </div>
+        <div class="skill-card"><div class="skill-header"><span>💻</span> Programming</div><div class="skill-items"><div class="skill-tag">Python</div><div class="skill-tag">Java</div><div class="skill-tag">C</div><div class="skill-tag">JavaScript</div><div class="skill-tag">PHP</div><div class="skill-tag">Dart</div></div></div>
+        <div class="skill-card"><div class="skill-header"><span>🧠</span> ML & AI</div><div class="skill-items"><div class="skill-tag">TensorFlow/Keras</div><div class="skill-tag">OpenCV</div><div class="skill-tag">Scikit-learn</div></div></div>
+        <div class="skill-card"><div class="skill-header"><span>🌐</span> Web & DB</div><div class="skill-items"><div class="skill-tag">Laravel</div><div class="skill-tag">WordPress</div><div class="skill-tag">MySQL</div><div class="skill-tag">HTML/CSS</div></div></div>
+        <div class="skill-card"><div class="skill-header"><span>⚙️</span> Tools & Cloud</div><div class="skill-items"><div class="skill-tag">Power BI</div><div class="skill-tag">AWS/GCP</div><div class="skill-tag">Flutter</div><div class="skill-tag">Git</div></div></div>
       </div>
-      <div class="nav-arrow" onclick="location.href='#projects'">
-        <i class="fas fa-chevron-down"></i>
+      
+      <h1 class="title" style="margin-top: 3rem;">Digital Skills</h1>
+      <div class="digital-skills-grid">
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-mobile-alt"></i></div><div class="digital-skill-text">Mobile App Development</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-palette"></i></div><div class="digital-skill-text">UI/UX Design</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-vial"></i></div><div class="digital-skill-text">Software Testing</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-cloud"></i></div><div class="digital-skill-text">Cloud Computing</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-chart-line"></i></div><div class="digital-skill-text">Power BI</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-file-alt"></i></div><div class="digital-skill-text">MS Office 365</div></div>
+        <div class="digital-skill-card"><div class="digital-skill-icon"><i class="fas fa-code"></i></div><div class="digital-skill-text">Full Stack Web Development</div></div>
       </div>
+      
+      <h1 class="title" style="margin-top: 3rem;">Expertise</h1>
+      <div class="expertise-grid">
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-microphone-alt"></i></div><div class="expertise-text">Public Speaking</div></div>
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-brain"></i></div><div class="expertise-text">Problem Solving & Analytical Thinking</div></div>
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-flask"></i></div><div class="expertise-text">Research & Development</div></div>
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-chalkboard-user"></i></div><div class="expertise-text">Technical Training & Knowledge Sharing</div></div>
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-users"></i></div><div class="expertise-text">Team Leadership & Collaboration</div></div>
+        <div class="expertise-card"><div class="expertise-icon"><i class="fas fa-lightbulb"></i></div><div class="expertise-text">Critical Thinking</div></div>
+      </div>
+      
+      <h1 class="title" style="margin-top: 3rem;">Languages</h1>
+      <div class="language-grid">
+        <div class="language-card"><div class="language-flag">🇬🇧</div><div class="language-info"><div class="language-name">English</div><div class="language-level">Fluent</div></div></div>
+        <div class="language-card"><div class="language-flag">🇧🇩</div><div class="language-info"><div class="language-name">Bangla</div><div class="language-level">Fluent</div></div></div>
+        <div class="language-card"><div class="language-flag">🇮🇳</div><div class="language-info"><div class="language-name">Hindi</div><div class="language-level">Intermediate</div></div></div>
+        <div class="language-card"><div class="language-flag">🇲🇾</div><div class="language-info"><div class="language-name">Malay</div><div class="language-level">Basic</div></div></div>
+      </div>
+      <div class="nav-arrow" onclick="location.href='#projects'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
+    <!-- PROJECTS SECTION -->
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Flagship Projects</h1>
       <div class="projects-grid">
-        <div class="project-card">
-          <div class="project-icon">🚗</div>
-          <h3 class="project-title">Car Damage Detection System</h3>
-          <p class="project-description">ML-powered system using <strong>VGG16, TensorFlow, and OpenCV</strong> to detect subtle vehicle damages. Achieved significant accuracy improvements through preprocessing and optimization techniques.</p>
-          <div class="project-tech"><span>TensorFlow</span><span>OpenCV</span><span>CNN</span><span>Python</span></div>
-          <div class="award-badge">🎓 Final Year Project</div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">🌱</div>
-          <h3 class="project-title">EcoSnap — Huawei Hackathon Winner</h3>
-          <p class="project-description"><strong>🏆 Best Game App Award</strong> representing team <strong>AceEngineers</strong> at Huawei Hackathon 2025 UMPSA. Flutter-based social gamification app promoting sustainability.</p>
-          <div class="project-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div>
-          <div class="award-badge">🏆 Winner — Huawei Hackathon 2025</div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">📋</div>
-          <h3 class="project-title">SamanSphere</h3>
-          <p class="project-description">Centralized traffic summons payment platform built with <strong>Laravel</strong>. Optimized for multi-agency integration, high performance, and secure transactions.</p>
-          <div class="project-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div>
-        </div>
-        <div class="project-card">
-          <div class="project-icon">🦟</div>
-          <h3 class="project-title">DengueSense & Datathon</h3>
-          <p class="project-description"><strong>DengueSense:</strong> Mobile app concept for dengue risk awareness. <strong>Datathon Financial Forecasting:</strong> Built time series models for financial data analysis.</p>
-          <div class="project-tech"><span>Time Series</span><span>Data Analysis</span><span>Mobile Concept</span></div>
-        </div>
+        <div class="project-card"><div class="project-icon">🚗</div><h3 class="project-title">Car Damage Detection System</h3><p class="project-description">ML system using VGG16, TensorFlow, and OpenCV to detect subtle vehicle damages.</p><div class="project-tech"><span>TensorFlow</span><span>OpenCV</span><span>Python</span></div><div class="award-badge">🎓 Final Year Project</div></div>
+        <div class="project-card"><div class="project-icon">🌱</div><h3 class="project-title">EcoSnap — Huawei Hackathon Winner</h3><p class="project-description">🏆 Best Game App Award. Flutter-based social gamification app promoting sustainability.</p><div class="project-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div><div class="award-badge">🏆 Winner 2025</div></div>
+        <div class="project-card"><div class="project-icon">📋</div><h3 class="project-title">SamanSphere</h3><p class="project-description">Centralized traffic summons payment platform built with Laravel.</p><div class="project-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div></div>
+        <div class="project-card"><div class="project-icon">🦟</div><h3 class="project-title">DengueSense</h3><p class="project-description">Mobile app concept for dengue risk awareness (Hackathon project).</p><div class="project-tech"><span>Mobile Concept</span><span>UI/UX</span></div></div>
       </div>
-      <div class="nav-arrow" onclick="location.href='#contact'">
-        <i class="fas fa-chevron-down"></i>
-      </div>
+      <div class="nav-arrow" onclick="location.href='#contact'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="reveal">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Let's Connect</h1>
-      <div class="contact-wrapper">
-        <div class="contact-info-upper-container">
-          <div class="contact-info-container"><span>📧</span><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></div>
-          <div class="contact-info-container"><span>📱</span><a href="tel:+60104650774">+60 10-465 0774</a></div>
-          <div class="contact-info-container"><span>🔗</span><a href="https://linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></div>
-          <div class="contact-info-container"><span>🌐</span><a href="https://mirtazwar.github.io" target="_blank">mirtazwar.github.io</a></div>
-          <div class="contact-info-container"><span>📘</span><a href="https://www.facebook.com/mirtazwaralam/" target="_blank">facebook.com/mirtazwaralam</a></div>
-          <div class="contact-info-container"><span>📷</span><a href="https://www.instagram.com/mirtazwar/" target="_blank">instagram.com/mirtazwar</a></div>
-        </div>
-        
-        <div class="contact-form-container">
-          <h3 style="color: var(--accent); margin-bottom: 1.5rem; font-size: 1.3rem;"><i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i> Send me a message</h3>
-          <form id="contactForm">
-            <div class="form-group">
-              <i class="fas fa-user" style="position: absolute; margin-left: 1rem; margin-top: 1rem; color: var(--accent); opacity: 0.6;"></i>
-              <input type="text" id="name" placeholder="Your Name" style="padding-left: 2.5rem;" required>
-            </div>
-            <div class="form-group">
-              <i class="fas fa-envelope" style="position: absolute; margin-left: 1rem; margin-top: 1rem; color: var(--accent); opacity: 0.6;"></i>
-              <input type="email" id="email" placeholder="Your Email" style="padding-left: 2.5rem;" required>
-            </div>
-            <div class="form-group">
-              <i class="fas fa-tag" style="position: absolute; margin-left: 1rem; margin-top: 1rem; color: var(--accent); opacity: 0.6;"></i>
-              <input type="text" id="subject" placeholder="Subject" style="padding-left: 2.5rem;" required>
-            </div>
-            <div class="form-group">
-              <textarea id="message" placeholder="Your Message..." required></textarea>
-            </div>
-            <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
-            <div id="formStatus" class="form-status"></div>
-          </form>
-        </div>
+      <div class="contact-info-container">
+        <div class="contact-card"><i class="fas fa-envelope"></i><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></div>
+        <div class="contact-card"><i class="fab fa-whatsapp"></i><a href="https://wa.me/+60104650774" target="_blank">+60 10-465 0774</a></div>
+        <div class="contact-card"><i class="fab fa-linkedin-in"></i><a href="https://linkedin.com/in/alam-mir-tazwar" target="_blank">linkedin.com/in/alam-mir-tazwar</a></div>
+        <div class="contact-card"><i class="fas fa-globe"></i><a href="https://mirtazwar.github.io" target="_blank">mirtazwar.github.io</a></div>
+        <div class="contact-card"><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/mirtazwaralam/" target="_blank">facebook.com/mirtazwaralam</a></div>
+        <div class="contact-card"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/mirtazwar/" target="_blank">instagram.com/mirtazwar</a></div>
       </div>
     </section>
   </div>
 
   <footer>
-    <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#experience">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
+    <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#awards">Awards</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
     <p>© 2026 Alam Mir Tazwar — Software Engineering Student | ML & Web Development</p>
   </footer>
 
@@ -1195,30 +1253,6 @@ Here is the complete fixed HTML with **formal icons** throughout:
     const cursorGlow = document.getElementById('cursorGlow');
     document.addEventListener('mousemove', (e) => { cursorGlow.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`; });
     
-    // Contact Form Handler
-    const form = document.getElementById('contactForm');
-    const formStatus = document.getElementById('formStatus');
-    
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const subject = document.getElementById('subject').value;
-      const message = document.getElementById('message').value;
-      
-      formStatus.innerHTML = '📤 Opening email client...';
-      formStatus.style.color = '#7EC8E3';
-      
-      const mailtoLink = `mailto:tazwaralam01@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-      window.location.href = mailtoLink;
-      
-      formStatus.innerHTML = '✅ Email client opened! Please send your message.';
-      formStatus.style.color = '#4CAF50';
-      form.reset();
-      setTimeout(() => { formStatus.innerHTML = ''; }, 5000);
-    });
-    
-    // CV Download
     document.getElementById('downloadCVBtn').addEventListener('click', function() {
       const pdfPath = './assets/resume-example.pdf';
       const link = document.createElement('a');
@@ -1238,22 +1272,17 @@ Here is the complete fixed HTML with **formal icons** throughout:
     
     class Particle {
       constructor() { 
-        this.x = Math.random() * canvas.width; 
-        this.y = Math.random() * canvas.height; 
-        this.size = Math.random() * 3.2 + 0.5; 
-        this.speedX = (Math.random() - 0.5) * 0.22; 
-        this.speedY = (Math.random() - 0.5) * 0.18; 
-        this.opacity = Math.random() * 0.5 + 0.1; 
+        this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; 
+        this.size = Math.random() * 3.2 + 0.5; this.speedX = (Math.random() - 0.5) * 0.22; 
+        this.speedY = (Math.random() - 0.5) * 0.18; this.opacity = Math.random() * 0.5 + 0.1; 
         this.color = `rgba(126, 200, 227, ${this.opacity})`; 
       }
       update() {
         this.x += this.speedX; this.y += this.speedY;
         const dx = mouseX - this.x, dy = mouseY - this.y, distance = Math.sqrt(dx * dx + dy * dy);
         if (distance < 200) { const angle = Math.atan2(dy, dx); const force = (200 - distance) / 200 * 0.35; this.x += Math.cos(angle) * force; this.y += Math.sin(angle) * force; }
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
+        if (this.x < 0) this.x = canvas.width; if (this.x > canvas.width) this.x = 0;
+        if (this.y < 0) this.y = canvas.height; if (this.y > canvas.height) this.y = 0;
       }
       draw() { ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fillStyle = this.color; ctx.fill(); }
     }
@@ -1277,8 +1306,7 @@ Here is the complete fixed HTML with **formal icons** throughout:
     function animateBackground() { 
       ctx.clearRect(0, 0, canvas.width, canvas.height); 
       for (let i = 0; i < particles.length; i++) { particles[i].update(); particles[i].draw(); } 
-      connectParticles(); 
-      requestAnimationFrame(animateBackground); 
+      connectParticles(); requestAnimationFrame(animateBackground); 
     }
     
     window.addEventListener('resize', () => { resizeCanvas(); initParticles(); });
