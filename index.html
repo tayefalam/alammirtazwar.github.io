@@ -1,3 +1,6 @@
+Here is your complete HTML portfolio with the **"Get To Know More" section redesigned with a clean arrow indicator** as shown in your reference image, plus the reduced gap between profile and about section.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -309,12 +312,41 @@
     
     #socials-container { display: flex; gap: 0.8rem; margin-top: 1.2rem; flex-wrap: wrap; }
     
-    .section__text__p1 {
+    /* Get To Know More Section - Arrow Indicator */
+    .get-to-know {
+      text-align: center;
+      margin-top: 2rem;
+      position: relative;
+    }
+    
+    .get-to-know p {
       font-size: 0.75rem;
-      letter-spacing: 5px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+    
+    .scroll-arrow {
+      display: inline-block;
+      cursor: pointer;
+      transition: var(--transition);
+      color: var(--accent);
+      font-size: 1rem;
+      animation: bounce 2s infinite;
+    }
+    
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(8px); }
+      60% { transform: translateY(4px); }
+    }
+    
+    .scroll-arrow:hover {
+      opacity: 1;
+      transform: translateY(5px);
+      animation: none;
     }
     
     .title {
@@ -329,11 +361,6 @@
       display: inline-block;
       border-bottom: 2px solid var(--border-light);
       padding-bottom: 0.3rem;
-    }
-    
-    /* Reduce gap between profile and about section */
-    #about {
-      padding-top: 1rem;
     }
     
     .about-bio-card, .info-card, .single-card, .contact-card {
@@ -643,19 +670,6 @@
     .contact-card a { color: var(--text-primary); text-decoration: none; transition: var(--transition); font-size: 0.75rem; }
     .contact-card a:hover { color: var(--accent); }
     
-    .nav-arrow {
-      display: block;
-      text-align: center;
-      margin-top: 1.5rem;
-      cursor: pointer;
-      transition: var(--transition);
-      color: var(--accent);
-      font-size: 1.1rem;
-      opacity: 0.6;
-    }
-    
-    .nav-arrow:hover { opacity: 1; transform: translateY(3px); }
-    
     footer {
       background: var(--bg-card);
       padding: 1.5rem;
@@ -743,7 +757,7 @@
         <img src="./assets/profile-pic.png" alt="Alam Mir Tazwar" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 100 100\'%3E%3Ccircle cx=\'50\' cy=\'50\' r=\'48\' fill=\'%239B7BDF\'/%3E%3Ctext x=\'50\' y=\'67\' font-size=\'40\' text-anchor=\'middle\' fill=\'white\'%3EAT%3C/text%3E%3C/svg%3E'">
       </div>
       <div class="section__text">
-        <p class="greeting">Hello, I'm</p>
+        <p class="greeting">HELLO, I'M</p>
         <h1>Alam Mir Tazwar</h1>
         <div class="animated-role"><span id="dynamicRole"></span></div>
         <div class="location-text">📍 Pekan, Pahang, Malaysia</div>
@@ -760,8 +774,15 @@
       </div>
     </section>
 
+    <!-- Get To Know More Section with Arrow -->
+    <div class="get-to-know">
+      <p>GET TO KNOW MORE</p>
+      <div class="scroll-arrow" onclick="location.href='#about'">
+        <i class="fas fa-chevron-down"></i>
+      </div>
+    </div>
+
     <section id="about" class="reveal">
-      <p class="section__text__p1">Get To Know More</p>
       <h1 class="title">About Me</h1>
       <div class="about-bio-card">
         <div class="bio-text">
@@ -1062,7 +1083,7 @@
   <script>
     function toggleMenu() { document.querySelector('.menu-links')?.classList.toggle('open'); }
     
-    // Typing Effect with updated titles
+    // Typing Effect
     const roles = ["Software Engineer", "Machine Learning Practitioner", "Web Developer", "Hackathon Winner"];
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicRole");
