@@ -1,4 +1,4 @@
-Here is your complete HTML portfolio with the **Awards & Certifications section redesigned as a beautiful gallery layout**, featuring card-style presentation with hover effects and image placeholders.
+Here is your complete HTML portfolio with the profile section updated to say **"Software Engineer"** and **"Machine Learning Practitioner"** instead of the previous titles.
 
 ```html
 <!DOCTYPE html>
@@ -7,7 +7,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="description" content="Alam Mir Tazwar — Software Engineering Student specializing in Machine Learning and Web Development. Huawei Hackathon Winner." />
+  <meta name="description" content="Alam Mir Tazwar — Software Engineer specializing in Machine Learning and Web Development. Huawei Hackathon Winner." />
   <meta name="author" content="Alam Mir Tazwar" />
   <title>Alam Mir Tazwar | Software Engineer | ML & Web Dev</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
@@ -19,7 +19,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     }
 
     :root {
-      /* Premium Minimal Purple Palette - Dark Mode */
       --bg-primary: #0D0B14;
       --bg-secondary: #12101A;
       --bg-card: rgba(26, 22, 40, 0.7);
@@ -36,7 +35,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       --transition: all 0.3s ease;
     }
 
-    /* Light Mode - Minimal Purple */
     body.light-mode {
       --bg-primary: #F5F3FA;
       --bg-secondary: #EDEAF3;
@@ -63,7 +61,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       transition: background 0.3s ease, color 0.3s ease;
     }
 
-    /* Subtle gradient overlay */
     .bg-overlay {
       position: fixed;
       top: 0;
@@ -75,7 +72,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       pointer-events: none;
     }
     
-    /* Light sweep animation */
     .light-sweep {
       position: fixed;
       top: 0;
@@ -95,7 +91,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       100% { transform: translateX(50%); opacity: 0; }
     }
 
-    /* ========== NAVIGATION ========== */
     nav {
       display: flex;
       justify-content: space-between;
@@ -112,9 +107,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       transition: background 0.3s ease;
     }
     
-    body.light-mode nav {
-      background: rgba(245, 243, 250, 0.9);
-    }
+    body.light-mode nav { background: rgba(245, 243, 250, 0.9); }
     
     .logo {
       font-size: 1.6rem;
@@ -141,11 +134,8 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       transition: var(--transition);
     }
     
-    .nav-links a:hover {
-      color: var(--accent);
-    }
+    .nav-links a:hover { color: var(--accent); }
     
-    /* Theme Toggle */
     .theme-toggle {
       background: var(--bg-card);
       border: 1px solid var(--border-light);
@@ -156,7 +146,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.1rem;
+      font-size: 1rem;
       color: var(--accent);
       transition: var(--transition);
     }
@@ -196,7 +186,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     
     .menu-links.open { display: flex; }
 
-    /* ========== MAIN CONTENT ========== */
     .container {
       max-width: 1200px;
       margin: 0 auto;
@@ -224,7 +213,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       background: linear-gradient(135deg, var(--accent), var(--accent-dark));
       padding: 4px;
       box-shadow: 0 20px 35px -12px rgba(0,0,0,0.3);
-      transition: var(--transition);
     }
     
     .section__pic-container img {
@@ -234,10 +222,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       border-radius: 50%;
     }
     
-    .section__text {
-      text-align: left;
-      max-width: 550px;
-    }
+    .section__text { text-align: left; max-width: 550px; }
     
     .greeting {
       font-size: 0.85rem;
@@ -257,18 +242,8 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       letter-spacing: -1px;
     }
     
-    .location-text {
-      font-size: 0.95rem;
-      color: var(--text-secondary);
-      margin-top: 0.3rem;
-    }
-    
-    .animated-role {
-      font-size: 1.2rem;
-      color: var(--text-secondary);
-      min-height: 3rem;
-      margin: 0.5rem 0;
-    }
+    .location-text { font-size: 0.95rem; color: var(--text-secondary); margin-top: 0.3rem; }
+    .animated-role { font-size: 1.2rem; color: var(--text-secondary); min-height: 3rem; margin: 0.5rem 0; }
     
     #dynamicRole {
       color: var(--accent);
@@ -283,11 +258,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       50% { border-color: transparent; }
     }
     
-    .btn-container {
-      display: flex;
-      gap: 1.2rem;
-      margin: 1.5rem 0;
-    }
+    .btn-container { display: flex; gap: 1.2rem; margin: 1.5rem 0; }
     
     .btn {
       padding: 0.75rem 1.8rem;
@@ -307,10 +278,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       color: white;
     }
     
-    .btn-color-1:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 5px 20px var(--accent-glow);
-    }
+    .btn-color-1:hover { transform: translateY(-2px); box-shadow: 0 5px 20px var(--accent-glow); }
     
     .btn-color-2 {
       background: transparent;
@@ -318,10 +286,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       color: var(--text-primary);
     }
     
-    .btn-color-2:hover {
-      background: var(--accent-glow);
-      transform: translateY(-2px);
-    }
+    .btn-color-2:hover { background: var(--accent-glow); transform: translateY(-2px); }
     
     .social-icon {
       width: 38px;
@@ -344,12 +309,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       transform: translateY(-3px);
     }
     
-    #socials-container {
-      display: flex;
-      gap: 0.8rem;
-      margin-top: 1.2rem;
-      flex-wrap: wrap;
-    }
+    #socials-container { display: flex; gap: 0.8rem; margin-top: 1.2rem; flex-wrap: wrap; }
     
     .section__text__p1 {
       font-size: 0.75rem;
@@ -373,8 +333,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       padding-bottom: 0.3rem;
     }
     
-    /* Card Styles */
-    .about-bio-card, .info-card, .skill-card, .single-card, .project-card, .contact-card {
+    .about-bio-card, .info-card, .single-card, .contact-card {
       background: var(--bg-card);
       backdrop-filter: blur(10px);
       border-radius: 1.2rem;
@@ -382,7 +341,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       transition: var(--transition);
     }
     
-    .about-bio-card:hover, .info-card:hover, .skill-card:hover, .single-card:hover, .project-card:hover, .contact-card:hover {
+    .about-bio-card:hover, .info-card:hover, .single-card:hover, .contact-card:hover {
       border-color: var(--accent);
       background: var(--bg-card-hover);
       transform: translateY(-4px);
@@ -391,9 +350,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     
     .about-bio-card { padding: 1.8rem; margin-bottom: 1.5rem; }
     .info-card { padding: 1.2rem; flex: 1; min-width: 210px; }
-    .skill-card { padding: 1.2rem; min-width: 210px; }
     .single-card { padding: 1.2rem; margin-bottom: 1.2rem; }
-    .project-card { padding: 1.2rem; min-width: 250px; }
     .contact-card { padding: 0.7rem 1.2rem; display: inline-flex; align-items: center; gap: 0.6rem; }
     
     .bio-text {
@@ -416,12 +373,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       margin-top: 0.5rem;
     }
     
-    .stats-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 1rem;
-    }
+    .stats-row { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
     
     .stat-item {
       flex: 1;
@@ -436,13 +388,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     
     .stat-item:hover { background: var(--accent-glow); }
     
-    .stat-number {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--accent);
-      display: block;
-    }
-    
+    .stat-number { font-size: 1.4rem; font-weight: 700; color: var(--accent); display: block; }
     .stat-label { font-size: 0.6rem; color: var(--text-secondary); }
     
     .about-cards { display: flex; gap: 1.2rem; flex-wrap: wrap; }
@@ -455,46 +401,109 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     
     .info-card p { color: var(--text-secondary); line-height: 1.5; font-size: 0.8rem; }
     
-    .skills-grid { display: flex; flex-wrap: wrap; gap: 1.2rem; justify-content: center; }
-    
-    .skill-header {
+    /* Skills Section with Progress Bars */
+    .skills-wrapper {
       display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 0.5rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: space-between;
     }
     
-    .skill-items { display: flex; flex-wrap: wrap; gap: 0.5rem; }
-    
-    .skill-tag {
-      background: var(--accent-glow);
-      padding: 0.3rem 0.8rem;
-      border-radius: 1.5rem;
-      font-size: 0.7rem;
-      font-weight: 500;
+    .skills-category {
+      flex: 1;
+      min-width: 250px;
+      background: var(--bg-card);
+      backdrop-filter: blur(10px);
+      border-radius: 1.2rem;
+      padding: 1.5rem;
+      border: var(--glass-border);
       transition: var(--transition);
     }
     
-    .skill-tag:hover { background: rgba(155, 123, 223, 0.25); }
-    
-    .card-title {
-      font-size: 1rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      border-bottom: 1px solid var(--border-light);
-      padding-bottom: 0.5rem;
+    .skills-category:hover {
+      border-color: var(--accent);
+      background: var(--bg-card-hover);
+      transform: translateY(-4px);
     }
     
-    .skills-list { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+    .category-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      border-bottom: 1px solid var(--border-light);
+      padding-bottom: 0.6rem;
+    }
+    
+    .skill-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    
+    .skill-name {
+      width: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    .skill-bar-container {
+      flex: 1;
+      height: 5px;
+      background: rgba(155, 123, 223, 0.15);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    
+    .skill-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-light));
+      border-radius: 10px;
+      width: 0;
+      transition: width 0.8s ease;
+    }
+    
+    .skill-percent {
+      width: 40px;
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 500;
+      text-align: right;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .tech-chip {
+      background: var(--accent-glow);
+      padding: 0.2rem 0.7rem;
+      border-radius: 1rem;
+      font-size: 0.6rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
     
     .skill-item {
       background: var(--accent-glow);
@@ -516,16 +525,13 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       border-radius: 0.8rem;
       padding: 0.7rem;
       text-align: center;
-      transition: var(--transition);
     }
-    
-    .language-entry:hover { background: rgba(155, 123, 223, 0.15); }
     
     .language-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
     .language-level { font-size: 0.65rem; color: var(--accent); }
     
-    /* ========== AWARDS GALLERY STYLES ========== */
-    .awards-gallery {
+    /* Gallery Styles */
+    .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
       gap: 1.5rem;
@@ -551,32 +557,20 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     
     .gallery-image {
       width: 100%;
-      height: 180px;
+      height: 160px;
       background: var(--accent-glow);
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      overflow: hidden;
     }
     
     .gallery-image i {
       font-size: 3rem;
       color: var(--accent);
       opacity: 0.6;
-      transition: var(--transition);
     }
     
-    .gallery-item:hover .gallery-image i {
-      opacity: 1;
-      transform: scale(1.05);
-    }
-    
-    .gallery-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
+    .gallery-item:hover .gallery-image i { opacity: 1; transform: scale(1.05); }
     
     .image-placeholder {
       width: 100%;
@@ -587,9 +581,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       background: var(--accent-glow);
     }
     
-    .gallery-info {
-      padding: 1.2rem;
-    }
+    .gallery-info { padding: 1.2rem; }
     
     .gallery-title {
       font-size: 0.9rem;
@@ -627,29 +619,19 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       margin-top: 0.6rem;
     }
     
-    .project-icon { font-size: 1.8rem; margin-bottom: 0.5rem; }
-    .project-title { font-size: 1rem; font-weight: 700; margin: 0.3rem 0; }
-    .project-description { color: var(--text-secondary); line-height: 1.5; font-size: 0.75rem; margin: 0.8rem 0; }
+    .gallery-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
     
-    .project-tech { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.8rem; }
-    .project-tech span {
+    .gallery-tech span {
       background: var(--accent-glow);
       padding: 0.2rem 0.6rem;
       border-radius: 1rem;
       font-size: 0.6rem;
       font-weight: 500;
-    }
-    
-    .award-badge {
-      display: inline-block;
-      background: var(--accent-glow);
-      border: 1px solid var(--border-light);
-      padding: 0.2rem 0.6rem;
-      border-radius: 1rem;
-      font-size: 0.6rem;
-      font-weight: 600;
-      color: var(--accent);
-      margin-top: 0.5rem;
     }
     
     .contact-info-container { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
@@ -698,7 +680,8 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       .title { font-size: 2rem; }
       nav { padding: 0 1.5rem; }
       .container { padding: 0 1.5rem; }
-      .awards-gallery { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .skills-wrapper { flex-direction: column; }
     }
     
     @media (max-width: 800px) {
@@ -712,6 +695,7 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       .animated-role { font-size: 0.85rem; }
       .btn { padding: 0.5rem 1.2rem; font-size: 0.75rem; }
       .title { font-size: 1.5rem; }
+      .skill-name { width: 80px; font-size: 0.7rem; }
     }
   </style>
 </head>
@@ -777,11 +761,11 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       <h1 class="title">About Me</h1>
       <div class="about-bio-card">
         <div class="bio-text">
-          I'm a <strong>Software Engineering student</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, passionate about <strong>Machine Learning</strong> and <strong>Web Development</strong>. I built a <strong>Car Damage Detection system</strong> using VGG16, TensorFlow, and OpenCV, and won <strong>🏆 Huawei Hackathon 2025 UMPSA (Best Game App)</strong> representing my team <strong>AceEngineers</strong>. Currently expanding my skills in <strong>Machine Learning, Microsoft Power Platform (Power BI, Power Apps)</strong> to drive data-informed business decisions.
+          I'm a <strong>Software Engineer</strong> and <strong>Machine Learning practitioner</strong> at <strong>Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)</strong>, passionate about building intelligent systems and scalable web applications. I built a <strong>Car Damage Detection system</strong> using VGG16, TensorFlow, and OpenCV, and won <strong>🏆 Huawei Hackathon 2025 UMPSA (Best Game App)</strong> representing my team <strong>AceEngineers</strong>. Currently expanding my skills in <strong>Machine Learning, Microsoft Power Platform (Power BI, Power Apps)</strong> to drive data-informed business decisions.
         </div>
         <div>
           <span class="highlight-badge">🏆 Hackathon Winner 2025</span>
-          <span class="highlight-badge">🤖 ML Engineer</span>
+          <span class="highlight-badge">🤖 ML Practitioner</span>
           <span class="highlight-badge">💻 Full-Stack</span>
           <span class="highlight-badge">📊 Power Platform</span>
         </div>
@@ -799,164 +783,259 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       <div class="nav-arrow" onclick="location.href='#awards'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
-    <!-- AWARDS & CERTIFICATIONS - GALLERY STYLE -->
+    <!-- AWARDS GALLERY -->
     <section id="awards" class="reveal">
       <p class="section__text__p1">Recognitions</p>
       <h1 class="title">Awards & Certifications</h1>
-      
-      <div class="awards-gallery">
-        <!-- Gallery Item 1 -->
+      <div class="gallery-grid">
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-trophy"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-trophy"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">🏆 Best Game App - Huawei Hackathon 2025</div>
             <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability. Built with Flutter and Firebase.</div>
+            <div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div>
             <span class="gallery-badge">Winner</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 2 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-medal"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-medal"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div>
             <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">Huawei AppGallery Competition - EcoSnap development using Flutter (Team AceEngineers)</div>
+            <div class="gallery-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div>
             <span class="gallery-badge">Finalist</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 3 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-mobile-alt"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-mobile-alt"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">📱 Huawei AppGallery Mobile App Competition 2025</div>
             <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">Designed and pitched DengueSense, a mobile app for dengue risk awareness with intuitive UI/UX.</div>
+            <div class="gallery-description">Designed DengueSense, a mobile app for dengue risk awareness.</div>
             <span class="gallery-badge">Participant</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 4 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-code"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-code"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">💻 SamanSphere - Hackathon X UMPSA</div>
             <span class="gallery-date">August 2025</span>
-            <div class="gallery-description">Developed a Laravel-based platform to centralize multi-agency summons payments with optimized performance.</div>
+            <div class="gallery-description">Laravel-based platform for multi-agency summons payments.</div>
             <span class="gallery-badge">Web Application</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 5 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-chart-line"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-chart-line"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">📊 Datathon 2025 - Universiti Malaya</div>
             <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Performed financial data analysis and built time series forecasting models for cash flow prediction.</div>
+            <div class="gallery-description">Financial time series forecasting for cash flow prediction.</div>
             <span class="gallery-badge">Data Analytics</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 6 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fab fa-google"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fab fa-google"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">☁️ Google Cloud Engineering Badge</div>
             <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Hands-on experience with cloud infrastructure (IAM, VPC, Compute Engine) on Google Cloud Platform.</div>
+            <div class="gallery-description">Hands-on with IAM, VPC, Compute Engine on GCP.</div>
             <span class="gallery-badge">Cloud Computing</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 7 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fab fa-aws"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fab fa-aws"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div>
             <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Knowledge of cloud services, security, and AWS global infrastructure fundamentals.</div>
+            <div class="gallery-description">Cloud services, security, and AWS infrastructure.</div>
             <span class="gallery-badge">Cloud Computing</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 8 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-network-wired"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-network-wired"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">🌐 CCNA: Introduction to Networks</div>
             <span class="gallery-date">July 2024</span>
-            <div class="gallery-description">Learned networking fundamentals, IP addressing, and performed configuration labs on Cisco devices.</div>
+            <div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div>
             <span class="gallery-badge">Networking</span>
           </div>
         </div>
-        
-        <!-- Gallery Item 9 -->
         <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image">
-            <div class="image-placeholder"><i class="fas fa-laptop-code"></i></div>
-          </div>
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-laptop-code"></i></div></div>
           <div class="gallery-info">
             <div class="gallery-title">💻 ICT Web Development Certification</div>
             <span class="gallery-date">October 2021</span>
-            <div class="gallery-description">Built responsive websites using HTML, CSS, PHP, and Bootstrap framework.</div>
+            <div class="gallery-description">Responsive websites with HTML, CSS, PHP, Bootstrap.</div>
             <span class="gallery-badge">Web Development</span>
           </div>
         </div>
       </div>
-      
       <div class="nav-arrow" onclick="location.href='#skills'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
+    <!-- TECHNICAL SKILLS SECTION -->
     <section id="skills" class="reveal">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Technical Skills</h1>
-      <div class="skills-grid">
-        <div class="skill-card"><div class="skill-header"><span>💻</span> Languages</div><div class="skill-items"><div class="skill-tag">Python</div><div class="skill-tag">Java</div><div class="skill-tag">C</div><div class="skill-tag">JavaScript</div><div class="skill-tag">PHP</div><div class="skill-tag">Dart</div></div></div>
-        <div class="skill-card"><div class="skill-header"><span>🧠</span> ML & AI</div><div class="skill-items"><div class="skill-tag">TensorFlow</div><div class="skill-tag">Keras</div><div class="skill-tag">OpenCV</div><div class="skill-tag">Scikit-learn</div></div></div>
-        <div class="skill-card"><div class="skill-header"><span>🌐</span> Web & DB</div><div class="skill-items"><div class="skill-tag">Laravel</div><div class="skill-tag">WordPress</div><div class="skill-tag">MySQL</div><div class="skill-tag">HTML/CSS</div></div></div>
-        <div class="skill-card"><div class="skill-header"><span>⚙️</span> Tools</div><div class="skill-items"><div class="skill-tag">Power BI</div><div class="skill-tag">AWS/GCP</div><div class="skill-tag">Flutter</div><div class="skill-tag">Git</div></div></div>
+      
+      <div class="skills-wrapper">
+        <div class="skills-category">
+          <div class="category-title"><i class="fas fa-code"></i> Programming Languages</div>
+          <div class="skill-items-list">
+            <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
+            <div class="skill-row"><span class="skill-name">Java</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-row"><span class="skill-name">PHP</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
+            <div class="skill-row"><span class="skill-name">Dart</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div>
+            <div class="skill-row"><span class="skill-name">C</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div>
+          </div>
+        </div>
+        
+        <div class="skills-category">
+          <div class="category-title"><i class="fas fa-brain"></i> Machine Learning & AI</div>
+          <div class="skill-items-list">
+            <div class="skill-row"><span class="skill-name">Deep Learning</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-row"><span class="skill-name">Computer Vision</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-row"><span class="skill-name">Data Analysis</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-row"><span class="skill-name">Model Optimization</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
+            <div class="skill-row"><span class="skill-name">Time Series</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">TensorFlow</span>
+            <span class="tech-chip">Keras</span>
+            <span class="tech-chip">OpenCV</span>
+            <span class="tech-chip">Scikit-learn</span>
+            <span class="tech-chip">Pandas</span>
+          </div>
+        </div>
+        
+        <div class="skills-category">
+          <div class="category-title"><i class="fas fa-globe"></i> Web Development</div>
+          <div class="skill-items-list">
+            <div class="skill-row"><span class="skill-name">Laravel</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-row"><span class="skill-name">WordPress</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
+            <div class="skill-row"><span class="skill-name">MySQL</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
+            <div class="skill-row"><span class="skill-name">HTML/CSS</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
+            <div class="skill-row"><span class="skill-name">Flutter</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-chip">REST APIs</span>
+            <span class="tech-chip">Redis</span>
+            <span class="tech-chip">Firebase</span>
+            <span class="tech-chip">Bootstrap</span>
+          </div>
+        </div>
+        
+        <div class="skills-category">
+          <div class="category-title"><i class="fas fa-toolbox"></i> Tools & Platforms</div>
+          <div class="skill-items-list">
+            <div class="skill-row"><span class="skill-name">Power BI</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
+            <div class="skill-row"><span class="skill-name">AWS/GCP</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div>
+            <div class="skill-row"><span class="skill-name">Git/GitHub</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
+            <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar-container"><div class="skill-bar" data-width="60"></div></div><span class="skill-percent">60%</span></div>
+            <div class="skill-row"><span class="skill-name">MS Office 365</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
+          </div>
+        </div>
       </div>
       
-      <div class="single-card"><div class="card-title"><i class="fas fa-laptop-code"></i> Digital Skills</div><div class="skills-list"><div class="skill-item">📱 Mobile Dev</div><div class="skill-item">🎨 UI/UX Design</div><div class="skill-item">🧪 Software Testing</div><div class="skill-item">☁️ Cloud Computing</div><div class="skill-item">📊 Power BI</div><div class="skill-item">📦 MS Office 365</div><div class="skill-item">🔧 Full Stack Web</div></div></div>
+      <div class="single-card" style="margin-top: 1.5rem;">
+        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-laptop-code"></i> Digital Skills</div>
+        <div class="skills-list">
+          <span class="skill-item">📱 Mobile App Development</span>
+          <span class="skill-item">🎨 UI/UX Design</span>
+          <span class="skill-item">🧪 Software Testing</span>
+          <span class="skill-item">☁️ Cloud Computing</span>
+          <span class="skill-item">📊 Power BI</span>
+          <span class="skill-item">📦 MS Office 365</span>
+          <span class="skill-item">🔧 Full Stack Web</span>
+        </div>
+      </div>
       
-      <div class="single-card"><div class="card-title"><i class="fas fa-star-of-life"></i> Expertise</div><div class="skills-list"><div class="skill-item">🎤 Public Speaking</div><div class="skill-item">🧩 Problem Solving</div><div class="skill-item">🔬 R&D</div><div class="skill-item">📚 Technical Training</div><div class="skill-item">👥 Team Leadership</div><div class="skill-item">💡 Critical Thinking</div></div></div>
+      <div class="single-card">
+        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-star-of-life"></i> Expertise</div>
+        <div class="skills-list">
+          <span class="skill-item">🎤 Public Speaking</span>
+          <span class="skill-item">🧩 Problem Solving</span>
+          <span class="skill-item">🔬 Research & Development</span>
+          <span class="skill-item">📚 Technical Training</span>
+          <span class="skill-item">👥 Team Leadership</span>
+          <span class="skill-item">💡 Critical Thinking</span>
+        </div>
+      </div>
       
-      <div class="single-card"><div class="card-title"><i class="fas fa-language"></i> Languages</div><div class="language-list"><div class="language-entry"><div class="language-name">English</div><div class="language-level">IELTS 6.5</div></div><div class="language-entry"><div class="language-name">Bangla</div><div class="language-level">Native</div></div><div class="language-entry"><div class="language-name">Hindi</div><div class="language-level">Intermediate</div></div><div class="language-entry"><div class="language-name">Malay</div><div class="language-level">Basic</div></div></div></div>
+      <div class="single-card">
+        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-language"></i> Languages</div>
+        <div class="language-list">
+          <div class="language-entry"><div class="language-name">English</div><div class="language-level">IELTS 6.5</div></div>
+          <div class="language-entry"><div class="language-name">Bangla</div><div class="language-level">Native</div></div>
+          <div class="language-entry"><div class="language-name">Hindi</div><div class="language-level">Intermediate</div></div>
+          <div class="language-entry"><div class="language-name">Malay</div><div class="language-level">Basic</div></div>
+        </div>
+      </div>
       
       <div class="nav-arrow" onclick="location.href='#projects'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
+    <!-- PROJECTS GALLERY -->
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Flagship Projects</h1>
-      <div class="projects-grid">
-        <div class="project-card"><div class="project-icon">🚗</div><div class="project-title">Car Damage Detection</div><div class="project-description">ML system using VGG16, TensorFlow, OpenCV for subtle vehicle damage detection.</div><div class="project-tech"><span>TensorFlow</span><span>OpenCV</span><span>Python</span></div><div class="award-badge">🎓 Final Year Project</div></div>
-        <div class="project-card"><div class="project-icon">🌱</div><div class="project-title">EcoSnap</div><div class="project-description">🏆 Best Game App. Flutter-based gamified sustainability platform.</div><div class="project-tech"><span>Flutter</span><span>Firebase</span></div><div class="award-badge">🏆 Huawei Winner</div></div>
-        <div class="project-card"><div class="project-icon">📋</div><div class="project-title">SamanSphere</div><div class="project-description">Centralized traffic summons payment platform with Laravel.</div><div class="project-tech"><span>Laravel</span><span>MySQL</span><span>REST</span></div></div>
-        <div class="project-card"><div class="project-icon">🦟</div><div class="project-title">DengueSense</div><div class="project-description">Mobile app concept for dengue risk awareness.</div><div class="project-tech"><span>UI/UX</span><span>Concept</span></div></div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-car"></i></div></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🚗 Car Damage Detection System</div>
+            <span class="gallery-date">Final Year Project</span>
+            <div class="gallery-description">ML-powered system using VGG16, TensorFlow, and OpenCV to detect subtle vehicle damages with optimized preprocessing.</div>
+            <div class="gallery-tech"><span>TensorFlow</span><span>OpenCV</span><span>Python</span><span>CNN</span></div>
+            <span class="gallery-badge">Machine Learning</span>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-leaf"></i></div></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🌱 EcoSnap - Huawei Hackathon Winner</div>
+            <span class="gallery-date">🏆 Best Game App Award 2025</span>
+            <div class="gallery-description">Flutter-based social gamification app promoting sustainability. Winner among 350+ teams.</div>
+            <div class="gallery-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div>
+            <span class="gallery-badge">Hackathon Winner</span>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-file-invoice-dollar"></i></div></div>
+          <div class="gallery-info">
+            <div class="gallery-title">📋 SamanSphere</div>
+            <span class="gallery-date">Web Application</span>
+            <div class="gallery-description">Centralized traffic summons payment platform built with Laravel for multi-agency integration.</div>
+            <div class="gallery-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div>
+            <span class="gallery-badge">Full Stack</span>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-chart-simple"></i></div></div>
+          <div class="gallery-info">
+            <div class="gallery-title">📊 Datathon 2025 - Financial Forecasting</div>
+            <span class="gallery-date">Universiti Malaya</span>
+            <div class="gallery-description">Time series models to forecast cash inflows and outflows for data-driven decision making.</div>
+            <div class="gallery-tech"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div>
+            <span class="gallery-badge">Data Analytics</span>
+          </div>
+        </div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
+          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-bug"></i></div></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🦟 DengueSense</div>
+            <span class="gallery-date">Hackathon Project</span>
+            <div class="gallery-description">Mobile app concept for dengue risk awareness with intuitive UI/UX design.</div>
+            <div class="gallery-tech"><span>UI/UX</span><span>Prototype</span></div>
+            <span class="gallery-badge">Healthcare Tech</span>
+          </div>
+        </div>
       </div>
       <div class="nav-arrow" onclick="location.href='#contact'"><i class="fas fa-chevron-down"></i></div>
     </section>
 
+    <!-- CONTACT SECTION -->
     <section id="contact" class="reveal">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Let's Connect</h1>
@@ -973,14 +1052,14 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
 
   <footer>
     <ul class="nav-links"><li><a href="#about">About</a></li><li><a href="#awards">Awards</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul>
-    <p>© 2026 Alam Mir Tazwar — Software Engineering Student</p>
+    <p>© 2026 Alam Mir Tazwar — Software Engineer & ML Practitioner</p>
   </footer>
 
   <script>
     function toggleMenu() { document.querySelector('.menu-links')?.classList.toggle('open'); }
     
-    // Typing Effect
-    const roles = ["Software Engineering Student", "ML Engineer", "Web Developer", "Hackathon Winner"];
+    // Updated Typing Effect with new titles
+    const roles = ["Software Engineer", "Machine Learning Practitioner", "Web Developer", "Hackathon Winner"];
     let roleIndex = 0, charIndex = 0, isDeleting = false;
     const dynamicElement = document.getElementById("dynamicRole");
     function typeEffect() {
@@ -994,10 +1073,23 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
     }
     typeEffect();
     
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('.skill-bar');
+    const skillsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const width = bar.getAttribute('data-width');
+          bar.style.width = width + '%';
+          skillsObserver.unobserve(bar);
+        }
+      });
+    }, { threshold: 0.3 });
+    skillBars.forEach(bar => skillsObserver.observe(bar));
+    
     // Theme Toggle
     const themeToggle = document.getElementById('themeToggle');
     const themeToggleMobile = document.getElementById('themeToggleMobile');
-    
     function toggleTheme() {
       document.body.classList.toggle('light-mode');
       const isLight = document.body.classList.contains('light-mode');
@@ -1007,7 +1099,6 @@ Here is your complete HTML portfolio with the **Awards & Certifications section 
       if (mobileIcon) mobileIcon.className = isLight ? 'fas fa-sun' : 'fas fa-moon';
       localStorage.setItem('theme', isLight ? 'light' : 'dark');
     }
-    
     themeToggle?.addEventListener('click', toggleTheme);
     themeToggleMobile?.addEventListener('click', toggleTheme);
     
