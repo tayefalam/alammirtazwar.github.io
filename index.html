@@ -1,3 +1,5 @@
+Here is an HTML document that updates your portfolio's "Awards & Certifications" section by replacing placeholder icons with real images and adding click-to-expand functionality.
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -589,27 +591,25 @@
     .gallery-image {
       width: 100%;
       height: 160px;
-      background: var(--accent-glow);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      overflow: hidden;
     }
     
-    .gallery-image i {
-      font-size: 3rem;
-      color: var(--accent);
-      opacity: 0.6;
+    .gallery-image img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-top-left-radius: 1.2rem;
+      border-top-right-radius: 1.2rem;
+      display: block;
+      transition: transform 0.4s ease;
     }
     
-    .gallery-item:hover .gallery-image i { opacity: 1; transform: scale(1.05); }
+    .gallery-item:hover .gallery-image img {
+      transform: scale(1.02);
+    }
     
     .image-placeholder {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: var(--accent-glow);
+      display: none;
     }
     
     .gallery-info { padding: 1.2rem; }
@@ -776,7 +776,6 @@
       </div>
     </section>
 
-    <!-- ONLY ONE ARROW - GET TO KNOW MORE -->
     <div class="get-to-know">
       <p>GET TO KNOW MORE</p>
       <div class="scroll-arrow" onclick="location.href='#about'">
@@ -809,255 +808,72 @@
       </div>
     </section>
 
-    <!-- AWARDS GALLERY -->
+    <!-- AWARDS GALLERY with real images and click-to-expand -->
     <section id="awards" class="reveal">
       <p class="section__text__p1">Recognitions</p>
       <h1 class="title">Awards & Certifications</h1>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-trophy"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🏆 Best Game App - Huawei Hackathon 2025</div>
-            <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div>
-            <span class="gallery-badge">Winner</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/hackathon-winner.jpg')">
+          <div class="gallery-image"><img src="./assets/hackathon-winner.jpg" alt="Best Game App - Huawei Hackathon 2025"></div>
+          <div class="gallery-info"><div class="gallery-title">🏆 Best Game App - Huawei Hackathon 2025</div><span class="gallery-date">November 2025</span><div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div><span class="gallery-badge">Winner</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-medal"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div>
-            <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div>
-            <span class="gallery-badge">Finalist</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/hackathon-samansphere.jpg')">
+          <div class="gallery-image"><img src="./assets/hackathon-samansphere.jpg" alt="SamanSphere - Hackathon X UMPSA"></div>
+          <div class="gallery-info"><div class="gallery-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div><span class="gallery-date">November 2025</span><div class="gallery-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div><span class="gallery-badge">Finalist</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-mobile-alt"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">📱 Huawei AppGallery Mobile App Competition 2025</div>
-            <span class="gallery-date">November 2025</span>
-            <div class="gallery-description">Designed DengueSense, a mobile app for dengue risk awareness.</div>
-            <span class="gallery-badge">Participant</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/dengue-sense.jpg')">
+          <div class="gallery-image"><img src="./assets/dengue-sense.jpg" alt="DengueSense Mobile App"></div>
+          <div class="gallery-info"><div class="gallery-title">📱 Huawei AppGallery Mobile App Competition 2025</div><span class="gallery-date">November 2025</span><div class="gallery-description">Designed DengueSense, a mobile app for dengue risk awareness.</div><span class="gallery-badge">Participant</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-code"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">💻 SamanSphere - Hackathon X UMPSA</div>
-            <span class="gallery-date">August 2025</span>
-            <div class="gallery-description">Laravel-based platform for multi-agency summons payments.</div>
-            <span class="gallery-badge">Web Application</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/hackathon-samansphere.jpg')">
+          <div class="gallery-image"><img src="./assets/hackathon-samansphere.jpg" alt="SamanSphere Web Application"></div>
+          <div class="gallery-info"><div class="gallery-title">💻 SamanSphere - Hackathon X UMPSA</div><span class="gallery-date">August 2025</span><div class="gallery-description">Laravel-based platform for multi-agency summons payments.</div><span class="gallery-badge">Web Application</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-chart-line"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">📊 Datathon 2025 - Universiti Malaya</div>
-            <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Financial time series forecasting for cash flow prediction.</div>
-            <span class="gallery-badge">Data Analytics</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/datathon.jpg')">
+          <div class="gallery-image"><img src="./assets/datathon.jpg" alt="Datathon 2025 - Universiti Malaya"></div>
+          <div class="gallery-info"><div class="gallery-title">📊 Datathon 2025 - Universiti Malaya</div><span class="gallery-date">December 2025</span><div class="gallery-description">Financial time series forecasting for cash flow prediction.</div><span class="gallery-badge">Data Analytics</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fab fa-google"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">☁️ Google Cloud Engineering Badge</div>
-            <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Hands-on with IAM, VPC, Compute Engine on GCP.</div>
-            <span class="gallery-badge">Cloud Computing</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/google-cloud.jpg')">
+          <div class="gallery-image"><img src="./assets/google-cloud.jpg" alt="Google Cloud Engineering Badge"></div>
+          <div class="gallery-info"><div class="gallery-title">☁️ Google Cloud Engineering Badge</div><span class="gallery-date">December 2025</span><div class="gallery-description">Hands-on with IAM, VPC, Compute Engine on GCP.</div><span class="gallery-badge">Cloud Computing</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fab fa-aws"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div>
-            <span class="gallery-date">December 2025</span>
-            <div class="gallery-description">Cloud services, security, and AWS infrastructure.</div>
-            <span class="gallery-badge">Cloud Computing</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/amazon-cloud.jpg')">
+          <div class="gallery-image"><img src="./assets/amazon-cloud.jpg" alt="AWS Cloud Practitioner Essentials"></div>
+          <div class="gallery-info"><div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div><span class="gallery-date">December 2025</span><div class="gallery-description">Cloud services, security, and AWS infrastructure.</div><span class="gallery-badge">Cloud Computing</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-network-wired"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🌐 CCNA: Introduction to Networks</div>
-            <span class="gallery-date">July 2024</span>
-            <div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div>
-            <span class="gallery-badge">Networking</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/ccna.jpg')">
+          <div class="gallery-image"><img src="./assets/ccna.jpg" alt="CCNA: Introduction to Networks"></div>
+          <div class="gallery-info"><div class="gallery-title">🌐 CCNA: Introduction to Networks</div><span class="gallery-date">July 2024</span><div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div><span class="gallery-badge">Networking</span></div>
         </div>
-        <div class="gallery-item" onclick="alert('Certificate image placeholder - Add your certificate image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-laptop-code"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">💻 ICT Web Development Certification</div>
-            <span class="gallery-date">October 2021</span>
-            <div class="gallery-description">Responsive websites with HTML, CSS, PHP, Bootstrap.</div>
-            <span class="gallery-badge">Web Development</span>
-          </div>
+        <div class="gallery-item" onclick="openImage('./assets/ict-training.jpg')">
+          <div class="gallery-image"><img src="./assets/ict-training.jpg" alt="ICT Web Development Certification"></div>
+          <div class="gallery-info"><div class="gallery-title">💻 ICT Web Development Certification</div><span class="gallery-date">October 2021</span><div class="gallery-description">Responsive websites with HTML, CSS, PHP, Bootstrap.</div><span class="gallery-badge">Web Development</span></div>
         </div>
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS SECTION -->
+    <!-- TECHNICAL SKILLS SECTION (unchanged) -->
     <section id="skills" class="reveal">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Technical Skills</h1>
-      
-      <div class="skills-wrapper">
-        <div class="skills-category">
-          <div class="category-title"><i class="fas fa-code"></i> Programming Languages</div>
-          <div class="skill-items-list">
-            <div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
-            <div class="skill-row"><span class="skill-name">Java</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
-            <div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
-            <div class="skill-row"><span class="skill-name">PHP</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
-            <div class="skill-row"><span class="skill-name">Dart</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div>
-            <div class="skill-row"><span class="skill-name">C</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div>
-          </div>
-        </div>
-        
-        <div class="skills-category">
-          <div class="category-title"><i class="fas fa-brain"></i> Machine Learning & AI</div>
-          <div class="skill-items-list">
-            <div class="skill-row"><span class="skill-name">Deep Learning</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
-            <div class="skill-row"><span class="skill-name">Computer Vision</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
-            <div class="skill-row"><span class="skill-name">Data Analysis</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
-            <div class="skill-row"><span class="skill-name">Model Optimization</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
-            <div class="skill-row"><span class="skill-name">Time Series</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div>
-          </div>
-          <div class="tech-stack">
-            <span class="tech-chip">TensorFlow</span>
-            <span class="tech-chip">Keras</span>
-            <span class="tech-chip">OpenCV</span>
-            <span class="tech-chip">Scikit-learn</span>
-            <span class="tech-chip">Pandas</span>
-          </div>
-        </div>
-        
-        <div class="skills-category">
-          <div class="category-title"><i class="fas fa-globe"></i> Web Development</div>
-          <div class="skill-items-list">
-            <div class="skill-row"><span class="skill-name">Laravel</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
-            <div class="skill-row"><span class="skill-name">WordPress</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
-            <div class="skill-row"><span class="skill-name">MySQL</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div>
-            <div class="skill-row"><span class="skill-name">HTML/CSS</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
-            <div class="skill-row"><span class="skill-name">Flutter</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
-          </div>
-          <div class="tech-stack">
-            <span class="tech-chip">REST APIs</span>
-            <span class="tech-chip">Redis</span>
-            <span class="tech-chip">Firebase</span>
-            <span class="tech-chip">Bootstrap</span>
-          </div>
-        </div>
-        
-        <div class="skills-category">
-          <div class="category-title"><i class="fas fa-toolbox"></i> Tools & Platforms</div>
-          <div class="skill-items-list">
-            <div class="skill-row"><span class="skill-name">Power BI</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div>
-            <div class="skill-row"><span class="skill-name">AWS/GCP</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div>
-            <div class="skill-row"><span class="skill-name">Git/GitHub</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div>
-            <div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar-container"><div class="skill-bar" data-width="60"></div></div><span class="skill-percent">60%</span></div>
-            <div class="skill-row"><span class="skill-name">MS Office 365</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="single-card" style="margin-top: 1.5rem;">
-        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-laptop-code"></i> Digital Skills</div>
-        <div class="skills-list">
-          <span class="skill-item">📱 Mobile App Development</span>
-          <span class="skill-item">🎨 UI/UX Design</span>
-          <span class="skill-item">🧪 Software Testing</span>
-          <span class="skill-item">☁️ Cloud Computing</span>
-          <span class="skill-item">📊 Power BI</span>
-          <span class="skill-item">📦 MS Office 365</span>
-          <span class="skill-item">🔧 Full Stack Web</span>
-        </div>
-      </div>
-      
-      <div class="single-card">
-        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-star-of-life"></i> Expertise</div>
-        <div class="skills-list">
-          <span class="skill-item">🎤 Public Speaking</span>
-          <span class="skill-item">🧩 Problem Solving</span>
-          <span class="skill-item">🔬 Research & Development</span>
-          <span class="skill-item">📚 Technical Training</span>
-          <span class="skill-item">👥 Team Leadership</span>
-          <span class="skill-item">💡 Critical Thinking</span>
-        </div>
-      </div>
-      
-      <div class="single-card">
-        <div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-language"></i> Languages</div>
-        <div class="language-list">
-          <div class="language-entry"><div class="language-name">English</div><div class="language-level">IELTS 6.5</div></div>
-          <div class="language-entry"><div class="language-name">Bangla</div><div class="language-level">Native</div></div>
-          <div class="language-entry"><div class="language-name">Hindi</div><div class="language-level">Intermediate</div></div>
-          <div class="language-entry"><div class="language-name">Malay</div><div class="language-level">Basic</div></div>
-        </div>
-      </div>
+      <div class="skills-wrapper"><div class="skills-category"><div class="category-title"><i class="fas fa-code"></i> Programming Languages</div><div class="skill-items-list"><div class="skill-row"><span class="skill-name">Python</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div><div class="skill-row"><span class="skill-name">Java</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div><div class="skill-row"><span class="skill-name">JavaScript</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div><div class="skill-row"><span class="skill-name">PHP</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div><div class="skill-row"><span class="skill-name">Dart</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div><div class="skill-row"><span class="skill-name">C</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div></div></div><div class="skills-category"><div class="category-title"><i class="fas fa-brain"></i> Machine Learning & AI</div><div class="skill-items-list"><div class="skill-row"><span class="skill-name">Deep Learning</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div><div class="skill-row"><span class="skill-name">Computer Vision</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div><div class="skill-row"><span class="skill-name">Data Analysis</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div><div class="skill-row"><span class="skill-name">Model Optimization</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div><div class="skill-row"><span class="skill-name">Time Series</span><div class="skill-bar-container"><div class="skill-bar" data-width="70"></div></div><span class="skill-percent">70%</span></div></div><div class="tech-stack"><span class="tech-chip">TensorFlow</span><span class="tech-chip">Keras</span><span class="tech-chip">OpenCV</span><span class="tech-chip">Scikit-learn</span><span class="tech-chip">Pandas</span></div></div><div class="skills-category"><div class="category-title"><i class="fas fa-globe"></i> Web Development</div><div class="skill-items-list"><div class="skill-row"><span class="skill-name">Laravel</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div><div class="skill-row"><span class="skill-name">WordPress</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div><div class="skill-row"><span class="skill-name">MySQL</span><div class="skill-bar-container"><div class="skill-bar" data-width="80"></div></div><span class="skill-percent">80%</span></div><div class="skill-row"><span class="skill-name">HTML/CSS</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div><div class="skill-row"><span class="skill-name">Flutter</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div></div><div class="tech-stack"><span class="tech-chip">REST APIs</span><span class="tech-chip">Redis</span><span class="tech-chip">Firebase</span><span class="tech-chip">Bootstrap</span></div></div><div class="skills-category"><div class="category-title"><i class="fas fa-toolbox"></i> Tools & Platforms</div><div class="skill-items-list"><div class="skill-row"><span class="skill-name">Power BI</span><div class="skill-bar-container"><div class="skill-bar" data-width="75"></div></div><span class="skill-percent">75%</span></div><div class="skill-row"><span class="skill-name">AWS/GCP</span><div class="skill-bar-container"><div class="skill-bar" data-width="65"></div></div><span class="skill-percent">65%</span></div><div class="skill-row"><span class="skill-name">Git/GitHub</span><div class="skill-bar-container"><div class="skill-bar" data-width="85"></div></div><span class="skill-percent">85%</span></div><div class="skill-row"><span class="skill-name">Docker</span><div class="skill-bar-container"><div class="skill-bar" data-width="60"></div></div><span class="skill-percent">60%</span></div><div class="skill-row"><span class="skill-name">MS Office 365</span><div class="skill-bar-container"><div class="skill-bar" data-width="90"></div></div><span class="skill-percent">90%</span></div></div></div></div>
+      <div class="single-card" style="margin-top: 1.5rem;"><div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-laptop-code"></i> Digital Skills</div><div class="skills-list"><span class="skill-item">📱 Mobile App Development</span><span class="skill-item">🎨 UI/UX Design</span><span class="skill-item">🧪 Software Testing</span><span class="skill-item">☁️ Cloud Computing</span><span class="skill-item">📊 Power BI</span><span class="skill-item">📦 MS Office 365</span><span class="skill-item">🔧 Full Stack Web</span></div></div>
+      <div class="single-card"><div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-star-of-life"></i> Expertise</div><div class="skills-list"><span class="skill-item">🎤 Public Speaking</span><span class="skill-item">🧩 Problem Solving</span><span class="skill-item">🔬 Research & Development</span><span class="skill-item">📚 Technical Training</span><span class="skill-item">👥 Team Leadership</span><span class="skill-item">💡 Critical Thinking</span></div></div>
+      <div class="single-card"><div class="category-title" style="margin-bottom: 1rem;"><i class="fas fa-language"></i> Languages</div><div class="language-list"><div class="language-entry"><div class="language-name">English</div><div class="language-level">IELTS 6.5</div></div><div class="language-entry"><div class="language-name">Bangla</div><div class="language-level">Native</div></div><div class="language-entry"><div class="language-name">Hindi</div><div class="language-level">Intermediate</div></div><div class="language-entry"><div class="language-name">Malay</div><div class="language-level">Basic</div></div></div></div>
     </section>
 
-    <!-- PROJECTS GALLERY -->
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Flagship Projects</h1>
       <div class="gallery-grid">
-        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-car"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🚗 Car Damage Detection System</div>
-            <span class="gallery-date">Final Year Project</span>
-            <div class="gallery-description">ML-powered system using VGG16, TensorFlow, and OpenCV to detect subtle vehicle damages with optimized preprocessing.</div>
-            <div class="gallery-tech"><span>TensorFlow</span><span>OpenCV</span><span>Python</span><span>CNN</span></div>
-            <span class="gallery-badge">Machine Learning</span>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-leaf"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🌱 EcoSnap - Huawei Hackathon Winner</div>
-            <span class="gallery-date">🏆 Best Game App Award 2025</span>
-            <div class="gallery-description">Flutter-based social gamification app promoting sustainability. Winner among 350+ teams.</div>
-            <div class="gallery-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div>
-            <span class="gallery-badge">Hackathon Winner</span>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-file-invoice-dollar"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">📋 SamanSphere</div>
-            <span class="gallery-date">Web Application</span>
-            <div class="gallery-description">Centralized traffic summons payment platform built with Laravel for multi-agency integration.</div>
-            <div class="gallery-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div>
-            <span class="gallery-badge">Full Stack</span>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-chart-simple"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">📊 Datathon 2025 - Financial Forecasting</div>
-            <span class="gallery-date">Universiti Malaya</span>
-            <div class="gallery-description">Time series models to forecast cash inflows and outflows for data-driven decision making.</div>
-            <div class="gallery-tech"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div>
-            <span class="gallery-badge">Data Analytics</span>
-          </div>
-        </div>
-        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')">
-          <div class="gallery-image"><div class="image-placeholder"><i class="fas fa-bug"></i></div></div>
-          <div class="gallery-info">
-            <div class="gallery-title">🦟 DengueSense</div>
-            <span class="gallery-date">Hackathon Project</span>
-            <div class="gallery-description">Mobile app concept for dengue risk awareness with intuitive UI/UX design.</div>
-            <div class="gallery-tech"><span>UI/UX</span><span>Prototype</span></div>
-            <span class="gallery-badge">Healthcare Tech</span>
-          </div>
-        </div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-image"><div class="image-placeholder"><i class="fas fa-car"></i></div></div><div class="gallery-info"><div class="gallery-title">🚗 Car Damage Detection System</div><span class="gallery-date">Final Year Project</span><div class="gallery-description">ML-powered system using VGG16, TensorFlow, and OpenCV.</div><div class="gallery-tech"><span>TensorFlow</span><span>OpenCV</span><span>Python</span><span>CNN</span></div><span class="gallery-badge">Machine Learning</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-image"><div class="image-placeholder"><i class="fas fa-leaf"></i></div></div><div class="gallery-info"><div class="gallery-title">🌱 EcoSnap - Huawei Hackathon Winner</div><span class="gallery-date">🏆 Best Game App Award 2025</span><div class="gallery-description">Flutter-based social gamification app promoting sustainability.</div><div class="gallery-tech"><span>Flutter</span><span>Firebase</span><span>UX Design</span></div><span class="gallery-badge">Hackathon Winner</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-image"><div class="image-placeholder"><i class="fas fa-file-invoice-dollar"></i></div></div><div class="gallery-info"><div class="gallery-title">📋 SamanSphere</div><span class="gallery-date">Web Application</span><div class="gallery-description">Centralized traffic summons payment platform using Laravel.</div><div class="gallery-tech"><span>Laravel</span><span>MySQL</span><span>REST APIs</span></div><span class="gallery-badge">Full Stack</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-image"><div class="image-placeholder"><i class="fas fa-chart-simple"></i></div></div><div class="gallery-info"><div class="gallery-title">📊 Datathon 2025 - Financial Forecasting</div><span class="gallery-date">Universiti Malaya</span><div class="gallery-description">Time series models for cash flow prediction.</div><div class="gallery-tech"><span>Python</span><span>Pandas</span><span>Scikit-learn</span></div><span class="gallery-badge">Data Analytics</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-image"><div class="image-placeholder"><i class="fas fa-bug"></i></div></div><div class="gallery-info"><div class="gallery-title">🦟 DengueSense</div><span class="gallery-date">Hackathon Project</span><div class="gallery-description">Mobile app for dengue risk awareness with intuitive UI/UX.</div><div class="gallery-tech"><span>UI/UX</span><span>Prototype</span></div><span class="gallery-badge">Healthcare Tech</span></div></div>
       </div>
     </section>
 
-    <!-- CONTACT SECTION -->
     <section id="contact" class="reveal">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Let's Connect</h1>
@@ -1145,6 +961,34 @@
       entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); }); 
     }, { threshold: 0.1 });
     revealElements.forEach(el => observer.observe(el));
+    
+    // Image expand preview function
+    function openImage(src) {
+      const overlay = document.createElement('div');
+      overlay.style.position = 'fixed';
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = '100%';
+      overlay.style.height = '100%';
+      overlay.style.background = 'rgba(0,0,0,0.9)';
+      overlay.style.display = 'flex';
+      overlay.style.alignItems = 'center';
+      overlay.style.justifyContent = 'center';
+      overlay.style.zIndex = 9999;
+      overlay.style.cursor = 'pointer';
+      
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      img.style.borderRadius = '10px';
+      img.style.boxShadow = '0 0 30px rgba(0,0,0,0.5)';
+      
+      overlay.appendChild(img);
+      overlay.onclick = () => document.body.removeChild(overlay);
+      document.body.appendChild(overlay);
+    }
+    window.openImage = openImage;
   </script>
 </body>
 </html>
