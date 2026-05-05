@@ -1,4 +1,4 @@
-Here is an HTML document that updates your portfolio's "Awards & Certifications" section by replacing placeholder icons with real images and adding click-to-expand functionality.
+Here is the HTML document with the image path for your CCNA certificate corrected. Now the "CCNA: Introduction to Networks" card will correctly display the `ccna.jpeg` image from your assets folder.
 ```html
 <!DOCTYPE html>
 <html lang="en">
@@ -346,7 +346,7 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
       animation: none;
     }
     
-    /* Section spacing - normal gap */
+    /* Section spacing */
     section {
       padding-top: 3rem;
       padding-bottom: 2rem;
@@ -563,7 +563,7 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
     .language-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
     .language-level { font-size: 0.65rem; color: var(--accent); }
     
-    /* Gallery Styles */
+    /* Gallery Styles - Modified: Top corners flat, bottom rounded */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -574,11 +574,11 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
     .gallery-item {
       background: var(--bg-card);
       backdrop-filter: blur(10px);
-      border-radius: 1.2rem;
       border: var(--glass-border);
       transition: var(--transition);
       overflow: hidden;
       cursor: pointer;
+      border-radius: 0 0 1.2rem 1.2rem; /* Only bottom corners rounded */
     }
     
     .gallery-item:hover {
@@ -598,10 +598,9 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
       width: 100%;
       height: 160px;
       object-fit: cover;
-      border-top-left-radius: 1.2rem;
-      border-top-right-radius: 1.2rem;
       display: block;
       transition: transform 0.4s ease;
+      /* No top border radius */
     }
     
     .gallery-item:hover .gallery-image img {
@@ -612,7 +611,10 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
       display: none;
     }
     
-    .gallery-info { padding: 1.2rem; }
+    .gallery-info {
+      padding: 1.2rem;
+      background: inherit;
+    }
     
     .gallery-title {
       font-size: 0.9rem;
@@ -808,7 +810,7 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
       </div>
     </section>
 
-    <!-- AWARDS GALLERY with real images and click-to-expand -->
+    <!-- AWARDS GALLERY with CCNA image corrected to ccna.jpeg -->
     <section id="awards" class="reveal">
       <p class="section__text__p1">Recognitions</p>
       <h1 class="title">Awards & Certifications</h1>
@@ -841,8 +843,9 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
           <div class="gallery-image"><img src="./assets/amazon-cloud.jpg" alt="AWS Cloud Practitioner Essentials"></div>
           <div class="gallery-info"><div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div><span class="gallery-date">December 2025</span><div class="gallery-description">Cloud services, security, and AWS infrastructure.</div><span class="gallery-badge">Cloud Computing</span></div>
         </div>
-        <div class="gallery-item" onclick="openImage('./assets/ccna.jpg')">
-          <div class="gallery-image"><img src="./assets/ccna.jpg" alt="CCNA: Introduction to Networks"></div>
+        <!-- CCNA certificate - using ccna.jpeg (corrected extension) -->
+        <div class="gallery-item" onclick="openImage('./assets/ccna.jpeg')">
+          <div class="gallery-image"><img src="./assets/ccna.jpeg" alt="CCNA: Introduction to Networks"></div>
           <div class="gallery-info"><div class="gallery-title">🌐 CCNA: Introduction to Networks</div><span class="gallery-date">July 2024</span><div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div><span class="gallery-badge">Networking</span></div>
         </div>
         <div class="gallery-item" onclick="openImage('./assets/ict-training.jpg')">
@@ -852,7 +855,7 @@ Here is an HTML document that updates your portfolio's "Awards & Certifications"
       </div>
     </section>
 
-    <!-- TECHNICAL SKILLS SECTION (unchanged) -->
+    <!-- TECHNICAL SKILLS SECTION -->
     <section id="skills" class="reveal">
       <p class="section__text__p1">Explore My</p>
       <h1 class="title">Technical Skills</h1>
