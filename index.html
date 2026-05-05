@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -558,91 +559,92 @@
     .language-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
     .language-level { font-size: 0.65rem; color: var(--accent); }
     
-    /* PREMIUM AWARDS SECTION - Clean, no extra spacing, elegant design */
-    .awards-grid {
+    /* GALLERY STYLES - Proper image sizing, fully visible */
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 1.8rem;
-      margin: 2rem 0 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
     }
     
-    .award-card {
+    .gallery-item {
       background: var(--bg-card);
       backdrop-filter: blur(12px);
       border-radius: 1rem;
       border: 1px solid var(--border-light);
       overflow: hidden;
-      transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      transition: all 0.3s ease;
       cursor: pointer;
       display: flex;
       flex-direction: column;
     }
     
-    .award-card:hover {
-      transform: translateY(-6px);
+    .gallery-item:hover {
+      transform: translateY(-4px);
       border-color: var(--accent);
-      box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 15px 30px -12px rgba(0, 0, 0, 0.4);
       background: var(--bg-card-hover);
     }
     
-    .award-image {
+    .gallery-img-container {
       width: 100%;
-      background: transparent;
+      height: 180px;
+      background: var(--bg-secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       overflow: hidden;
     }
     
-    .award-image img {
+    .gallery-img-container img {
       width: 100%;
-      height: auto;
-      display: block;
-      transition: transform 0.5s ease;
+      height: 100%;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+      background: var(--bg-secondary);
     }
     
-    .award-card:hover .award-image img {
+    .gallery-item:hover .gallery-img-container img {
       transform: scale(1.02);
     }
     
-    .award-content {
-      padding: 1.2rem 1.2rem 1.2rem 1.2rem;
+    .gallery-info {
+      padding: 1rem 1rem 1.2rem 1rem;
       background: inherit;
     }
     
-    .award-title {
-      font-size: 1rem;
+    .gallery-title {
+      font-size: 0.85rem;
       font-weight: 700;
       color: var(--accent);
-      margin-bottom: 0.4rem;
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      flex-wrap: wrap;
+      margin-bottom: 0.3rem;
+      line-height: 1.3;
     }
     
-    .award-date {
-      font-size: 0.65rem;
+    .gallery-date {
+      font-size: 0.6rem;
       color: var(--text-secondary);
       display: inline-block;
       background: var(--accent-glow);
-      padding: 0.2rem 0.7rem;
+      padding: 0.2rem 0.6rem;
       border-radius: 2rem;
-      margin-bottom: 0.6rem;
-      letter-spacing: 0.3px;
+      margin-bottom: 0.5rem;
     }
     
-    .award-description {
-      font-size: 0.75rem;
+    .gallery-description {
+      font-size: 0.7rem;
       color: var(--text-secondary);
-      line-height: 1.45;
-      margin: 0.4rem 0 0.5rem;
+      line-height: 1.4;
+      margin: 0.3rem 0 0.4rem;
     }
     
-    .award-badge {
+    .gallery-badge {
       display: inline-block;
       background: linear-gradient(135deg, var(--accent-glow), transparent);
       border: 1px solid var(--border-light);
-      padding: 0.2rem 0.8rem;
+      padding: 0.2rem 0.7rem;
       border-radius: 2rem;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 600;
       color: var(--accent);
       margin-top: 0.3rem;
@@ -681,7 +683,7 @@
       .title { font-size: 2rem; }
       nav { padding: 0 1.5rem; }
       .container { padding: 0 1.5rem; }
-      .awards-grid { grid-template-columns: 1fr; gap: 1.2rem; }
+      .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.2rem; }
       .skills-wrapper { flex-direction: column; }
       section { padding-top: 2rem; padding-bottom: 1.5rem; }
     }
@@ -699,8 +701,8 @@
       .title { font-size: 1.5rem; }
       .skill-name { width: 80px; font-size: 0.7rem; }
       #profile { min-height: calc(100vh - 70px); }
-      .award-content { padding: 1rem; }
-      .award-title { font-size: 0.85rem; }
+      .gallery-img-container { height: 150px; }
+      .gallery-info { padding: 0.8rem; }
     }
   </style>
 </head>
@@ -793,107 +795,98 @@
       </div>
     </section>
 
-    <!-- PREMIUM AWARDS SECTION - Clean, consistent spacing, no extra bottom gaps -->
+    <!-- AWARDS GALLERY - Proper image sizing with contain to show full certificates -->
     <section id="awards" class="reveal">
       <p class="section__text__p1">Recognitions</p>
       <h1 class="title">Awards & Certifications</h1>
-      <div class="awards-grid">
-        <!-- Winner Card -->
-        <div class="award-card" onclick="openImage('./assets/hackathon-winner.jpg')">
-          <div class="award-image"><img src="./assets/hackathon-winner.jpg" alt="Best Game App"></div>
-          <div class="award-content">
-            <div class="award-title">🏆 Best Game App - Huawei Hackathon 2025</div>
-            <span class="award-date">November 2025</span>
-            <div class="award-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div>
-            <span class="award-badge">Winner</span>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="openImage('./assets/hackathon-winner.jpg')">
+          <div class="gallery-img-container"><img src="./assets/hackathon-winner.jpg" alt="Best Game App - Huawei Hackathon 2025"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🏆 Best Game App - Huawei Hackathon 2025</div>
+            <span class="gallery-date">November 2025</span>
+            <div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div>
+            <span class="gallery-badge">Winner</span>
           </div>
         </div>
         
-        <!-- Top 10 Finalist Card -->
-        <div class="award-card" onclick="openImage('./assets/top10finalisthackathon.jpeg')">
-          <div class="award-image"><img src="./assets/top10finalisthackathon.jpeg" alt="Top 10 Finalist"></div>
-          <div class="award-content">
-            <div class="award-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div>
-            <span class="award-date">November 2025</span>
-            <div class="award-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div>
-            <span class="award-badge">Finalist</span>
+        <div class="gallery-item" onclick="openImage('./assets/top10finalisthackathon.jpeg')">
+          <div class="gallery-img-container"><img src="./assets/top10finalisthackathon.jpeg" alt="Top 10 Finalist - Innovation Mobile App Competition"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div>
+            <span class="gallery-date">November 2025</span>
+            <div class="gallery-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div>
+            <span class="gallery-badge">Finalist</span>
           </div>
         </div>
         
-        <!-- DengueSense Card -->
-        <div class="award-card" onclick="openImage('./assets/dengue-sense.jpg')">
-          <div class="award-image"><img src="./assets/dengue-sense.jpg" alt="DengueSense"></div>
-          <div class="award-content">
-            <div class="award-title">📱 Huawei AppGallery Mobile App Competition 2025</div>
-            <span class="award-date">November 2025</span>
-            <div class="award-description">Designed DengueSense, a mobile app for dengue risk awareness.</div>
-            <span class="award-badge">Participant</span>
+        <div class="gallery-item" onclick="openImage('./assets/dengue-sense.jpg')">
+          <div class="gallery-img-container"><img src="./assets/dengue-sense.jpg" alt="DengueSense Mobile App"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">📱 Huawei AppGallery Mobile App Competition 2025</div>
+            <span class="gallery-date">November 2025</span>
+            <div class="gallery-description">Designed DengueSense, a mobile app for dengue risk awareness.</div>
+            <span class="gallery-badge">Participant</span>
           </div>
         </div>
         
-        <!-- SamanSphere Card -->
-        <div class="award-card" onclick="openImage('./assets/hackathon-samansphere.jpg')">
-          <div class="award-image"><img src="./assets/hackathon-samansphere.jpg" alt="SamanSphere"></div>
-          <div class="award-content">
-            <div class="award-title">💻 SamanSphere - Hackathon X UMPSA</div>
-            <span class="award-date">August 2025</span>
-            <div class="award-description">Laravel-based platform for multi-agency summons payments.</div>
-            <span class="award-badge">Web Application</span>
+        <div class="gallery-item" onclick="openImage('./assets/hackathon-samansphere.jpg')">
+          <div class="gallery-img-container"><img src="./assets/hackathon-samansphere.jpg" alt="SamanSphere Web Application"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">💻 SamanSphere - Hackathon X UMPSA</div>
+            <span class="gallery-date">August 2025</span>
+            <div class="gallery-description">Laravel-based platform for multi-agency summons payments.</div>
+            <span class="gallery-badge">Web Application</span>
           </div>
         </div>
         
-        <!-- Datathon Card -->
-        <div class="award-card" onclick="openImage('./assets/datathon.jpg')">
-          <div class="award-image"><img src="./assets/datathon.jpg" alt="Datathon 2025"></div>
-          <div class="award-content">
-            <div class="award-title">📊 Datathon 2025 - Universiti Malaya</div>
-            <span class="award-date">December 2025</span>
-            <div class="award-description">Financial time series forecasting for cash flow prediction.</div>
-            <span class="award-badge">Data Analytics</span>
+        <div class="gallery-item" onclick="openImage('./assets/datathon.jpg')">
+          <div class="gallery-img-container"><img src="./assets/datathon.jpg" alt="Datathon 2025 - Universiti Malaya"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">📊 Datathon 2025 - Universiti Malaya</div>
+            <span class="gallery-date">December 2025</span>
+            <div class="gallery-description">Financial time series forecasting for cash flow prediction.</div>
+            <span class="gallery-badge">Data Analytics</span>
           </div>
         </div>
         
-        <!-- Google Cloud Card -->
-        <div class="award-card" onclick="openImage('./assets/google-cloud.jpg')">
-          <div class="award-image"><img src="./assets/google-cloud.jpg" alt="Google Cloud"></div>
-          <div class="award-content">
-            <div class="award-title">☁️ Google Cloud Engineering Badge</div>
-            <span class="award-date">December 2025</span>
-            <div class="award-description">Hands-on with IAM, VPC, Compute Engine on GCP.</div>
-            <span class="award-badge">Cloud Computing</span>
+        <div class="gallery-item" onclick="openImage('./assets/google-cloud.jpg')">
+          <div class="gallery-img-container"><img src="./assets/google-cloud.jpg" alt="Google Cloud Engineering Badge"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">☁️ Google Cloud Engineering Badge</div>
+            <span class="gallery-date">December 2025</span>
+            <div class="gallery-description">Hands-on with IAM, VPC, Compute Engine on GCP.</div>
+            <span class="gallery-badge">Cloud Computing</span>
           </div>
         </div>
         
-        <!-- AWS Cloud Card -->
-        <div class="award-card" onclick="openImage('./assets/amazon-cloud.jpg')">
-          <div class="award-image"><img src="./assets/amazon-cloud.jpg" alt="AWS Cloud"></div>
-          <div class="award-content">
-            <div class="award-title">☁️ AWS Cloud Practitioner Essentials</div>
-            <span class="award-date">December 2025</span>
-            <div class="award-description">Cloud services, security, and AWS infrastructure.</div>
-            <span class="award-badge">Cloud Computing</span>
+        <div class="gallery-item" onclick="openImage('./assets/amazon-cloud.jpg')">
+          <div class="gallery-img-container"><img src="./assets/amazon-cloud.jpg" alt="AWS Cloud Practitioner Essentials"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div>
+            <span class="gallery-date">December 2025</span>
+            <div class="gallery-description">Cloud services, security, and AWS infrastructure.</div>
+            <span class="gallery-badge">Cloud Computing</span>
           </div>
         </div>
         
-        <!-- CCNA Card -->
-        <div class="award-card" onclick="openImage('./assets/ccna.jpeg')">
-          <div class="award-image"><img src="./assets/ccna.jpeg" alt="CCNA"></div>
-          <div class="award-content">
-            <div class="award-title">🌐 CCNA: Introduction to Networks</div>
-            <span class="award-date">July 2024</span>
-            <div class="award-description">Networking fundamentals and Cisco configuration labs.</div>
-            <span class="award-badge">Networking</span>
+        <div class="gallery-item" onclick="openImage('./assets/ccna.jpeg')">
+          <div class="gallery-img-container"><img src="./assets/ccna.jpeg" alt="CCNA: Introduction to Networks"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">🌐 CCNA: Introduction to Networks</div>
+            <span class="gallery-date">July 2024</span>
+            <div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div>
+            <span class="gallery-badge">Networking</span>
           </div>
         </div>
         
-        <!-- ICT Training Card -->
-        <div class="award-card" onclick="openImage('./assets/ict-training.jpg')">
-          <div class="award-image"><img src="./assets/ict-training.jpg" alt="ICT Training"></div>
-          <div class="award-content">
-            <div class="award-title">💻 ICT Web Development Certification</div>
-            <span class="award-date">October 2021</span>
-            <div class="award-description">Responsive websites with HTML, CSS, PHP, Bootstrap.</div>
-            <span class="award-badge">Web Development</span>
+        <div class="gallery-item" onclick="openImage('./assets/ict-training.jpg')">
+          <div class="gallery-img-container"><img src="./assets/ict-training.jpg" alt="ICT Web Development Certification"></div>
+          <div class="gallery-info">
+            <div class="gallery-title">💻 ICT Web Development Certification</div>
+            <span class="gallery-date">October 2021</span>
+            <div class="gallery-description">Responsive websites with HTML, CSS, PHP, Bootstrap.</div>
+            <span class="gallery-badge">Web Development</span>
           </div>
         </div>
       </div>
@@ -912,12 +905,12 @@
     <section id="projects" class="reveal">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Flagship Projects</h1>
-      <div class="awards-grid">
-        <div class="award-card" onclick="alert('Project image placeholder - Add your project image here')"><div class="award-image"><div class="image-placeholder" style="display:flex; align-items:center; justify-content:center; height:160px; background:var(--accent-glow);"><i class="fas fa-car" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div></div><div class="award-content"><div class="award-title">🚗 Car Damage Detection System</div><span class="award-date">Final Year Project</span><div class="award-description">ML-powered system using VGG16, TensorFlow, and OpenCV.</div><div class="award-badge">Machine Learning</div></div></div>
-        <div class="award-card" onclick="alert('Project image placeholder - Add your project image here')"><div class="award-image"><div class="image-placeholder" style="display:flex; align-items:center; justify-content:center; height:160px; background:var(--accent-glow);"><i class="fas fa-leaf" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div></div><div class="award-content"><div class="award-title">🌱 EcoSnap - Huawei Hackathon Winner</div><span class="award-date">🏆 Best Game App Award 2025</span><div class="award-description">Flutter-based social gamification app promoting sustainability.</div><div class="award-badge">Hackathon Winner</div></div></div>
-        <div class="award-card" onclick="alert('Project image placeholder - Add your project image here')"><div class="award-image"><div class="image-placeholder" style="display:flex; align-items:center; justify-content:center; height:160px; background:var(--accent-glow);"><i class="fas fa-file-invoice-dollar" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div></div><div class="award-content"><div class="award-title">📋 SamanSphere</div><span class="award-date">Web Application</span><div class="award-description">Centralized traffic summons payment platform using Laravel.</div><div class="award-badge">Full Stack</div></div></div>
-        <div class="award-card" onclick="alert('Project image placeholder - Add your project image here')"><div class="award-image"><div class="image-placeholder" style="display:flex; align-items:center; justify-content:center; height:160px; background:var(--accent-glow);"><i class="fas fa-chart-simple" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div></div><div class="award-content"><div class="award-title">📊 Datathon 2025 - Financial Forecasting</div><span class="award-date">Universiti Malaya</span><div class="award-description">Time series models for cash flow prediction.</div><div class="award-badge">Data Analytics</div></div></div>
-        <div class="award-card" onclick="alert('Project image placeholder - Add your project image here')"><div class="award-image"><div class="image-placeholder" style="display:flex; align-items:center; justify-content:center; height:160px; background:var(--accent-glow);"><i class="fas fa-bug" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div></div><div class="award-content"><div class="award-title">🦟 DengueSense</div><span class="award-date">Hackathon Project</span><div class="award-description">Mobile app for dengue risk awareness with intuitive UI/UX.</div><div class="award-badge">Healthcare Tech</div></div></div>
+      <div class="gallery-grid">
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-img-container" style="background:var(--accent-glow); display:flex; align-items:center; justify-content:center;"><i class="fas fa-car" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div><div class="gallery-info"><div class="gallery-title">🚗 Car Damage Detection System</div><span class="gallery-date">Final Year Project</span><div class="gallery-description">ML-powered system using VGG16, TensorFlow, and OpenCV.</div><span class="gallery-badge">Machine Learning</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-img-container" style="background:var(--accent-glow); display:flex; align-items:center; justify-content:center;"><i class="fas fa-leaf" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div><div class="gallery-info"><div class="gallery-title">🌱 EcoSnap - Huawei Hackathon Winner</div><span class="gallery-date">🏆 Best Game App Award 2025</span><div class="gallery-description">Flutter-based social gamification app promoting sustainability.</div><span class="gallery-badge">Hackathon Winner</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-img-container" style="background:var(--accent-glow); display:flex; align-items:center; justify-content:center;"><i class="fas fa-file-invoice-dollar" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div><div class="gallery-info"><div class="gallery-title">📋 SamanSphere</div><span class="gallery-date">Web Application</span><div class="gallery-description">Centralized traffic summons payment platform using Laravel.</div><span class="gallery-badge">Full Stack</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-img-container" style="background:var(--accent-glow); display:flex; align-items:center; justify-content:center;"><i class="fas fa-chart-simple" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div><div class="gallery-info"><div class="gallery-title">📊 Datathon 2025 - Financial Forecasting</div><span class="gallery-date">Universiti Malaya</span><div class="gallery-description">Time series models for cash flow prediction.</div><span class="gallery-badge">Data Analytics</span></div></div>
+        <div class="gallery-item" onclick="alert('Project image placeholder - Add your project image here')"><div class="gallery-img-container" style="background:var(--accent-glow); display:flex; align-items:center; justify-content:center;"><i class="fas fa-bug" style="font-size:3rem; color:var(--accent); opacity:0.6;"></i></div><div class="gallery-info"><div class="gallery-title">🦟 DengueSense</div><span class="gallery-date">Hackathon Project</span><div class="gallery-description">Mobile app for dengue risk awareness with intuitive UI/UX.</div><span class="gallery-badge">Healthcare Tech</span></div></div>
       </div>
     </section>
 
@@ -1009,6 +1002,7 @@
     }, { threshold: 0.1 });
     revealElements.forEach(el => observer.observe(el));
     
+    // Full-image preview on click
     function openImage(src) {
       const overlay = document.createElement('div');
       overlay.style.position = 'fixed';
@@ -1028,6 +1022,7 @@
       img.style.maxHeight = '90%';
       img.style.borderRadius = '8px';
       img.style.boxShadow = '0 0 30px rgba(0,0,0,0.3)';
+      img.style.objectFit = 'contain';
       overlay.appendChild(img);
       overlay.onclick = () => document.body.removeChild(overlay);
       document.body.appendChild(overlay);
