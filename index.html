@@ -1,5 +1,4 @@
-Here is the HTML document with the image path for your CCNA certificate corrected. Now the "CCNA: Introduction to Networks" card will correctly display the `ccna.jpeg` image from your assets folder.
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -563,7 +562,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
     .language-name { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
     .language-level { font-size: 0.65rem; color: var(--accent); }
     
-    /* Gallery Styles - Modified: Top corners flat, bottom rounded */
+    /* Gallery Styles - Fixed image display without cutoff */
     .gallery-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -578,7 +577,9 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       transition: var(--transition);
       overflow: hidden;
       cursor: pointer;
-      border-radius: 0 0 1.2rem 1.2rem; /* Only bottom corners rounded */
+      border-radius: 0 0 1.2rem 1.2rem;
+      display: flex;
+      flex-direction: column;
     }
     
     .gallery-item:hover {
@@ -590,17 +591,21 @@ Here is the HTML document with the image path for your CCNA certificate correcte
     
     .gallery-image {
       width: 100%;
-      height: 160px;
+      height: 200px;
       overflow: hidden;
+      background: var(--accent-glow);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .gallery-image img {
       width: 100%;
-      height: 160px;
-      object-fit: cover;
-      display: block;
+      height: 100%;
+      object-fit: contain;
+      background: var(--bg-secondary);
       transition: transform 0.4s ease;
-      /* No top border radius */
+      display: block;
     }
     
     .gallery-item:hover .gallery-image img {
@@ -614,6 +619,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
     .gallery-info {
       padding: 1.2rem;
       background: inherit;
+      flex-shrink: 0;
     }
     
     .gallery-title {
@@ -703,6 +709,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       .gallery-grid { grid-template-columns: 1fr; }
       .skills-wrapper { flex-direction: column; }
       section { padding-top: 2rem; padding-bottom: 1.5rem; }
+      .gallery-image { height: 180px; }
     }
     
     @media (max-width: 800px) {
@@ -718,6 +725,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       .title { font-size: 1.5rem; }
       .skill-name { width: 80px; font-size: 0.7rem; }
       #profile { min-height: calc(100vh - 70px); }
+      .gallery-image { height: 160px; }
     }
   </style>
 </head>
@@ -770,7 +778,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
           <button class="btn btn-color-1" onclick="location.href='#contact'"><i class="fas fa-envelope"></i> Contact</button>
         </div>
         <div id="socials-container">
-          <div class="social-icon" onclick="window.open('https://www.linkedin.com/in/alam-mir-tazwar', '_blank')"><i class="fab fa-linkedin-in"></i></div>
+          <div class="social-icon" onclick="window.open('https://www.linkedin.com/in/alam-tazwar/', '_blank')"><i class="fab fa-linkedin-in"></i></div>
           <div class="social-icon" onclick="window.open('https://github.com/mirtazwar', '_blank')"><i class="fab fa-github"></i></div>
           <div class="social-icon" onclick="window.open('https://www.facebook.com/mirtazwaralam/', '_blank')"><i class="fab fa-facebook-f"></i></div>
           <div class="social-icon" onclick="window.open('https://www.instagram.com/mirtazwar/', '_blank')"><i class="fab fa-instagram"></i></div>
@@ -810,7 +818,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       </div>
     </section>
 
-    <!-- AWARDS GALLERY with CCNA image corrected to ccna.jpeg -->
+    <!-- AWARDS GALLERY with improved image display -->
     <section id="awards" class="reveal">
       <p class="section__text__p1">Recognitions</p>
       <h1 class="title">Awards & Certifications</h1>
@@ -820,7 +828,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
           <div class="gallery-info"><div class="gallery-title">🏆 Best Game App - Huawei Hackathon 2025</div><span class="gallery-date">November 2025</span><div class="gallery-description">EcoSnap: Flutter-based social gamification app promoting sustainability.</div><span class="gallery-badge">Winner</span></div>
         </div>
         <div class="gallery-item" onclick="openImage('./assets/hackathon-samansphere.jpg')">
-          <div class="gallery-image"><img src="./assets/hackathon-samansphere.jpg" alt="SamanSphere - Hackathon X UMPSA"></div>
+          <div class="gallery-image"><img src="./assets/hackathon-samansphere.jpg" alt="Top 10 Finalist - Innovation Mobile App Competition"></div>
           <div class="gallery-info"><div class="gallery-title">🏆 Top 10 Finalist - Innovation Mobile App Competition</div><span class="gallery-date">November 2025</span><div class="gallery-description">Huawei AppGallery Competition - EcoSnap (Team AceEngineers)</div><span class="gallery-badge">Finalist</span></div>
         </div>
         <div class="gallery-item" onclick="openImage('./assets/dengue-sense.jpg')">
@@ -843,7 +851,6 @@ Here is the HTML document with the image path for your CCNA certificate correcte
           <div class="gallery-image"><img src="./assets/amazon-cloud.jpg" alt="AWS Cloud Practitioner Essentials"></div>
           <div class="gallery-info"><div class="gallery-title">☁️ AWS Cloud Practitioner Essentials</div><span class="gallery-date">December 2025</span><div class="gallery-description">Cloud services, security, and AWS infrastructure.</div><span class="gallery-badge">Cloud Computing</span></div>
         </div>
-        <!-- CCNA certificate - using ccna.jpeg (corrected extension) -->
         <div class="gallery-item" onclick="openImage('./assets/ccna.jpeg')">
           <div class="gallery-image"><img src="./assets/ccna.jpeg" alt="CCNA: Introduction to Networks"></div>
           <div class="gallery-info"><div class="gallery-title">🌐 CCNA: Introduction to Networks</div><span class="gallery-date">July 2024</span><div class="gallery-description">Networking fundamentals and Cisco configuration labs.</div><span class="gallery-badge">Networking</span></div>
@@ -883,7 +890,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       <div class="contact-info-container">
         <div class="contact-card"><i class="fas fa-envelope"></i><a href="mailto:tazwaralam01@gmail.com">tazwaralam01@gmail.com</a></div>
         <div class="contact-card"><i class="fab fa-whatsapp"></i><a href="https://wa.me/+60104650774" target="_blank">+60 10-465 0774</a></div>
-        <div class="contact-card"><i class="fab fa-linkedin-in"></i><a href="https://linkedin.com/in/alam-mir-tazwar" target="_blank">LinkedIn</a></div>
+        <div class="contact-card"><i class="fab fa-linkedin-in"></i><a href="https://www.linkedin.com/in/alam-tazwar/" target="_blank">LinkedIn</a></div>
         <div class="contact-card"><i class="fas fa-globe"></i><a href="https://mirtazwar.github.io" target="_blank">Portfolio</a></div>
         <div class="contact-card"><i class="fab fa-facebook-f"></i><a href="https://www.facebook.com/mirtazwaralam/" target="_blank">Facebook</a></div>
         <div class="contact-card"><i class="fab fa-instagram"></i><a href="https://www.instagram.com/mirtazwar/" target="_blank">Instagram</a></div>
@@ -986,6 +993,7 @@ Here is the HTML document with the image path for your CCNA certificate correcte
       img.style.maxHeight = '90%';
       img.style.borderRadius = '10px';
       img.style.boxShadow = '0 0 30px rgba(0,0,0,0.5)';
+      img.style.objectFit = 'contain';
       
       overlay.appendChild(img);
       overlay.onclick = () => document.body.removeChild(overlay);
